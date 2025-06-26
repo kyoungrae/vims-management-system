@@ -18,6 +18,7 @@ public class CommonCodeController extends AbstractCommonController<CommonCode> {
     private final CommonCodeRepository commonCodeRepository;
     @RequestMapping("/findCommonCode")
     protected List<CommonCode> findCommonCode(@RequestBody CommonCode request) throws Exception {
+        System.out.println("gigigigi");
         return commonCodeService.findCommonCode(request);
     }
 

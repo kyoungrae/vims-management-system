@@ -535,84 +535,87 @@
             accessRightGroupSetting();
         })
     }
-    // function findByCommonCodeMenuList(page,range,sortId,sortOrder) {
-    //     console.log("ggg")
-    //     let url = "/login/common/menu/commonMenu/findHierarchy";
-    //     let param = {
-    //     };
-    //     // 검색조건 설정 (추가해서 사용)
-    //     let cont1 = $("#menu_name").val();
-    //     if(formUtil.checkEmptyValue(cont1)) param.menu_name = cont1;
-    //     // 정렬조건추가 (기준id, 순서)
-    //     if(formUtil.checkEmptyValue(sortId)) param.sort_id = sortId;
-    //     if(formUtil.checkEmptyValue(sortOrder)) param.sort_order = sortOrder;
-    //
-    //     axios.post(url, param).then(response => {
-    //         console.log(response)
-    //         let status = response.status;
-    //         if (status === 200) {
-    //             let data = response.data;
-    //
-    //             // 그리드 헤더 설정
-    //             let menuGrid = {
-    //                 title : "메뉴목록",
-    //                 list:[
-    //                     {HEADER:"메뉴명",      ID:"menu_name",     WIDTH:"15",TYPE:"text",FONT_SIZE:"12px",TEXT_ALIGN:"left",HIDDEN:false},
-    //                     {HEADER:"메뉴코드",     ID:"menu_code",    WIDTH:"20",TYPE:"text",FONT_SIZE:"12px",TEXT_ALIGN:"left",HIDDEN:false},
-    //                     {HEADER:"메뉴레벨",     ID:"menu_level",   WIDTH:"5",TYPE:"text",FONT_SIZE:"12px",TEXT_ALIGN:"center",HIDDEN:false},
-    //                     {HEADER:"노출순서",     ID:"menu_sequence",  WIDTH:"5",TYPE:"text",FONT_SIZE:"12px",TEXT_ALIGN:"center",HIDDEN:false},
-    //                     {HEADER:"메뉴순서",     ID:"menu_number",  WIDTH:"5",TYPE:"text",FONT_SIZE:"12px",TEXT_ALIGN:"center",HIDDEN:false},
-    //                     {HEADER:"상위 메뉴코드", ID:"top_menu_code",WIDTH:"15",TYPE:"text",FONT_SIZE:"12px",TEXT_ALIGN:"left",HIDDEN:false},
-    //                     {HEADER:"경로",         ID:"url",          WIDTH:"20",TYPE:"text",FONT_SIZE:"12px",TEXT_ALIGN:"left",HIDDEN:false},
-    //                     {HEADER:"사용여부",     ID:"use_yn_name",        WIDTH:"5",TYPE:"text",FONT_SIZE:"12px",TEXT_ALIGN:"center",HIDDEN:false},
-    //                     {HEADER:"수정",        ID:"update_menu_btn",     WIDTH:"5",TYPE:"button",FONT_SIZE:"12px",TEXT_ALIGN:"center",HIDDEN:false},
-    //                     {HEADER:"삭제",        ID:"delete_menu_btn",     WIDTH:"5",TYPE:"button",FONT_SIZE:"12px",TEXT_ALIGN:"center",HIDDEN:false},
-    //
-    //                     {HEADER:"사용여부",     ID:"use_yn",        WIDTH:"20",TYPE:"text",FONT_SIZE:"12px",TEXT_ALIGN:"center",HIDDEN:true},
-    //                     {HEADER:"No",         ID:"no",              WIDTH:"7",TYPE:"text",FONT_SIZE:"12px",TEXT_ALIGN:"center",HIDDEN:true},
-    //                     {HEADER:"접근권한 그룹",ID:"access_right_group",     WIDTH:"15",TYPE:"text",FONT_SIZE:"12px",TEXT_ALIGN:"center",HIDDEN:true},
-    //                     {HEADER:"작성일자",     ID:"system_create_date",   WIDTH:"15",TYPE:"text",FONT_SIZE:"12px",TEXT_ALIGN:"center",HIDDEN:true},
-    //                     {HEADER:"작성자ID",     ID:"system_create_userid", WIDTH:"15",TYPE:"text",FONT_SIZE:"12px",TEXT_ALIGN:"center",HIDDEN:true},
-    //                     {HEADER:"수정일자",     ID:"system_update_date",   WIDTH:"15",TYPE:"text",FONT_SIZE:"12px",TEXT_ALIGN:"center",HIDDEN:true},
-    //                     {HEADER:"수정자ID",     ID:"system_update_userid", WIDTH:"15",TYPE:"text",FONT_SIZE:"12px",TEXT_ALIGN:"center",HIDDEN:true}
-    //                 ]
-    //             }
-    //             //그리드 생성 <div id="gi-Grid"></div>
-    //             let menu_grid = formUtil.giGridHierarchy(menuGrid);
-    //             //계층 구조 기준컬럼명 설정
-    //             menu_grid.HierarchyOption({level_column:"menu_level",parent_depth_column:"menu_code",child_depth_column:"top_menu_code"});
-    //             //그리드 데이터 설정
-    //             menu_grid.DataSet(data);
-    //             //그리드 내부의 상세 버튼 클릭 이벤트 설정(버튼클릭시 호출될 함수, 그리드 헤더 부분에 설정한 버튼 ID)
-    //             // menu_grid.updateBtnClick(menuUpdateSetting,"update_menu_btn");
-    //             // menu_grid.deleteBtnClick(commonMenuDelete,"delete_menu_btn");
-    //
-    //             //그리스 내부의 header click 정렬 이벤트 설정
-    //             //menu_grid.sortDataSet(findByCommonCodeMenuList);
-    //
-    //             //그리드 row 선택 이벤트 설정
-    //             menu_grid.rowClick(rowClickEvent);
-    //             function rowClickEvent(rows){
-    //                 if(rows.menu_level !== "2"){
-    //                     $("#menu_depth_register_btn").removeClass("gi-hidden");
-    //                     $("#access_right_group_setting-btn").addClass("gi-hidden");
-    //                     rowClickData = rows;
-    //                 }else{
-    //                     $("#menu_depth_register_btn").addClass("gi-hidden");
-    //                     $("#access_right_group_setting-btn").removeClass("gi-hidden");
-    //                     rowClickData = rows;
-    //                 }
-    //             }
-    //         } else {
-    //             formUtil.alertPopup("response status is :" + status);
-    //         }
-    //     }).catch(error => {
-    //         formUtil.alertPopup(error);
-    //     })
-    // }
-    // function menuRegisterSetting(){
-    //     $("#gi-menu_register-popup").attr("data-popup-open","true");
-    // }
+    function findByCommonCodeMenuList(page,range,sortId,sortOrder) {
+        console.log("ggg")
+        let url = "/cms/common/menu/commonMenu/findHierarchy";
+        let param = {
+        };
+        // 검색조건 설정 (추가해서 사용)
+        let cont1 = $("#menu_name").val();
+        if(formUtil.checkEmptyValue(cont1)) param.menu_name = cont1;
+        // 정렬조건추가 (기준id, 순서)
+        if(formUtil.checkEmptyValue(sortId)) param.sort_id = sortId;
+        if(formUtil.checkEmptyValue(sortOrder)) param.sort_order = sortOrder;
+
+        axios.post(url, param).then(response => {
+            console.log(response)
+            let status = response.status;
+            if (status === 200) {
+                let data = response.data;
+
+                // 그리드 헤더 설정
+                let menuGrid = {
+                    title : "메뉴목록",
+                    list:[
+                        {HEADER:"메뉴명",      ID:"menu_name_kr",     WIDTH:"15",TYPE:"text",FONT_SIZE:"12px",TEXT_ALIGN:"left",HIDDEN:false},
+                        {HEADER:"메뉴코드",     ID:"menu_code",    WIDTH:"20",TYPE:"text",FONT_SIZE:"12px",TEXT_ALIGN:"left",HIDDEN:false},
+                        {HEADER:"메뉴레벨",     ID:"menu_level",   WIDTH:"5",TYPE:"text",FONT_SIZE:"12px",TEXT_ALIGN:"center",HIDDEN:false},
+                        {HEADER:"노출순서",     ID:"menu_sequence",  WIDTH:"5",TYPE:"text",FONT_SIZE:"12px",TEXT_ALIGN:"center",HIDDEN:false},
+                        {HEADER:"메뉴순서",     ID:"menu_number",  WIDTH:"5",TYPE:"text",FONT_SIZE:"12px",TEXT_ALIGN:"center",HIDDEN:false},
+                        {HEADER:"상위 메뉴코드", ID:"top_menu_code",WIDTH:"15",TYPE:"text",FONT_SIZE:"12px",TEXT_ALIGN:"left",HIDDEN:false},
+                        {HEADER:"API경로",     ID:"prgm_url",          WIDTH:"20",TYPE:"text",FONT_SIZE:"12px",TEXT_ALIGN:"left",HIDDEN:false},
+                        {HEADER:"경로",         ID:"url",          WIDTH:"20",TYPE:"text",FONT_SIZE:"12px",TEXT_ALIGN:"left",HIDDEN:false},
+                        {HEADER:"사용여부",     ID:"use_yn_name",        WIDTH:"5",TYPE:"text",FONT_SIZE:"12px",TEXT_ALIGN:"center",HIDDEN:false},
+                        {HEADER:"수정",        ID:"update_menu_btn",     WIDTH:"5",TYPE:"button",FONT_SIZE:"12px",TEXT_ALIGN:"center",HIDDEN:false},
+                        {HEADER:"삭제",        ID:"delete_menu_btn",     WIDTH:"5",TYPE:"button",FONT_SIZE:"12px",TEXT_ALIGN:"center",HIDDEN:false},
+
+                        {HEADER:"메뉴명",      ID:"menu_name_en",     WIDTH:"15",TYPE:"text",FONT_SIZE:"12px",TEXT_ALIGN:"left",HIDDEN:true},
+                        {HEADER:"메뉴명",      ID:"menu_name_mn",     WIDTH:"15",TYPE:"text",FONT_SIZE:"12px",TEXT_ALIGN:"left",HIDDEN:true},
+                        {HEADER:"사용여부",     ID:"use_yn",        WIDTH:"20",TYPE:"text",FONT_SIZE:"12px",TEXT_ALIGN:"center",HIDDEN:true},
+                        {HEADER:"No",         ID:"no",              WIDTH:"7",TYPE:"text",FONT_SIZE:"12px",TEXT_ALIGN:"center",HIDDEN:true},
+                        {HEADER:"접근권한 그룹",ID:"access_right_group",     WIDTH:"15",TYPE:"text",FONT_SIZE:"12px",TEXT_ALIGN:"center",HIDDEN:true},
+                        {HEADER:"작성일자",     ID:"system_create_date",   WIDTH:"15",TYPE:"text",FONT_SIZE:"12px",TEXT_ALIGN:"center",HIDDEN:true},
+                        {HEADER:"작성자ID",     ID:"system_create_userid", WIDTH:"15",TYPE:"text",FONT_SIZE:"12px",TEXT_ALIGN:"center",HIDDEN:true},
+                        {HEADER:"수정일자",     ID:"system_update_date",   WIDTH:"15",TYPE:"text",FONT_SIZE:"12px",TEXT_ALIGN:"center",HIDDEN:true},
+                        {HEADER:"수정자ID",     ID:"system_update_userid", WIDTH:"15",TYPE:"text",FONT_SIZE:"12px",TEXT_ALIGN:"center",HIDDEN:true}
+                    ]
+                }
+                //그리드 생성 <div id="gi-Grid"></div>
+                let menu_grid = formUtil.giGridHierarchy(menuGrid);
+                //계층 구조 기준컬럼명 설정
+                menu_grid.HierarchyOption({level_column:"menu_level",parent_depth_column:"menu_code",child_depth_column:"top_menu_code"});
+                //그리드 데이터 설정
+                menu_grid.DataSet(data);
+                //그리드 내부의 상세 버튼 클릭 이벤트 설정(버튼클릭시 호출될 함수, 그리드 헤더 부분에 설정한 버튼 ID)
+                // menu_grid.updateBtnClick(menuUpdateSetting,"update_menu_btn");
+                // menu_grid.deleteBtnClick(commonMenuDelete,"delete_menu_btn");
+
+                //그리스 내부의 header click 정렬 이벤트 설정
+                //menu_grid.sortDataSet(findByCommonCodeMenuList);
+
+                //그리드 row 선택 이벤트 설정
+                menu_grid.rowClick(rowClickEvent);
+                function rowClickEvent(rows){
+                    if(rows.menu_level !== "2"){
+                        $("#menu_depth_register_btn").removeClass("gi-hidden");
+                        $("#access_right_group_setting-btn").addClass("gi-hidden");
+                        rowClickData = rows;
+                    }else{
+                        $("#menu_depth_register_btn").addClass("gi-hidden");
+                        $("#access_right_group_setting-btn").removeClass("gi-hidden");
+                        rowClickData = rows;
+                    }
+                }
+            } else {
+                formUtil.alertPopup("response status is :" + status);
+            }
+        }).catch(error => {
+            formUtil.alertPopup(error);
+        })
+    }
+    function menuRegisterSetting(){
+        $("#gi-menu_register-popup").attr("data-popup-open","true");
+    }
     // function menuDepthRegisterSetting(){
     //     $("#gi-menuDepth_register-popup").attr("data-popup-open","true");
     //     $("#register_depth_top_menu_code").val(rowClickData.menu_code);
