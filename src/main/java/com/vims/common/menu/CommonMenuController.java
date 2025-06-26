@@ -38,7 +38,10 @@ public class CommonMenuController extends AbstractCommonController<CommonMenu> {
     protected List<CommonMenu> findImpl(@RequestBody CommonMenu request) throws Exception{
         return commonMenuService.findImpl(request);
     }
-
+    @PostMapping("/removeMenuCode")
+    public int removeMenuCode(@RequestBody CommonMenu request) throws Exception{
+        return commonMenuService.removeMenuCode(request);
+    }
     @PostMapping("/remove")
     @Override
     protected int removeImpl(@RequestBody CommonMenu request) {

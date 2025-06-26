@@ -1,6 +1,6 @@
 <style>
     .gi-popup-body{
-        height: 620px !important;
+        height: 450px !important;
     }
 
     #gi-common_access_right_group-popup .gi-popup-body {
@@ -20,7 +20,7 @@
 <article class="gi-article-content gi-col-95 gi-row-90">
     <section class="gi-col-100 gi-row-100">
         <header class="gi-flex gi-flex-center gi-col-5">
-            <h1 class="gi-page-title">메뉴설정</h1>
+            <h1 class="gi-page-title">[Page.Message].Message.Label.Array["COMMON_MENU.TITLE_LIST"]</h1>
         </header>
         <article class=" gi-col-93 gi-row-100">
             <!--      검색기능 영역      -->
@@ -71,29 +71,29 @@
     </section>
 </article>
 <article id="gi-menu_register-popup" class="gi-popup" data-popup-open="false">
-    <div class="gi-popup-body">
+    <div class="gi-popup-body gi-row-40-important">
         <div class="gi-popup-header">
             <span>메뉴등록</span>
         </div>
         <div class="gi-popup-contents gi-overflow-scroll">
             <!--      팝업내용 삽입 영역      -->
             <div class="gi-row-100 gi-col-auto gi-flex gi-flex-center">
-                <form id="commonMenuRegister" class="gi-row-100">
-                    <div class="gi-row-100 gi-padding-5px gi-grid-container gi-grid gi-grid-justify-items-center gi-grid-gap-10px gi-margin-bottom-15px">
-                        <div class="gi-row-60 gi-col-100 gi-grid gi-grid-template-columns-repeat-1-1fr-2fr gi-grid-rows-container">
-                            <div class="gi-row-100 gi-col-100 gi-flex gi-flex-center">
-                                <span>메뉴명</span>
-                            </div>
+                <form id="commonMenuRegister" class="gi-row-100 gi-grid gi-grid-justify-items-center">
+                    <div class="gi-row-80 gi-padding-5px gi-grid-container gi-grid gi-grid-justify-items-center gi-grid-gap-10px gi-margin-bottom-15px">
+                        <div class="gi-row-100 gi-col-100 gi-grid gi-grid-template-columns-repeat-1-1fr gi-grid-rows-container">
                             <div class="gi-row-100 gi-col-100">
                                 <div class="gi-row-100 gi-input-container gi-input-container-box-border-shadow gi-flex gi-flex-center ">
-                                    <label for="register_menu_name" class="gi-input-label" data-focus-label="true" data-focus-label-text-align="default" data-required="true">메뉴명</label>
-                                    <input data-field="menu_name" id="register_menu_name" name="menu_name" class="gi-input" data-focus-span-text-align="default" data-required="true" autocomplete="off"/>
+                                    <label for="register_top_menu_code" class="gi-input-label" data-focus-label="true" data-focus-label-text-align="default" data-required="true">상위메뉴코드</label>
+                                    <input data-gi-tag-disabled data-field="top_menu_code" id="register_top_menu_code" name="top_menu_code" class="gi-input" data-focus-span-text-align="default" data-required="true" autocomplete="off"/>
                                 </div>
                             </div>
                         </div>
-                        <div class="gi-row-60 gi-col-100 gi-grid gi-grid-template-columns-repeat-1-1fr-2fr gi-grid-rows-container">
-                            <div class="gi-row-100 gi-col-100 gi-flex gi-flex-center">
-                                <span>메뉴코드</span>
+                        <div class="gi-row-100 gi-col-100 gi-grid gi-grid-template-columns-repeat-2-1fr gi-grid-rows-container">
+                            <div class="gi-row-100 gi-col-100">
+                                <div class="gi-row-100 gi-input-container gi-input-container-box-border-shadow gi-flex gi-flex-center ">
+                                    <label for="register_menu_name" class="gi-input-label" data-focus-label="true" data-focus-label-text-align="default" data-required="true">메뉴명</label>
+                                    <input data-field="menu_name" id="register_menu_name" name="menu_name_kr" class="gi-input" data-focus-span-text-align="default" data-required="true" autocomplete="off"/>
+                                </div>
                             </div>
                             <div class="gi-row-100 gi-col-100">
                                 <div class="gi-row-100 gi-input-container gi-input-container-box-border-shadow gi-flex gi-flex-center ">
@@ -102,54 +102,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="gi-row-60 gi-col-100 gi-grid gi-grid-template-columns-repeat-1-1fr-2fr gi-grid-rows-container">
-                            <div class="gi-row-100 gi-col-100 gi-flex gi-flex-center">
-                                <span>노출순서</span>
-                            </div>
-                            <div class="gi-row-100 gi-col-100">
-                                <div class="gi-row-100 gi-input-container gi-input-container-box-border-shadow gi-flex gi-flex-center ">
-                                    <label for="register_menu_sequence" class="gi-input-label" data-focus-label="true" data-focus-label-text-align="default" data-required="false">노출순서</label>
-                                    <input inputNumberOnly maxlength="1" data-field="menu_sequence" id="register_menu_sequence" name="menu_sequence" class="gi-input" data-focus-span-text-align="default" data-required="false" autocomplete="off"/>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="gi-row-60 gi-col-100 gi-grid gi-grid-template-columns-repeat-1-1fr-2fr gi-grid-rows-container">
-                            <div class="gi-row-100 gi-col-100 gi-flex gi-flex-center">
-                                <span>메뉴순서</span>
-                            </div>
-                            <div class="gi-row-100 gi-col-100">
-                                <div class="gi-row-100 gi-input-container gi-input-container-box-border-shadow gi-flex gi-flex-center ">
-                                    <label for="register_menu_number" class="gi-input-label" data-focus-label="true" data-focus-label-text-align="default" data-required="true">메뉴순서</label>
-                                    <input inputNumberOnly maxlength="1" data-field="menu_number" id="register_menu_number" name="menu_number" class="gi-input" data-focus-span-text-align="default" data-required="true" autocomplete="off"/>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="gi-row-60 gi-col-100 gi-grid gi-grid-template-columns-repeat-1-1fr-2fr gi-grid-rows-container">
-                            <div class="gi-row-100 gi-col-100 gi-flex gi-flex-center">
-                                <span>메뉴레벨</span>
-                            </div>
-                            <div class="gi-row-100 gi-col-100">
-                                <div class="gi-row-100 gi-input-container gi-input-container-box-border-shadow gi-flex gi-flex-center ">
-                                    <label for="register_menu_level" class="gi-input-label" data-focus-label="true" data-focus-label-text-align="default" data-required="true">메뉴레벨</label>
-                                    <input inputNumberOnly data-field="menu_level" id="register_menu_level" name="menu_level" class="gi-input" data-focus-span-text-align="default" data-required="true" autocomplete="off" maxlength="1"/>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="gi-row-60 gi-col-100 gi-grid gi-grid-template-columns-repeat-1-1fr-2fr gi-grid-rows-container">
-                            <div class="gi-row-100 gi-col-100 gi-flex gi-flex-center">
-                                <span>상위메뉴코드</span>
-                            </div>
-                            <div class="gi-row-100 gi-col-100">
-                                <div class="gi-row-100 gi-input-container gi-input-container-box-border-shadow gi-flex gi-flex-center ">
-                                    <label for="register_top_menu_code" class="gi-input-label" data-focus-label="true" data-focus-label-text-align="default" data-required="true">상위메뉴코드</label>
-                                    <input data-gi-tag-disabled data-field="top_menu_code" id="register_top_menu_code" name="top_menu_code" class="gi-input" data-focus-span-text-align="default" data-required="true" autocomplete="off" value="-"/>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="gi-row-60 gi-col-100 gi-grid gi-grid-template-columns-repeat-1-1fr-2fr gi-grid-rows-container">
-                            <div class="gi-row-100 gi-col-100 gi-flex gi-flex-center">
-                                <span>경로</span>
-                            </div>
+                        <div class="gi-row-100 gi-col-100 gi-grid gi-grid-template-columns-repeat-1-1fr gi-grid-rows-container">
                             <div class="gi-row-100 gi-col-100">
                                 <div class="gi-row-100 gi-input-container gi-input-container-box-border-shadow gi-flex gi-flex-center ">
                                     <label for="register_url" class="gi-input-label" data-focus-label="true" data-focus-label-text-align="default" data-required="true">경로</label>
@@ -157,14 +110,23 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="gi-row-60 gi-col-100 gi-grid gi-grid-template-columns-repeat-1-1fr-2fr gi-grid-rows-container">
-                            <div class="gi-row-100 gi-col-100 gi-flex gi-flex-center">
-                                <span>사용여부</span>
+                        <div class="gi-row-100 gi-col-100 gi-grid gi-grid-template-columns-repeat-3-1fr gi-grid-rows-container">
+                            <div class="gi-row-100 gi-col-100">
+                                <div class="gi-row-100 gi-input-container gi-input-container-box-border-shadow gi-flex gi-flex-center ">
+                                    <label for="register_menu_number" class="gi-input-label" data-focus-label="true" data-focus-label-text-align="default" data-required="true">메뉴순서</label>
+                                    <input inputNumberOnly maxlength="1" data-field="menu_number" id="register_menu_number" name="menu_number" class="gi-input" data-focus-span-text-align="default" data-required="true" autocomplete="off"/>
+                                </div>
                             </div>
                             <div class="gi-row-100 gi-col-100">
                                 <div class="gi-row-100 gi-input-container gi-input-container-box-border-shadow gi-flex gi-flex-center ">
                                     <label for="register_use_yn" class="gi-input-label" data-focus-label="true" data-focus-label-text-align="default" data-required="true">사용여부</label>
                                     <input gi-selectbox data-selectbox-field="USE_YN" data-field="use_yn" id="register_use_yn" name="use_yn" class="gi-input" data-focus-span-text-align="default" data-required="true" autocomplete="off"/>
+                                </div>
+                            </div>
+                            <div class="gi-row-100 gi-col-100">
+                                <div class="gi-row-100 gi-input-container gi-input-container-box-border-shadow gi-flex gi-flex-center ">
+                                    <label for="register_menu_level" class="gi-input-label" data-focus-label="true" data-focus-label-text-align="default" data-required="true">메뉴레벨</label>
+                                    <input inputNumberOnly data-gi-tag-disabled data-field="menu_level" id="register_menu_level" name="menu_level" class="gi-input" data-focus-span-text-align="default" data-required="true" autocomplete="off" maxlength="1"/>
                                 </div>
                             </div>
                         </div>
@@ -182,29 +144,29 @@
     </div>
 </article>
 <article id="gi-menuDepth_register-popup" class="gi-popup" data-popup-open="false">
-    <div class="gi-popup-body">
+    <div class="gi-popup-body gi-row-40-important">
         <div class="gi-popup-header">
             <span>하위메뉴등록</span>
         </div>
         <div class="gi-popup-contents gi-overflow-scroll">
             <!--      팝업내용 삽입 영역      -->
             <div class="gi-row-100 gi-col-auto gi-flex gi-flex-center">
-                <form id="commonMenuDepthRegister" class="gi-row-100">
-                    <div class="gi-row-100 gi-padding-5px gi-grid-container gi-grid gi-grid-justify-items-center gi-grid-gap-10px gi-margin-bottom-15px">
-                        <div class="gi-row-60 gi-col-100 gi-grid gi-grid-template-columns-repeat-1-1fr-2fr gi-grid-rows-container">
-                            <div class="gi-row-100 gi-col-100 gi-flex gi-flex-center">
-                                <span>메뉴명</span>
+                <form id="commonMenuDepthRegister" class="gi-row-100 gi-grid gi-grid-justify-items-center">
+                    <div class="gi-row-80 gi-padding-5px gi-grid-container gi-grid gi-grid-justify-items-center gi-grid-gap-10px gi-margin-bottom-15px">
+                        <div class="gi-row-100 gi-col-100 gi-grid gi-grid-template-columns-repeat-1-1fr gi-grid-rows-container">
+                            <div class="gi-row-100 gi-col-100">
+                                <div class="gi-row-100 gi-input-container gi-input-container-box-border-shadow gi-flex gi-flex-center ">
+                                    <label for="register_depth_top_menu_code" class="gi-input-label" data-focus-label="true" data-focus-label-text-align="default" data-required="true">상위메뉴코드</label>
+                                    <input data-gi-tag-disabled data-field="top_menu_code" id="register_depth_top_menu_code" name="top_menu_code" class="gi-input" data-focus-span-text-align="default" data-required="true" autocomplete="off"/>
+                                </div>
                             </div>
+                        </div>
+                        <div class="gi-row-100 gi-col-100 gi-grid gi-grid-template-columns-repeat-2-1fr gi-grid-rows-container">
                             <div class="gi-row-100 gi-col-100">
                                 <div class="gi-row-100 gi-input-container gi-input-container-box-border-shadow gi-flex gi-flex-center ">
                                     <label for="register_depth_menu_name" class="gi-input-label" data-focus-label="true" data-focus-label-text-align="default" data-required="true">메뉴명</label>
                                     <input data-field="menu_name" id="register_depth_menu_name" name="menu_name" class="gi-input" data-focus-span-text-align="default" data-required="true" autocomplete="off"/>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="gi-row-60 gi-col-100 gi-grid gi-grid-template-columns-repeat-1-1fr-2fr gi-grid-rows-container">
-                            <div class="gi-row-100 gi-col-100 gi-flex gi-flex-center">
-                                <span>메뉴코드</span>
                             </div>
                             <div class="gi-row-100 gi-col-100">
                                 <div class="gi-row-100 gi-input-container gi-input-container-box-border-shadow gi-flex gi-flex-center ">
@@ -213,43 +175,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="gi-row-60 gi-col-100 gi-grid gi-grid-template-columns-repeat-1-1fr-2fr gi-grid-rows-container">
-                            <div class="gi-row-100 gi-col-100 gi-flex gi-flex-center">
-                                <span>메뉴순서</span>
-                            </div>
-                            <div class="gi-row-100 gi-col-100">
-                                <div class="gi-row-100 gi-input-container gi-input-container-box-border-shadow gi-flex gi-flex-center ">
-                                    <label for="register_depth_menu_number" class="gi-input-label" data-focus-label="true" data-focus-label-text-align="default" data-required="true">메뉴순서</label>
-                                    <input inputNumberOnly maxlength="1" data-field="menu_number" id="register_depth_menu_number" name="menu_number" class="gi-input" data-focus-span-text-align="default" data-required="true" autocomplete="off"/>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="gi-row-60 gi-col-100 gi-grid gi-grid-template-columns-repeat-1-1fr-2fr gi-grid-rows-container">
-                            <div class="gi-row-100 gi-col-100 gi-flex gi-flex-center">
-                                <span>메뉴레벨</span>
-                            </div>
-                            <div class="gi-row-100 gi-col-100">
-                                <div class="gi-row-100 gi-input-container gi-input-container-box-border-shadow gi-flex gi-flex-center ">
-                                    <label for="register_depth_menu_level" class="gi-input-label" data-focus-label="true" data-focus-label-text-align="default" data-required="true">메뉴레벨</label>
-                                    <input inputNumberOnly data-gi-tag-disabled data-field="menu_level" id="register_depth_menu_level" name="menu_level" class="gi-input" data-focus-span-text-align="default" data-required="true" autocomplete="off" maxlength="1"/>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="gi-row-60 gi-col-100 gi-grid gi-grid-template-columns-repeat-1-1fr-2fr gi-grid-rows-container">
-                            <div class="gi-row-100 gi-col-100 gi-flex gi-flex-center">
-                                <span>상위메뉴코드</span>
-                            </div>
-                            <div class="gi-row-100 gi-col-100">
-                                <div class="gi-row-100 gi-input-container gi-input-container-box-border-shadow gi-flex gi-flex-center ">
-                                    <label for="register_depth_top_menu_code" class="gi-input-label" data-focus-label="true" data-focus-label-text-align="default" data-required="true">상위메뉴코드</label>
-                                    <input data-gi-tag-disabled data-field="top_menu_code" id="register_depth_top_menu_code" name="top_menu_code" class="gi-input" data-focus-span-text-align="default" data-required="true" autocomplete="off"/>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="gi-row-60 gi-col-100 gi-grid gi-grid-template-columns-repeat-1-1fr-2fr gi-grid-rows-container">
-                            <div class="gi-row-100 gi-col-100 gi-flex gi-flex-center">
-                                <span>경로</span>
-                            </div>
+                        <div class="gi-row-100 gi-col-100 gi-grid gi-grid-template-columns-repeat-1-1fr gi-grid-rows-container">
                             <div class="gi-row-100 gi-col-100">
                                 <div class="gi-row-100 gi-input-container gi-input-container-box-border-shadow gi-flex gi-flex-center ">
                                     <label for="register_depth_url" class="gi-input-label" data-focus-label="true" data-focus-label-text-align="default" data-required="true">경로</label>
@@ -257,14 +183,23 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="gi-row-60 gi-col-100 gi-grid gi-grid-template-columns-repeat-1-1fr-2fr gi-grid-rows-container">
-                            <div class="gi-row-100 gi-col-100 gi-flex gi-flex-center">
-                                <span>사용여부</span>
+                        <div class="gi-row-100 gi-col-100 gi-grid gi-grid-template-columns-repeat-3-1fr gi-grid-rows-container">
+                            <div class="gi-row-100 gi-col-100">
+                                <div class="gi-row-100 gi-input-container gi-input-container-box-border-shadow gi-flex gi-flex-center ">
+                                    <label for="register_depth_menu_number" class="gi-input-label" data-focus-label="true" data-focus-label-text-align="default" data-required="true">메뉴순서</label>
+                                    <input inputNumberOnly maxlength="1" data-field="menu_number" id="register_depth_menu_number" name="menu_number" class="gi-input" data-focus-span-text-align="default" data-required="true" autocomplete="off"/>
+                                </div>
                             </div>
                             <div class="gi-row-100 gi-col-100">
                                 <div class="gi-row-100 gi-input-container gi-input-container-box-border-shadow gi-flex gi-flex-center ">
                                     <label for="register_depth_use_yn" class="gi-input-label" data-focus-label="true" data-focus-label-text-align="default" data-required="true">사용여부</label>
                                     <input gi-selectbox data-selectbox-field="USE_YN" data-field="use_yn" id="register_depth_use_yn" name="use_yn" class="gi-input" data-focus-span-text-align="default" data-required="true" autocomplete="off"/>
+                                </div>
+                            </div>
+                            <div class="gi-row-100 gi-col-100">
+                                <div class="gi-row-100 gi-input-container gi-input-container-box-border-shadow gi-flex gi-flex-center ">
+                                    <label for="register_depth_menu_level" class="gi-input-label" data-focus-label="true" data-focus-label-text-align="default" data-required="true">메뉴레벨</label>
+                                    <input inputNumberOnly data-gi-tag-disabled data-field="menu_level" id="register_depth_menu_level" name="menu_level" class="gi-input" data-focus-span-text-align="default" data-required="true" autocomplete="off" maxlength="1"/>
                                 </div>
                             </div>
                         </div>
@@ -310,17 +245,6 @@
                                 <div class="gi-row-100 gi-input-container gi-input-container-box-border-shadow gi-flex gi-flex-center ">
                                     <label for="update_menu_code" class="gi-input-label" data-focus-label="true" data-focus-label-text-align="default" data-required="true">메뉴코드</label>
                                     <input data-gi-tag-disabled data-field="menu_code" id="update_menu_code" name="menu_code" class="gi-input" data-focus-span-text-align="default" data-required="true" autocomplete="off"/>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="gi-row-60 gi-col-100 gi-grid gi-grid-template-columns-repeat-1-1fr-2fr gi-grid-rows-container">
-                            <div class="gi-row-100 gi-col-100 gi-flex gi-flex-center">
-                                <span>노출순서</span>
-                            </div>
-                            <div class="gi-row-100 gi-col-100">
-                                <div class="gi-row-100 gi-input-container gi-input-container-box-border-shadow gi-flex gi-flex-center ">
-                                    <label for="update_menu_sequence" class="gi-input-label" data-focus-label="true" data-focus-label-text-align="default" data-required="false">노출순서</label>
-                                    <input inputNumberOnly maxlength="1" data-field="menu_sequence" id="update_menu_sequence" name="menu_sequence" class="gi-input" data-focus-span-text-align="default" data-required="false" autocomplete="off"/>
                                 </div>
                             </div>
                         </div>
@@ -536,7 +460,6 @@
         })
     }
     function findByCommonCodeMenuList(page,range,sortId,sortOrder) {
-        console.log("ggg")
         let url = "/cms/common/menu/commonMenu/findHierarchy";
         let param = {
         };
@@ -548,7 +471,6 @@
         if(formUtil.checkEmptyValue(sortOrder)) param.sort_order = sortOrder;
 
         axios.post(url, param).then(response => {
-            console.log(response)
             let status = response.status;
             if (status === 200) {
                 let data = response.data;
@@ -558,26 +480,26 @@
                     title : "메뉴목록",
                     list:[
                         {HEADER:"메뉴명",      ID:"menu_name_kr",     WIDTH:"15",TYPE:"text",FONT_SIZE:"12px",TEXT_ALIGN:"left",HIDDEN:false},
-                        {HEADER:"메뉴코드",     ID:"menu_code",    WIDTH:"20",TYPE:"text",FONT_SIZE:"12px",TEXT_ALIGN:"left",HIDDEN:false},
-                        {HEADER:"메뉴레벨",     ID:"menu_level",   WIDTH:"5",TYPE:"text",FONT_SIZE:"12px",TEXT_ALIGN:"center",HIDDEN:false},
-                        {HEADER:"노출순서",     ID:"menu_sequence",  WIDTH:"5",TYPE:"text",FONT_SIZE:"12px",TEXT_ALIGN:"center",HIDDEN:false},
-                        {HEADER:"메뉴순서",     ID:"menu_number",  WIDTH:"5",TYPE:"text",FONT_SIZE:"12px",TEXT_ALIGN:"center",HIDDEN:false},
-                        {HEADER:"상위 메뉴코드", ID:"top_menu_code",WIDTH:"15",TYPE:"text",FONT_SIZE:"12px",TEXT_ALIGN:"left",HIDDEN:false},
-                        {HEADER:"API경로",     ID:"prgm_url",          WIDTH:"20",TYPE:"text",FONT_SIZE:"12px",TEXT_ALIGN:"left",HIDDEN:false},
-                        {HEADER:"경로",         ID:"url",          WIDTH:"20",TYPE:"text",FONT_SIZE:"12px",TEXT_ALIGN:"left",HIDDEN:false},
-                        {HEADER:"사용여부",     ID:"use_yn_name",        WIDTH:"5",TYPE:"text",FONT_SIZE:"12px",TEXT_ALIGN:"center",HIDDEN:false},
-                        {HEADER:"수정",        ID:"update_menu_btn",     WIDTH:"5",TYPE:"button",FONT_SIZE:"12px",TEXT_ALIGN:"center",HIDDEN:false},
+                        {HEADER:Message.Label.Array["COMMON_MENU.MENU_CODE"],     ID:"menu_code",    WIDTH:"15",TYPE:"text",FONT_SIZE:"12px",TEXT_ALIGN:"left",HIDDEN:false},
+                        {HEADER:Message.Label.Array["COMMON_MENU.MENU_LEVEL"],     ID:"menu_level",   WIDTH:"5",TYPE:"text",FONT_SIZE:"12px",TEXT_ALIGN:"center",HIDDEN:false},
+                        {HEADER:Message.Label.Array["COMMON_MENU.MENU_NUMBER"],     ID:"menu_number",  WIDTH:"5",TYPE:"text",FONT_SIZE:"12px",TEXT_ALIGN:"center",HIDDEN:false},
+                        {HEADER:Message.Label.Array["COMMON_MENU.TOP_MENU_CODE"], ID:"top_menu_code",WIDTH:"15",TYPE:"text",FONT_SIZE:"12px",TEXT_ALIGN:"left",HIDDEN:false},
+                        {HEADER:Message.Label.Array["COMMON_MENU.PRGM_URL"],     ID:"prgm_url",      WIDTH:"5",TYPE:"text",FONT_SIZE:"12px",TEXT_ALIGN:"left",HIDDEN:false},
+                        {HEADER:Message.Label.Array["COMMON_MENU.URL"],         ID:"url",          WIDTH:"20",TYPE:"text",FONT_SIZE:"12px",TEXT_ALIGN:"left",HIDDEN:false},
+                        {HEADER:Message.Label.Array["COMMON_MENU.USE_YN"],     ID:"use_yn",        WIDTH:"5",TYPE:"text",FONT_SIZE:"12px",TEXT_ALIGN:"center",HIDDEN:false},
+                        {HEADER:Message.Label.Array["COMMON_MENU.TITLE_MODIFY"],        ID:"update_menu_btn",     WIDTH:"5",TYPE:"button",FONT_SIZE:"12px",TEXT_ALIGN:"center",HIDDEN:false},
                         {HEADER:"삭제",        ID:"delete_menu_btn",     WIDTH:"5",TYPE:"button",FONT_SIZE:"12px",TEXT_ALIGN:"center",HIDDEN:false},
 
-                        {HEADER:"메뉴명",      ID:"menu_name_en",     WIDTH:"15",TYPE:"text",FONT_SIZE:"12px",TEXT_ALIGN:"left",HIDDEN:true},
-                        {HEADER:"메뉴명",      ID:"menu_name_mn",     WIDTH:"15",TYPE:"text",FONT_SIZE:"12px",TEXT_ALIGN:"left",HIDDEN:true},
-                        {HEADER:"사용여부",     ID:"use_yn",        WIDTH:"20",TYPE:"text",FONT_SIZE:"12px",TEXT_ALIGN:"center",HIDDEN:true},
+                        {HEADER:Message.Label.Array["COMMON_MENU.MENU_SEQUENCE"],  ID:"menu_sequence",  WIDTH:"5",TYPE:"text",FONT_SIZE:"12px",TEXT_ALIGN:"center",HIDDEN:true},
+                        {HEADER:Message.Label.Array["COMMON_MENU.MENU_NAME_EN"],      ID:"menu_name_en",     WIDTH:"15",TYPE:"text",FONT_SIZE:"12px",TEXT_ALIGN:"left",HIDDEN:true},
+                        {HEADER:Message.Label.Array["COMMON_MENU.MENU_NAME_MN"],      ID:"menu_name_mn",     WIDTH:"15",TYPE:"text",FONT_SIZE:"12px",TEXT_ALIGN:"left",HIDDEN:true},
+                        {HEADER:Message.Label.Array["COMMON_MENU.USE_YN"],     ID:"use_yn",        WIDTH:"20",TYPE:"text",FONT_SIZE:"12px",TEXT_ALIGN:"center",HIDDEN:true},
                         {HEADER:"No",         ID:"no",              WIDTH:"7",TYPE:"text",FONT_SIZE:"12px",TEXT_ALIGN:"center",HIDDEN:true},
                         {HEADER:"접근권한 그룹",ID:"access_right_group",     WIDTH:"15",TYPE:"text",FONT_SIZE:"12px",TEXT_ALIGN:"center",HIDDEN:true},
-                        {HEADER:"작성일자",     ID:"system_create_date",   WIDTH:"15",TYPE:"text",FONT_SIZE:"12px",TEXT_ALIGN:"center",HIDDEN:true},
-                        {HEADER:"작성자ID",     ID:"system_create_userid", WIDTH:"15",TYPE:"text",FONT_SIZE:"12px",TEXT_ALIGN:"center",HIDDEN:true},
-                        {HEADER:"수정일자",     ID:"system_update_date",   WIDTH:"15",TYPE:"text",FONT_SIZE:"12px",TEXT_ALIGN:"center",HIDDEN:true},
-                        {HEADER:"수정자ID",     ID:"system_update_userid", WIDTH:"15",TYPE:"text",FONT_SIZE:"12px",TEXT_ALIGN:"center",HIDDEN:true}
+                        {HEADER:Message.Label.Array["COMMON_MENU.SYSTEM_CREATE_DATE"],     ID:"system_create_date",   WIDTH:"15",TYPE:"text",FONT_SIZE:"12px",TEXT_ALIGN:"center",HIDDEN:true},
+                        {HEADER:Message.Label.Array["COMMON_MENU.SYSTEM_CREATE_USERID"],     ID:"system_create_userid", WIDTH:"15",TYPE:"text",FONT_SIZE:"12px",TEXT_ALIGN:"center",HIDDEN:true},
+                        {HEADER:Message.Label.Array["COMMON_MENU.SYSTEM_UPDATE_DATE"],     ID:"system_update_date",   WIDTH:"15",TYPE:"text",FONT_SIZE:"12px",TEXT_ALIGN:"center",HIDDEN:true},
+                        {HEADER:Message.Label.Array["COMMON_MENU.SYSTEM_UPDATE_USERID"],     ID:"system_update_userid", WIDTH:"15",TYPE:"text",FONT_SIZE:"12px",TEXT_ALIGN:"center",HIDDEN:true}
                     ]
                 }
                 //그리드 생성 <div id="gi-Grid"></div>
@@ -588,7 +510,7 @@
                 menu_grid.DataSet(data);
                 //그리드 내부의 상세 버튼 클릭 이벤트 설정(버튼클릭시 호출될 함수, 그리드 헤더 부분에 설정한 버튼 ID)
                 // menu_grid.updateBtnClick(menuUpdateSetting,"update_menu_btn");
-                // menu_grid.deleteBtnClick(commonMenuDelete,"delete_menu_btn");
+                menu_grid.deleteBtnClick(commonMenuDelete,"delete_menu_btn");
 
                 //그리스 내부의 header click 정렬 이벤트 설정
                 //menu_grid.sortDataSet(findByCommonCodeMenuList);
@@ -615,14 +537,17 @@
     }
     function menuRegisterSetting(){
         $("#gi-menu_register-popup").attr("data-popup-open","true");
+        $("#register_top_menu_code").val("-");
+        $("#register_menu_level").val("0");
+        commonTag.inputTagReset($(".gi-input"));
     }
-    // function menuDepthRegisterSetting(){
-    //     $("#gi-menuDepth_register-popup").attr("data-popup-open","true");
-    //     $("#register_depth_top_menu_code").val(rowClickData.menu_code);
-    //     $("#register_depth_menu_level").val((parseInt(rowClickData.menu_level)+1)+"");
-    //
-    //     inputTageReset.commonTagSettings();
-    // }
+    function menuDepthRegisterSetting(){
+        $("#gi-menuDepth_register-popup").attr("data-popup-open","true");
+        $("#register_depth_top_menu_code").val(rowClickData.menu_code);
+        $("#register_depth_menu_level").val((parseInt(rowClickData.menu_level)+1)+"");
+
+        inputTageReset.commonTagSettings();
+    }
     // function menuUpdateSetting(cont){
     //     $("#gi-menu_update-popup").attr("data-popup-open","true");
     //     data_binding.setDataSelectBox("update_use_yn",cont.use_yn);
@@ -635,65 +560,64 @@
     //     //접근권한그룹 추가용 데이터 조회
     //     //findByCommonGroup();
     // }
-    // function commonMenuRegister(){
-    //     let flag =  checkRegisterPopupValidation();
-    //     if(flag){
-    //         let url = "/common/menu/register"
-    //         let data = new dataBinding().getData(COMMON_MENU_REGISTER_PRGMID);
-    //         let param = {
-    //             menu_code : data.menu_code,
-    //             menu_name : data.menu_name,
-    //             menu_number : data.menu_number,
-    //             menu_level : data.menu_level,
-    //             top_menu_code : data.top_menu_code,
-    //             url : data.url,
-    //             use_yn : data.use_yn,
-    //             menu_sequence : data.menu_sequence
-    //         };
-    //
-    //         axios.post(url, param).then(response =>{
-    //             if(response.status === 200){
-    //                 formUtil.showMessage(Message.Label.Array["COMPLETE.INSERT"]);
-    //                 common_popup.close("gi-menu_register-popup");
-    //                 findByCommonCodeMenuList();
-    //                 findByMenuList();
-    //             }else{
-    //                 formUtil.showMessage(Message.Label.Array["FAIL.INSERT"])
-    //             }
-    //         }).catch(error =>{
-    //             formUtil.checkEmptyValue(error+"");
-    //         })
-    //     }
-    // }
-    // function commonMenuDepthRegister(){
-    //     let flag =  checkDepthRegisterPopupValidation();
-    //     if(flag){
-    //         let url = "/common/menu/register"
-    //         let data = new dataBinding().getData(COMMON_MENU_DEPTH_REGISTER_PRGMID);
-    //         let param = {
-    //             menu_code : data.menu_code,
-    //             menu_name : data.menu_name,
-    //             menu_number : data.menu_number,
-    //             menu_level : data.menu_level,
-    //             top_menu_code : data.top_menu_code,
-    //             url : data.url,
-    //             use_yn : data.use_yn
-    //         };
-    //
-    //         axios.post(url, param).then(response =>{
-    //             if(response.status === 200){
-    //                 formUtil.showMessage(Message.Label.Array["COMPLETE.INSERT"]);
-    //                 common_popup.close("gi-menuDepth_register-popup");
-    //                 findByCommonCodeMenuList();
-    //                 findByMenuList();
-    //             }else{
-    //                 formUtil.showMessage(Message.Label.Array["FAIL.INSERT"])
-    //             }
-    //         }).catch(error =>{
-    //             formUtil.checkEmptyValue(error+"");
-    //         })
-    //     }
-    // }
+    function commonMenuRegister(){
+        let flag =  checkRegisterPopupValidation();
+        if(flag){
+            let url = "/cms/common/menu/commonMenu/register"
+            let data = new dataBinding().getData(COMMON_MENU_REGISTER_PRGMID);
+            let param = {
+                menu_code : data.menu_code,
+                menu_name_kr : data.menu_name,
+                menu_number : data.menu_number,
+                menu_level : data.menu_level,
+                top_menu_code : data.top_menu_code,
+                url : data.url,
+                use_yn : data.use_yn
+            };
+
+            axios.post(url, param).then(response =>{
+                if(response.status === 200){
+                    formUtil.showMessage(Message.Label.Array["COMPLETE.INSERT"]);
+                    common_popup.close("gi-menu_register-popup");
+                    findByCommonCodeMenuList();
+                    findByMenuList();
+                }else{
+                    formUtil.showMessage(Message.Label.Array["FAIL.INSERT"])
+                }
+            }).catch(error =>{
+                formUtil.checkEmptyValue(error+"");
+            })
+        }
+    }
+    function commonMenuDepthRegister(){
+        let flag =  checkDepthRegisterPopupValidation();
+        if(flag){
+            let url = "/cms/common/menu/commonMenu/register"
+            let data = new dataBinding().getData(COMMON_MENU_DEPTH_REGISTER_PRGMID);
+            let param = {
+                menu_code : data.menu_code,
+                menu_name : data.menu_name,
+                menu_number : data.menu_number,
+                menu_level : data.menu_level,
+                top_menu_code : data.top_menu_code,
+                url : data.url,
+                use_yn : data.use_yn
+            };
+
+            axios.post(url, param).then(response =>{
+                if(response.status === 200){
+                    formUtil.showMessage(Message.Label.Array["COMPLETE.INSERT"]);
+                    common_popup.close("gi-menuDepth_register-popup");
+                    findByCommonCodeMenuList();
+                    findByMenuList();
+                }else{
+                    formUtil.showMessage(Message.Label.Array["FAIL.INSERT"])
+                }
+            }).catch(error =>{
+                formUtil.checkEmptyValue(error+"");
+            })
+        }
+    }
     // function commonMenuUpdate(){
     //     let data = new dataBinding().getData(COMMON_MENU_UPDATE_PRGMID);
     //     let url = "/common/menu/update";
@@ -722,55 +646,59 @@
     //          formUtil.alertPopup(error + "");
     //      })
     // }
-    // function commonMenuDelete(cont){
-    //     let data = cont;
-    //     let url = "/common/menu/removeMenuCode";
-    //     let param = {
-    //         menu_code : data.menu_code
-    //     };
-    //     axios.post(url, param).then(response =>{
-    //         if(response.data === -1){
-    //             formUtil.showMessage(Message.Label.Array["FAIL.DELETE.REASON.EXIST_CHILD_DATA"]);
-    //         }else{
-    //             formUtil.showMessage(Message.Label.Array["COMPLETE.DELETE"]);
-    //             findByCommonCodeMenuList();
-    //             findByMenuList();
-    //         }
-    //     }).catch(error =>{
-    //         formUtil.alertPopup(error + "");
-    //     })
-    // }
-    // function checkRegisterPopupValidation(){
-    //     let flag = false;
-    //     let validation = $(`[data-required="true"]`)
-    //         .filter((_, el) => formUtil.checkEmptyValue(el.id))
-    //         .map((_, el) => ({
-    //             id: el.id,
-    //             message: Message.Label.Array["COMMON_MENU.CHECK." + el.name.toUpperCase()]
-    //         })).get();
-    //
-    //     validation.formId = COMMON_MENU_REGISTER_PRGMID;
-    //     if (formUtil.validationCheck(validation)) {
-    //         flag = true;
-    //     }
-    //     return flag;
-    // }
-    // function checkDepthRegisterPopupValidation(){
-    //     let flag = false;
-    //     let validation = $(`[data-required="true"]`)
-    //         .filter((_, el) => formUtil.checkEmptyValue(el.id))
-    //         .map((_, el) => ({
-    //             id: el.id,
-    //             message: Message.Label.Array["COMMON_MENU.CHECK." + el.name.toUpperCase()]
-    //         })).get();
-    //
-    //     validation.formId = COMMON_MENU_DEPTH_REGISTER_PRGMID;
-    //     if (formUtil.validationCheck(validation)) {
-    //         flag = true;
-    //     }
-    //     return flag;
-    // }
-    //
+    /**
+     * NOTE: 메뉴 ROW DATA 삭제
+     * @param cont
+     */
+    function commonMenuDelete(cont){
+        let data = cont;
+        let url = "/cms/common/menu/commonMenu/removeMenuCode";
+        let param = {
+            menu_code : data.menu_code,
+            menu_sequence: data.menu_sequence
+        };
+        axios.post(url, param).then(response =>{
+            if(response.data === -1){
+                formUtil.showMessage(Message.Label.Array["FAIL.DELETE.REASON.EXIST_CHILD_DATA"]);
+            }else{
+                formUtil.showMessage(Message.Label.Array["COMPLETE.DELETE"]);
+                findByCommonCodeMenuList();
+                findByMenuList();
+            }
+        }).catch(error =>{
+            formUtil.alertPopup(error + "");
+        })
+    }
+    function checkRegisterPopupValidation(){
+        let flag = false;
+        let validation = $('#'+COMMON_MENU_REGISTER_PRGMID+' [data-required="true"]')
+            .filter((_, el) => formUtil.checkEmptyValue(el.id))
+            .map((_, el) => ({
+                id: el.id,
+                message: Message.Label.Array["COMMON_MENU.CHECK." + el.name.toUpperCase()]
+            })).get();
+        validation.formId = COMMON_MENU_REGISTER_PRGMID;
+        if (formUtil.validationCheck(validation)) {
+            flag = true;
+        }
+        return flag;
+    }
+    function checkDepthRegisterPopupValidation(){
+        let flag = false;
+        let validation = $("#"+COMMON_MENU_DEPTH_REGISTER_PRGMID+' [data-required="true"]')
+            .filter((_, el) => formUtil.checkEmptyValue(el.id))
+            .map((_, el) => ({
+                id: el.id,
+                message: Message.Label.Array["COMMON_MENU.CHECK." + el.name.toUpperCase()]
+            })).get();
+
+        validation.formId = COMMON_MENU_DEPTH_REGISTER_PRGMID;
+        if (formUtil.validationCheck(validation)) {
+            flag = true;
+        }
+        return flag;
+    }
+
     // function renderBoxList() {
     //     $container.empty();
     //     let listHtml = "";

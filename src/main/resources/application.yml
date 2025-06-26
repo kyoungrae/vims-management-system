@@ -61,7 +61,7 @@ spring:
 logging:
     level:
         root: INFO
-        com.system: DEBUG
+        com.*: DEBUG
         org.apache.ibatis: DEBUG
         java.sql: DEBUG
         org.springframework.jdbc: DEBUG

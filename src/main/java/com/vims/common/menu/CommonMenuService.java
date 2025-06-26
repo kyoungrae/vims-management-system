@@ -38,6 +38,27 @@ public class CommonMenuService extends AbstractCommonService<CommonMenu> {
     protected List<CommonMenu> findImpl(CommonMenu request) throws Exception {
         return commonMenuMapper.SELECT(request);
     }
+    public int removeMenuCode(CommonMenu request) throws Exception{
+        var containTopMenuCode = CommonMenu.builder()
+                .top_menu_code(request.getMenu_code())
+                .menu_sequence(request.getMenu_sequence())
+                .build();
+        var containMenuCode = CommonMenu.builder()
+                .menu_code(request.getMenu_code())
+                .menu_sequence(request.getMenu_sequence())
+                .build();
+        List<CommonMenu> list = commonMenuMapper.SELECT(containTopMenuCode);
+        boolean childNodeExist = !list.isEmpty();
+        try {
+            if(childNodeExist){
+                return -1;
+            }else{
+                return commonMenuMapper.DELETE(containMenuCode);
+            }
+        }catch (Exception e){
+            throw new Exception("FAIL TO REMOVE MENU");
+        }
+    }
 
     @Override
     protected int removeImpl(CommonMenu request) {
