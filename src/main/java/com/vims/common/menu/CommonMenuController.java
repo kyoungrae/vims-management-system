@@ -24,7 +24,6 @@ public class CommonMenuController extends AbstractCommonController<CommonMenu> {
     }
     @PostMapping("/findHierarchy")
     public List<CommonMenu> findHierarchy(@RequestBody CommonMenu request) throws Exception{
-        System.out.println("안녕하세요");
         return commonMenuService.findHierarchy(request);
     }
 

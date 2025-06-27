@@ -42,7 +42,6 @@ public class CommonMenuService extends AbstractCommonService<CommonMenu> {
     public int removeMenuCode(CommonMenu request) throws Exception{
         var containTopMenuCode = CommonMenu.builder()
                 .top_menu_code(request.getMenu_code())
-                .menu_sequence(request.getMenu_sequence())
                 .build();
         var containMenuCode = CommonMenu.builder()
                 .menu_code(request.getMenu_code())
@@ -51,13 +50,15 @@ public class CommonMenuService extends AbstractCommonService<CommonMenu> {
         List<CommonMenu> list = commonMenuMapper.SELECT(containTopMenuCode);
         boolean childNodeExist = !list.isEmpty();
         try {
-            if(childNodeExist){
-                return -1;
-            }else{
+            if (childNodeExist) {
+                throw new CustomException(getMessage("EXCEPTION.DELETE.EXIST.SBU_DATA"));
+            } else {
                 return commonMenuMapper.DELETE(containMenuCode);
             }
+        }catch (CustomException ce){
+            throw ce;
         }catch (Exception e){
-            throw new Exception("FAIL TO REMOVE MENU");
+            throw new Exception("FAIL TO REMOVE MENU",e);
         }
     }
 

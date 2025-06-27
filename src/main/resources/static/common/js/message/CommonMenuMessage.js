@@ -2,7 +2,7 @@
 <!--Message.Label = {};-->
 <!--Message.Label.Array = {};-->
 Message.Label.Array["COMMON_MENU.TITLE_DETAIL"] = " 상세";
-Message.Label.Array["COMMON_MENU.TITLE_LIST"] = " 목록";
+Message.Label.Array["COMMON_MENU.TITLE_LIST"] = " 메뉴설정";
 Message.Label.Array["COMMON_MENU.TITLE_MODIFY"] = " 수정";
 Message.Label.Array["COMMON_MENU.TITLE_REGISTER"] = " 등록";
 

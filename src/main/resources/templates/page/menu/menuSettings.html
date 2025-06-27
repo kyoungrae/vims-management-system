@@ -165,7 +165,7 @@
                             <div class="gi-row-100 gi-col-100">
                                 <div class="gi-row-100 gi-input-container gi-input-container-box-border-shadow gi-flex gi-flex-center ">
                                     <label for="register_depth_menu_name" class="gi-input-label" data-focus-label="true" data-focus-label-text-align="default" data-required="true">메뉴명</label>
-                                    <input data-field="menu_name" id="register_depth_menu_name" name="menu_name" class="gi-input" data-focus-span-text-align="default" data-required="true" autocomplete="off"/>
+                                    <input data-field="menu_name_kr" id="register_depth_menu_name" name="menu_name_kr" class="gi-input" data-focus-span-text-align="default" data-required="true" autocomplete="off"/>
                                 </div>
                             </div>
                             <div class="gi-row-100 gi-col-100">
@@ -585,7 +585,7 @@
                     formUtil.showMessage(Message.Label.Array["FAIL.INSERT"])
                 }
             }).catch(error =>{
-                formUtil.checkEmptyValue(error+"");
+                formUtil.alertPopup(error.response.data);
             })
         }
     }
@@ -596,7 +596,7 @@
             let data = new dataBinding().getData(COMMON_MENU_DEPTH_REGISTER_PRGMID);
             let param = {
                 menu_code : data.menu_code,
-                menu_name : data.menu_name,
+                menu_name_kr : data.menu_name_kr,
                 menu_number : data.menu_number,
                 menu_level : data.menu_level,
                 top_menu_code : data.top_menu_code,
@@ -658,15 +658,11 @@
             menu_sequence: data.menu_sequence
         };
         axios.post(url, param).then(response =>{
-            if(response.data === -1){
-                formUtil.showMessage(Message.Label.Array["FAIL.DELETE.REASON.EXIST_CHILD_DATA"]);
-            }else{
-                formUtil.showMessage(Message.Label.Array["COMPLETE.DELETE"]);
-                findByCommonCodeMenuList();
-                findByMenuList();
-            }
+            formUtil.showMessage(Message.Label.Array["COMPLETE.DELETE"]);
+            findByCommonCodeMenuList();
+            findByMenuList();
         }).catch(error =>{
-            formUtil.alertPopup(error + "");
+            formUtil.alertPopup(error.response.data);
         })
     }
     function checkRegisterPopupValidation(){
