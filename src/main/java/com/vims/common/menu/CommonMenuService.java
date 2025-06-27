@@ -4,6 +4,7 @@
 package com.vims.common.menu;
 
 import com.system.common.base.AbstractCommonService;
+import com.system.common.exception.CustomException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.MessageSource;
 import org.springframework.context.i18n.LocaleContextHolder;
@@ -18,7 +19,7 @@ public class CommonMenuService extends AbstractCommonService<CommonMenu> {
     private final CommonMenuRepository commonMenuRepository;
     private final MessageSource messageSource;
 
-     private String getMessage(String code) {
+    private String getMessage(String code) {
         return messageSource.getMessage(code, null, LocaleContextHolder.getLocale());
     }
     public List<CommonMenu> findHierarchy(CommonMenu request) throws Exception {
@@ -62,16 +63,28 @@ public class CommonMenuService extends AbstractCommonService<CommonMenu> {
 
     @Override
     protected int removeImpl(CommonMenu request) {
-        return commonMenuMapper.DELETE(request);
+        try{
+            return commonMenuMapper.DELETE(request);
+        }catch (Exception e){
+            throw new CustomException(getMessage("EXCEPTION.PK.EXIST.USER"));
+        }
     }
 
     @Override
     protected int updateImpl(CommonMenu request) {
-        return commonMenuMapper.UPDATE(request);
+        try{
+            return commonMenuMapper.UPDATE(request);
+        }catch (Exception e){
+            throw new CustomException(getMessage(""));
+        }
     }
 
     @Override
     protected int registerImpl(CommonMenu request){
-        return commonMenuMapper.INSERT(request);
+         try{
+            return commonMenuMapper.INSERT(request);
+         }catch (Exception e){
+             throw new CustomException(getMessage("EXCEPTION.PK.EXIST"));
+         }
     }
 }

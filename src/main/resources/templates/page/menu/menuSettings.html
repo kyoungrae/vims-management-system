@@ -614,7 +614,7 @@
                     formUtil.showMessage(Message.Label.Array["FAIL.INSERT"])
                 }
             }).catch(error =>{
-                formUtil.checkEmptyValue(error+"");
+                formUtil.alertPopup(error.response.data);
             })
         }
     }
