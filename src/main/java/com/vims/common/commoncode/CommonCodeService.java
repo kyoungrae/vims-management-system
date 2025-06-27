@@ -14,7 +14,6 @@ public class CommonCodeService extends AbstractCommonService<CommonCode> {
     private final CommonCodeMapper commonCodeMapper;
     protected List<CommonCode> findCommonCode(CommonCode request) throws Exception {
         try{
-            System.out.println("hello");
             return commonCodeMapper.SELECT(request);
         }catch (Exception e){
             throw new Exception(e);
