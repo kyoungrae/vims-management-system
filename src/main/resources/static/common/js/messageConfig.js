@@ -2,8 +2,9 @@
 class loadToScript{
     constructor() {
         const scriptsToLoad = [
-            "CommonUserMessage",
-            "CommonMenuMessage"
+            "CommonMenuMessage",
+            "CommonGroupMessage",
+            "CommonUserGroupMessage"
         ];
         this.loadScripts(scriptsToLoad)
     }

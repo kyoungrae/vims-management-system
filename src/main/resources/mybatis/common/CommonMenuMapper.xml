@@ -71,7 +71,7 @@
             <if test="_prgm_url != null and _prgm_url != ''">AND prgm_url LIKE CONCAT('%', #{_prgm_url}, '%')</if>
         </where>
         <include refid="sortFilter"/>
-        LIMIT #{row_range} OFFSET ((#{page_no} - 1) * #{row_range})
+        LIMIT #{row_range} OFFSET #{offset}
     </select>
 
     <select id="SELECT_PAGING_TOTAL_NUMBER" resultType="int">
@@ -188,8 +188,8 @@
         menu_sequence,
         system_create_userid,
         system_update_userid,
-        DATE_FORMAT(system_update_date,'%Y-%m-%d %H:%i:%S') AS system_update_date, -- MariaDB의 DATE_FORMAT 사용
-        DATE_FORMAT(system_create_date,'%Y-%m-%d %H:%i:%S') AS system_create_date    -- MariaDB의 DATE_FORMAT 사용
+        DATE_FORMAT(system_update_date,'%Y-%m-%d %H:%i:%S') AS system_update_date,
+        DATE_FORMAT(system_create_date,'%Y-%m-%d %H:%i:%S') AS system_create_date
         FROM COMMON_MENU
         <where>
             1=1
@@ -213,26 +213,26 @@
         rownum AS no,
         subquery.*
         FROM (
-        SELECT
-        cm.menu_code,
-        cm.menu_name_kr,
-        cm.menu_name_en,
-        cm.menu_name_mn,
-        cm.menu_number,
-        cm.menu_level,
-        cm.top_menu_code,
-        cm.prgm_url,
-        cm.url,
-        cm.use_yn,
-        fn_get_common_code_name('use_yn', cm.use_yn) as use_yn_name,
-        cm.menu_sequence,
-        cm.system_create_userid,
-        cm.system_update_userid,
-        TO_DATE(TO_CHAR(cm.system_update_date, 'yyyy-MM-dd HH24:MI:SS'), 'yyyy-MM-dd HH24:MI:SS') AS system_update_date,
-        TO_DATE(TO_CHAR(cm.system_create_date, 'yyyy-MM-dd HH24:MI:SS'), 'yyyy-MM-dd HH24:MI:SS') AS system_create_date,
-        LISTAGG(group_info, ',') WITHIN GROUP (ORDER BY group_level, group_id) AS access_right_group
-        FROM
-        COMMON_MENU cm
+            SELECT
+                cm.menu_code,
+                cm.menu_name_kr,
+                cm.menu_name_en,
+                cm.menu_name_mn,
+                cm.menu_number,
+                cm.menu_level,
+                cm.top_menu_code,
+                cm.prgm_url,
+                cm.url,
+                cm.use_yn,
+                fn_get_common_code_name('use_yn', cm.use_yn) as use_yn_name,
+                cm.menu_sequence,
+                cm.system_create_userid,
+                cm.system_update_userid,
+                TO_DATE(TO_CHAR(cm.system_update_date, 'yyyy-MM-dd HH24:MI:SS'), 'yyyy-MM-dd HH24:MI:SS') AS system_update_date,
+                TO_DATE(TO_CHAR(cm.system_create_date, 'yyyy-MM-dd HH24:MI:SS'), 'yyyy-MM-dd HH24:MI:SS') AS system_create_date,
+                LISTAGG(group_info, ',') WITHIN GROUP (ORDER BY group_level, group_id) AS access_right_group
+            FROM
+                COMMON_MENU cm
         LEFT JOIN (
         SELECT DISTINCT
         cagml.MENU_CODE,
@@ -370,21 +370,20 @@
     <update id="UPDATE">
         UPDATE COMMON_MENU
         <set>
-            
-            <if test="menu_name_kr != null">menu_name_kr = #{menu_name_kr}</if>
-            <if test="menu_name_en != null">menu_name_en = #{menu_name_en}</if>
-            <if test="menu_name_mn != null">menu_name_mn = #{menu_name_mn}</if>
-            <if test="menu_number != null">menu_number = #{menu_number}</if>
-            <if test="menu_level != null">menu_level = #{menu_level}</if>
-            <if test="top_menu_code != null">top_menu_code = #{top_menu_code}</if>
-            <if test="url != null">url = #{url}</if>
-            <if test="use_yn != null">use_yn = #{use_yn}</if>
-            <if test="system_create_date != null">system_create_date = #{system_create_date}</if>
-            <if test="system_create_userid != null">system_create_userid = #{system_create_userid}</if>
-            <if test="system_update_date != null">system_update_date = #{system_update_date}</if>
-            <if test="system_update_userid != null">system_update_userid = #{system_update_userid}</if>
-            <if test="menu_icon != null">menu_icon = #{menu_icon}</if>
-            <if test="prgm_url != null">prgm_url = #{prgm_url}</if>
+            system_update_date = #{system_update_date}
+            ,system_update_userid = #{system_update_userid}
+            <if test="menu_name_kr != null">,menu_name_kr = #{menu_name_kr}</if>
+            <if test="menu_name_en != null">,menu_name_en = #{menu_name_en}</if>
+            <if test="menu_name_mn != null">,menu_name_mn = #{menu_name_mn}</if>
+            <if test="menu_number != null">,menu_number = #{menu_number}</if>
+            <if test="menu_level != null">,menu_level = #{menu_level}</if>
+            <if test="top_menu_code != null">,top_menu_code = #{top_menu_code}</if>
+            <if test="url != null">,url = #{url}</if>
+            <if test="use_yn != null">,use_yn = #{use_yn}</if>
+            <if test="system_create_date != null">,system_create_date = #{system_create_date}</if>
+            <if test="system_create_userid != null">,system_create_userid = #{system_create_userid}</if>
+            <if test="menu_icon != null">,menu_icon = #{menu_icon}</if>
+            <if test="prgm_url != null">,prgm_url = #{prgm_url}</if>
         </set>
         <where>
             

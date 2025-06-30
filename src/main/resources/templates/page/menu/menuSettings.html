@@ -53,17 +53,17 @@
 <!--            </div>-->
             <!--/     검색기능 영역      -->
             <!--      그리드 영역      -->
-            <div class="gi-row-100 gi-col-100">
+            <div class="gi-row-100 gi-col-90 gi-flex gi-flex-center gi-padding-left-right-5px">
                 <div id="gi-Grid"></div>
-
+                <div class="gi-Grid-side" id="access_group_grid" data-side-grid-open="false"></div>
             </div>
             <!--/     그리드 영역      -->
             <!--      추가버튼 영역      -->
-            <div class="gi-row-100">
+            <div class="gi-row-100 gi-col-30px">
                 <div class="gi-btn-section gi-row-30 gi-float-right gi-padding-left-right-20px gi-flex gi-flex-justify-content-flex-end">
                     <button id="menu_depth0_register_btn" class="gi-btn gi-float-right" type="button">메뉴추가</button>
                     <button id="menu_depth_register_btn" class="gi-btn gi-float-right gi-hidden" type="button">하위메뉴추가</button>
-                    <button id="access_right_group_setting-btn" class="gi-btn gi-float-right gi-hidden" type="button">접근권한그룹 관리</button>
+                    <button id="access_right_group_setting-btn" class="access_right_group_setting-btn gi-btn gi-float-right gi-hidden" type="button">접근권한그룹 관리</button>
                 </div>
             </div>
             <!--/     추가버튼 영역      -->
@@ -102,7 +102,13 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="gi-row-100 gi-col-100 gi-grid gi-grid-template-columns-repeat-1-1fr gi-grid-rows-container">
+                        <div class="gi-row-100 gi-col-100 gi-grid gi-grid-template-columns-repeat-2-1fr gi-grid-rows-container">
+                            <div class="gi-row-100 gi-col-100">
+                                <div class="gi-row-100 gi-input-container gi-input-container-box-border-shadow gi-flex gi-flex-center ">
+                                    <label for="register_prgm_url" class="gi-input-label" data-focus-label="true" data-focus-label-text-align="default" data-required="true">API 경로</label>
+                                    <input data-field="prgm_url" id="register_prgm_url" name="prgm_url" class="gi-input" data-focus-span-text-align="default" data-required="true" autocomplete="off"/>
+                                </div>
+                            </div>
                             <div class="gi-row-100 gi-col-100">
                                 <div class="gi-row-100 gi-input-container gi-input-container-box-border-shadow gi-flex gi-flex-center ">
                                     <label for="register_url" class="gi-input-label" data-focus-label="true" data-focus-label-text-align="default" data-required="true">경로</label>
@@ -175,7 +181,13 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="gi-row-100 gi-col-100 gi-grid gi-grid-template-columns-repeat-1-1fr gi-grid-rows-container">
+                        <div class="gi-row-100 gi-col-100 gi-grid gi-grid-template-columns-repeat-2-1fr gi-grid-rows-container">
+                            <div class="gi-row-100 gi-col-100">
+                                <div class="gi-row-100 gi-input-container gi-input-container-box-border-shadow gi-flex gi-flex-center ">
+                                    <label for="register_depth_prgm_url" class="gi-input-label" data-focus-label="true" data-focus-label-text-align="default" data-required="true">API 경로</label>
+                                    <input data-field="prgm_url" id="register_depth_prgm_url" name="prgm_url" class="gi-input" data-focus-span-text-align="default" data-required="true" autocomplete="off"/>
+                                </div>
+                            </div>
                             <div class="gi-row-100 gi-col-100">
                                 <div class="gi-row-100 gi-input-container gi-input-container-box-border-shadow gi-flex gi-flex-center ">
                                     <label for="register_depth_url" class="gi-input-label" data-focus-label="true" data-focus-label-text-align="default" data-required="true">경로</label>
@@ -217,29 +229,29 @@
     </div>
 </article>
 <article id="gi-menu_update-popup" class="gi-popup" data-popup-open="false">
-    <div class="gi-popup-body">
+    <div class="gi-popup-body gi-row-40-important">
         <div class="gi-popup-header">
             <span>메뉴수정</span>
         </div>
         <div class="gi-popup-contents gi-overflow-scroll">
             <!--      팝업내용 삽입 영역      -->
             <div class="gi-row-100 gi-col-auto gi-flex gi-flex-center">
-                <form id="commonMenuUpdate" class="gi-row-100">
-                    <div class="gi-row-100 gi-padding-5px gi-grid-container gi-grid gi-grid-justify-items-center gi-grid-gap-10px gi-margin-bottom-15px">
-                        <div class="gi-row-60 gi-col-100 gi-grid gi-grid-template-columns-repeat-1-1fr-2fr gi-grid-rows-container">
-                            <div class="gi-row-100 gi-col-100 gi-flex gi-flex-center">
-                                <span>메뉴명</span>
-                            </div>
+                <form id="commonMenuUpdate" class="gi-row-100 gi-grid gi-grid-justify-items-center">
+                    <div class="gi-row-80 gi-padding-5px gi-grid-container gi-grid gi-grid-justify-items-center gi-grid-gap-10px gi-margin-bottom-15px">
+                        <div class="gi-row-100 gi-col-100 gi-grid gi-grid-template-columns-repeat-1-1fr gi-grid-rows-container">
                             <div class="gi-row-100 gi-col-100">
                                 <div class="gi-row-100 gi-input-container gi-input-container-box-border-shadow gi-flex gi-flex-center ">
-                                    <label for="update_menu_name" class="gi-input-label" data-focus-label="true" data-focus-label-text-align="default" data-required="true">메뉴명</label>
-                                    <input data-field="menu_name" id="update_menu_name" name="menu_name" class="gi-input" data-focus-span-text-align="default" data-required="true" autocomplete="off"/>
+                                    <label for="update_top_menu_code" class="gi-input-label" data-focus-label="true" data-focus-label-text-align="default" data-required="true">상위메뉴코드</label>
+                                    <input data-gi-tag-disabled data-field="top_menu_code" id="update_top_menu_code" name="top_menu_code" class="gi-input" data-focus-span-text-align="default" data-required="true" autocomplete="off"/>
                                 </div>
                             </div>
                         </div>
-                        <div class="gi-row-60 gi-col-100 gi-grid gi-grid-template-columns-repeat-1-1fr-2fr gi-grid-rows-container">
-                            <div class="gi-row-100 gi-col-100 gi-flex gi-flex-center">
-                                <span>메뉴코드</span>
+                        <div class="gi-row-100 gi-col-100 gi-grid gi-grid-template-columns-repeat-2-1fr gi-grid-rows-container">
+                            <div class="gi-row-100 gi-col-100">
+                                <div class="gi-row-100 gi-input-container gi-input-container-box-border-shadow gi-flex gi-flex-center ">
+                                    <label for="update_menu_name" class="gi-input-label" data-focus-label="true" data-focus-label-text-align="default" data-required="true">메뉴명</label>
+                                    <input data-field="menu_name_kr" id="update_menu_name" name="menu_name_kr" class="gi-input" data-focus-span-text-align="default" data-required="true" autocomplete="off"/>
+                                </div>
                             </div>
                             <div class="gi-row-100 gi-col-100">
                                 <div class="gi-row-100 gi-input-container gi-input-container-box-border-shadow gi-flex gi-flex-center ">
@@ -248,42 +260,12 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="gi-row-60 gi-col-100 gi-grid gi-grid-template-columns-repeat-1-1fr-2fr gi-grid-rows-container">
-                            <div class="gi-row-100 gi-col-100 gi-flex gi-flex-center">
-                                <span>메뉴순서</span>
-                            </div>
+                        <div class="gi-row-100 gi-col-100 gi-grid gi-grid-template-columns-repeat-2-1fr gi-grid-rows-container">
                             <div class="gi-row-100 gi-col-100">
                                 <div class="gi-row-100 gi-input-container gi-input-container-box-border-shadow gi-flex gi-flex-center ">
-                                    <label for="update_menu_number" class="gi-input-label" data-focus-label="true" data-focus-label-text-align="default" data-required="true">메뉴순서</label>
-                                    <input inputNumberOnly maxlength="1" data-field="menu_number" id="update_menu_number" name="menu_number" class="gi-input" data-focus-span-text-align="default" data-required="true" autocomplete="off"/>
+                                    <label for="update_prgm_url" class="gi-input-label" data-focus-label="true" data-focus-label-text-align="default" data-required="true">API 경로</label>
+                                    <input data-field="prgm_url" id="update_prgm_url" name="prgm_url" class="gi-input" data-focus-span-text-align="default" data-required="true" autocomplete="off"/>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="gi-row-60 gi-col-100 gi-grid gi-grid-template-columns-repeat-1-1fr-2fr gi-grid-rows-container">
-                            <div class="gi-row-100 gi-col-100 gi-flex gi-flex-center">
-                                <span>메뉴레벨</span>
-                            </div>
-                            <div class="gi-row-100 gi-col-100">
-                                <div class="gi-row-100 gi-input-container gi-input-container-box-border-shadow gi-flex gi-flex-center ">
-                                    <label for="update_menu_level" class="gi-input-label" data-focus-label="true" data-focus-label-text-align="default" data-required="true">메뉴레벨</label>
-                                    <input inputNumberOnly data-field="menu_level" id="update_menu_level" name="menu_level" class="gi-input" data-focus-span-text-align="default" data-required="true" autocomplete="off" maxlength="1"/>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="gi-row-60 gi-col-100 gi-grid gi-grid-template-columns-repeat-1-1fr-2fr gi-grid-rows-container">
-                            <div class="gi-row-100 gi-col-100 gi-flex gi-flex-center">
-                                <span>상위메뉴코드</span>
-                            </div>
-                            <div class="gi-row-100 gi-col-100">
-                                <div class="gi-row-100 gi-input-container gi-input-container-box-border-shadow gi-flex gi-flex-center ">
-                                    <label for="update_top_menu_code" class="gi-input-label" data-focus-label="true" data-focus-label-text-align="default" data-required="true">상위메뉴코드</label>
-                                    <input data-gi-tag-disabled data-field="top_menu_code" id="update_top_menu_code" name="top_menu_code" class="gi-input" data-focus-span-text-align="default" data-required="true" autocomplete="off"/>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="gi-row-60 gi-col-100 gi-grid gi-grid-template-columns-repeat-1-1fr-2fr gi-grid-rows-container">
-                            <div class="gi-row-100 gi-col-100 gi-flex gi-flex-center">
-                                <span>경로</span>
                             </div>
                             <div class="gi-row-100 gi-col-100">
                                 <div class="gi-row-100 gi-input-container gi-input-container-box-border-shadow gi-flex gi-flex-center ">
@@ -292,14 +274,29 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="gi-row-60 gi-col-100 gi-grid gi-grid-template-columns-repeat-1-1fr-2fr gi-grid-rows-container">
-                            <div class="gi-row-100 gi-col-100 gi-flex gi-flex-center">
-                                <span>사용여부</span>
-                            </div>
+                        <div class="gi-row-100 gi-col-100 gi-grid gi-grid-template-columns-repeat-3-1fr gi-grid-rows-container">
                             <div class="gi-row-100 gi-col-100">
                                 <div class="gi-row-100 gi-input-container gi-input-container-box-border-shadow gi-flex gi-flex-center ">
                                     <label for="update_use_yn" class="gi-input-label" data-focus-label="true" data-focus-label-text-align="default" data-required="true">사용여부</label>
                                     <input gi-selectbox data-selectbox-field="USE_YN" data-field="use_yn" id="update_use_yn" name="use_yn" class="gi-input" data-focus-span-text-align="default" data-required="true" autocomplete="off"/>
+                                </div>
+                            </div>
+                            <div class="gi-row-100 gi-col-100">
+                                <div class="gi-row-100 gi-input-container gi-input-container-box-border-shadow gi-flex gi-flex-center ">
+                                    <label for="update_menu_number" class="gi-input-label" data-focus-label="true" data-focus-label-text-align="default" data-required="true">메뉴순서</label>
+                                    <input inputNumberOnly maxlength="1" data-field="menu_number" id="update_menu_number" name="menu_number" class="gi-input" data-focus-span-text-align="default" data-required="true" autocomplete="off"/>
+                                </div>
+                            </div>
+                            <div class="gi-row-100 gi-col-100">
+                                <div class="gi-row-100 gi-input-container gi-input-container-box-border-shadow gi-flex gi-flex-center ">
+                                    <label for="update_menu_level" class="gi-input-label" data-focus-label="true" data-focus-label-text-align="default" data-required="true">메뉴레벨</label>
+                                    <input inputNumberOnly data-field="menu_level" id="update_menu_level" name="menu_level" class="gi-input" data-focus-span-text-align="default" data-required="true" autocomplete="off" maxlength="1"/>
+                                </div>
+                            </div>
+                            <div class="gi-row-100 gi-col-100 gi-hidden">
+                                <div class="gi-row-100 gi-input-container gi-input-container-box-border-shadow gi-flex gi-flex-center ">
+                                    <label for="update_menu_sequence" class="gi-input-label" data-focus-label="true" data-focus-label-text-align="default" data-required="true">메뉴고유번호</label>
+                                    <input inputNumberOnly data-field="menu_sequence" id="update_menu_sequence" name="menu_sequence" class="gi-input" data-focus-span-text-align="default" data-required="true" autocomplete="off" maxlength="1"/>
                                 </div>
                             </div>
                         </div>
@@ -455,9 +452,9 @@
         $("#menuDepthRegister-btn").click(function(){
             commonMenuDepthRegister();
         })
-        $("#access_right_group_setting-btn").click(function(){
-            accessRightGroupSetting();
-        })
+        // $("#access_right_group_setting-btn").click(function(){
+            // accessRightGroupSetting();
+        // })
     }
     function findByCommonCodeMenuList(page,range,sortId,sortOrder) {
         let url = "/cms/common/menu/commonMenu/findHierarchy";
@@ -467,8 +464,8 @@
         let cont1 = $("#menu_name").val();
         if(formUtil.checkEmptyValue(cont1)) param.menu_name = cont1;
         // 정렬조건추가 (기준id, 순서)
-        if(formUtil.checkEmptyValue(sortId)) param.sort_id = sortId;
-        if(formUtil.checkEmptyValue(sortOrder)) param.sort_order = sortOrder;
+        param.sort_id = "menu_name_kr";
+        param.sort_order = "ASC";
 
         axios.post(url, param).then(response => {
             let status = response.status;
@@ -509,12 +506,13 @@
                 //그리드 데이터 설정
                 menu_grid.DataSet(data);
                 //그리드 내부의 상세 버튼 클릭 이벤트 설정(버튼클릭시 호출될 함수, 그리드 헤더 부분에 설정한 버튼 ID)
-                // menu_grid.updateBtnClick(menuUpdateSetting,"update_menu_btn");
+                menu_grid.updateBtnClick(menuUpdateSetting,"update_menu_btn");
                 menu_grid.deleteBtnClick(commonMenuDelete,"delete_menu_btn");
 
                 //그리스 내부의 header click 정렬 이벤트 설정
                 //menu_grid.sortDataSet(findByCommonCodeMenuList);
 
+                menu_grid.sideOpenBtnClick("access_group_grid","access_right_group_setting-btn")
                 //그리드 row 선택 이벤트 설정
                 menu_grid.rowClick(rowClickEvent);
                 function rowClickEvent(rows){
@@ -535,6 +533,9 @@
             formUtil.alertPopup(error);
         })
     }
+    function test(){
+        console.log("test")
+    }
     function menuRegisterSetting(){
         $("#gi-menu_register-popup").attr("data-popup-open","true");
         $("#register_top_menu_code").val("-");
@@ -548,18 +549,21 @@
 
         inputTageReset.commonTagSettings();
     }
-    // function menuUpdateSetting(cont){
-    //     $("#gi-menu_update-popup").attr("data-popup-open","true");
-    //     data_binding.setDataSelectBox("update_use_yn",cont.use_yn);
-    //     data_binding.setDataForm("gi-menu_update-popup",cont);
-    //
-    //     //data_binding.setDataBoxList("access_right_group_area", cont.access_right_group);
-    //
-    //     //접근권한그룹 박스리스트
-    //     //setDataBoxList(cont.access_right_group);
-    //     //접근권한그룹 추가용 데이터 조회
-    //     //findByCommonGroup();
-    // }
+    function menuUpdateSetting(cont){
+        $("#gi-menu_update-popup").attr("data-popup-open","true");
+        data_binding.setDataSelectBox("update_use_yn",cont.use_yn);
+        data_binding.setDataForm("gi-menu_update-popup",cont);
+
+        //data_binding.setDataBoxList("access_right_group_area", cont.access_right_group);
+
+        //접근권한그룹 박스리스트
+        //setDataBoxList(cont.access_right_group);
+        //접근권한그룹 추가용 데이터 조회
+        //findByCommonGroup();
+    }
+    /**
+     * NOTE: 상위메뉴등록
+     */
     function commonMenuRegister(){
         let flag =  checkRegisterPopupValidation();
         if(flag){
@@ -572,6 +576,7 @@
                 menu_level : data.menu_level,
                 top_menu_code : data.top_menu_code,
                 url : data.url,
+                prgm_url : data.prgm_url,
                 use_yn : data.use_yn
             };
 
@@ -589,6 +594,10 @@
             })
         }
     }
+
+    /**
+     * NOTE: 하위메뉴등록
+     */
     function commonMenuDepthRegister(){
         let flag =  checkDepthRegisterPopupValidation();
         if(flag){
@@ -601,6 +610,7 @@
                 menu_level : data.menu_level,
                 top_menu_code : data.top_menu_code,
                 url : data.url,
+                prgm_url : data.prgm_url,
                 use_yn : data.use_yn
             };
 
@@ -618,34 +628,39 @@
             })
         }
     }
-    // function commonMenuUpdate(){
-    //     let data = new dataBinding().getData(COMMON_MENU_UPDATE_PRGMID);
-    //     let url = "/common/menu/update";
-    //     let param = {
-    //         menu_code :data.menu_code ,
-    //         menu_name :data.menu_name ,
-    //         menu_number :data.menu_number ,
-    //         menu_level :data.menu_level ,
-    //         top_menu_code :data.top_menu_code ,
-    //         url :data.url ,
-    //         use_yn :data.use_yn,
-    //         menu_sequence : data.menu_sequence
-    //         //,access_right_group : data.access_right_group
-    //     };
-    //
-    //      axios.post(url, param).then(response =>{
-    //          if(response.status === 200){
-    //              formUtil.showMessage(Message.Label.Array["COMPLETE.UPDATE"]);
-    //              common_popup.close("gi-menu_update-popup");
-    //              findByCommonCodeMenuList();
-    //              findByMenuList();
-    //          }else{
-    //              formUtil.showMessage(Message.Label.Array["FAIL.UPDATE"]);
-    //          }
-    //      }).catch(error =>{
-    //          formUtil.alertPopup(error + "");
-    //      })
-    // }
+    /**
+     * NOTE: 메뉴 업데이트 API
+     */
+    function commonMenuUpdate(){
+        let data = new dataBinding().getData(COMMON_MENU_UPDATE_PRGMID);
+        let url = "/cms/common/menu/commonMenu/update";
+        let param = {
+            menu_code :data.menu_code ,
+            menu_name_kr :data.menu_name_kr ,
+            menu_number :data.menu_number ,
+            menu_level :data.menu_level ,
+            top_menu_code :data.top_menu_code ,
+            url :data.url ,
+            prgm_url : data.prgm_url,
+            use_yn :data.use_yn,
+            menu_sequence : data.menu_sequence
+            //,access_right_group : data.access_right_group
+        };
+        console.log(param)
+
+         axios.post(url, param).then(response =>{
+             if(response.status === 200){
+                 formUtil.showMessage(Message.Label.Array["COMPLETE.UPDATE"]);
+                 common_popup.close("gi-menu_update-popup");
+                 findByCommonCodeMenuList();
+                 findByMenuList();
+             }else{
+                 formUtil.showMessage(Message.Label.Array["FAIL.UPDATE"]);
+             }
+         }).catch(error =>{
+             formUtil.alertPopup(error + "");
+         })
+    }
     /**
      * NOTE: 메뉴 ROW DATA 삭제
      * @param cont
@@ -754,7 +769,7 @@
     //     //default range(row)
     //     if(!formUtil.checkEmptyValue(range)) range = 100;
     //
-    //     let url = "/common/common/commonGroup/findPage";
+    //     let url = "/cms/common/commonGroup/findPage";
     //     let param = {
     //         page_no:page,
     //         row_range : range

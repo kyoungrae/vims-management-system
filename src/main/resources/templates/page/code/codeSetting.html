@@ -437,7 +437,7 @@
         //default range(row)
         if(!formUtil.checkEmptyValue(range)) range = 10;
 
-        let url = "/common/common/commonCodeGroup/findPage";
+        let url = "/cms/common/commonCodeGroup/findPage";
         let param = {
             page_no:page,
             row_range : range
@@ -512,7 +512,7 @@
         })
     }
     async function commonCodeGroupDelete(deleteParamDataList){
-        let url = "/common/common/commonCodeGroup/remove";
+        let url = "/cms/common/commonCodeGroup/remove";
         let data = deleteParamDataList;
         // console.log(data);
         let param ={
@@ -536,7 +536,7 @@
         }
     }
     function commonCodeDelete(deleteParamDataList){
-        let url = "/common/common/commonCode/remove";
+        let url = "/cms/common/commonCode/remove";
         let data = deleteParamDataList;
         let flag = false;
         // console.log(data);
@@ -563,7 +563,7 @@
         //default range(row)
         if(!formUtil.checkEmptyValue(range)) range = 10;
 
-        let url = "/common/common/commonCode/findPage";
+        let url = "/cms/common/commonCode/findPage";
         let param = {
             page_no:page,
             row_range : range
@@ -680,7 +680,7 @@
         let flag =  commonCodeGroupCheckValidation();
         if(flag){
             let data = new dataBinding().getData(COMMON_CODE_GROUP_PRGMID);
-            let url = "/common/common/commonCodeGroup/register";
+            let url = "/cms/common/commonCodeGroup/register";
             // console.log(data);
             let param = {
 
@@ -708,7 +708,7 @@
         let flag =  commonCodeCheckValidation();
         if(flag){
             let data = new dataBinding().getData(COMMON_CODE_PRGMID);
-            let url = "/common/common/commonCode/register";
+            let url = "/cms/common/commonCode/register";
             // console.log(data);
             let param = {
 
@@ -737,7 +737,7 @@
         let flag =  commonCodeUpdateCheckValidation();
         if(flag){
             let data = new dataBinding().getData(COMMON_CODE_UPDATE_PRGMID);
-            let url = "/common/common/commonCode/update";
+            let url = "/cms/common/commonCode/update";
             // console.log(data);
             let param = {
 
@@ -767,7 +767,7 @@
         let flag =  commonCodeGroupUpdateCheckValidation();
         if(flag){
             let data = new dataBinding().getData(COMMON_CODE_GROUP_UPDATE_PRGMID);
-            let url = "/common/common/commonCodeGroup/update";
+            let url = "/cms/common/commonCodeGroup/update";
             // console.log(data);
             let param = {
                 group_id : data.group_id ,
