@@ -483,7 +483,7 @@
                         {HEADER:'[Page.Message].Message.Label.Array["COMMON_MENU.TOP_MENU_CODE"]', ID:"top_menu_code",WIDTH:"15",TYPE:"text",FONT_SIZE:"12px",TEXT_ALIGN:"left",HIDDEN:false},
                         {HEADER:'[Page.Message].Message.Label.Array["COMMON_MENU.PRGM_URL"]',     ID:"prgm_url",      WIDTH:"5",TYPE:"text",FONT_SIZE:"12px",TEXT_ALIGN:"left",HIDDEN:false},
                         {HEADER:'[Page.Message].Message.Label.Array["COMMON_MENU.URL"]',         ID:"url",          WIDTH:"20",TYPE:"text",FONT_SIZE:"12px",TEXT_ALIGN:"left",HIDDEN:false},
-                        {HEADER:'[Page.Message].Message.Label.Array["COMMON_MENU.USE_YN"]',     ID:"use_yn",        WIDTH:"5",TYPE:"text",FONT_SIZE:"12px",TEXT_ALIGN:"center",HIDDEN:false},
+                        {HEADER:'[Page.Message].Message.Label.Array["COMMON_MENU.USE_YN"]',     ID:"use_yn",        WIDTH:"7",TYPE:"text",FONT_SIZE:"12px",TEXT_ALIGN:"center",COMMON_CODE_GROUP_ID:"USE_YN",HIDDEN:false},
                         {HEADER:'[Page.Message].Message.Label.Array["COMMON_MENU.TITLE_MODIFY"]',        ID:"update_menu_btn",     WIDTH:"5",TYPE:"button",FONT_SIZE:"12px",TEXT_ALIGN:"center",HIDDEN:false},
                         {HEADER:"삭제",        ID:"delete_menu_btn",     WIDTH:"5",TYPE:"button",FONT_SIZE:"12px",TEXT_ALIGN:"center",HIDDEN:false},
 
@@ -500,7 +500,7 @@
                     ]
                 }
                 //그리드 생성 <div id="gi-Grid"></div>
-                let menu_grid = formUtil.giGridHierarchy(menuGrid);
+                let menu_grid = formUtil.giGridHierarchy(menuGrid,"","");
                 //계층 구조 기준컬럼명 설정
                 menu_grid.HierarchyOption({level_column:"menu_level",parent_depth_column:"menu_code",child_depth_column:"top_menu_code"});
                 //그리드 데이터 설정
@@ -532,9 +532,6 @@
         }).catch(error => {
             formUtil.alertPopup(error);
         })
-    }
-    function test(){
-        console.log("test")
     }
     function menuRegisterSetting(){
         $("#gi-menu_register-popup").attr("data-popup-open","true");
