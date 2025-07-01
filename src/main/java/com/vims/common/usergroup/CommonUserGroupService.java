@@ -56,12 +56,12 @@ public class CommonUserGroupService extends AbstractCommonService<CommonUserGrou
         try {
             rtn = commonUserGroupMapper.INSERT(request);
         }catch (Exception e){
-            throw new CustomException(getMessage("EXCEPTION.PK.EXIST.USER"));
+            throw new Exception(e);
         }
         return rtn;
     }
-    public Map<String, List<?>> findJoinCommonUserGroupPage(AuthUser request) throws Exception {
-        List<AuthUser> list = new ArrayList<>();
+    public Map<String, List<?>> findJoinCommonUserGroupPage(CommonUserGroup request) throws Exception {
+        List<CommonUserGroup> list = new ArrayList<>();
         Map<String, List<?>> result = new HashMap<>();
         int pagingNum;
         try {
@@ -78,10 +78,15 @@ public class CommonUserGroupService extends AbstractCommonService<CommonUserGrou
         }
         return result;
     }
-    protected List<AuthUser> selectJoinCommonUserGroupPage(AuthUser request) throws Exception {
-        return commonUserGroupMapper.SELECT_JOIN_COMMON_USER_GROUP_PAGE(request);
+    protected List<CommonUserGroup> selectJoinCommonUserGroupPage(CommonUserGroup request) throws Exception {
+        try{
+            return commonUserGroupMapper.SELECT_JOIN_COMMON_USER_GROUP_PAGE(request);
+        }catch (Exception e){
+            e.printStackTrace();;
+        }
+        return null;
     }
-    protected int selectJoinCommonUserGroupPagingTotalNumber(AuthUser request) throws Exception {
+    protected int selectJoinCommonUserGroupPagingTotalNumber(CommonUserGroup request) throws Exception {
         return commonUserGroupMapper.SELECT_JOIN_COMMON_USER_GROUP_PAGING_TOTAL_NUMBER(request);
     }
 }

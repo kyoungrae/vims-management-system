@@ -222,13 +222,11 @@
         </foreach>
     </select>
 
-    <select id="SELECT_JOIN_COMMON_USER_GROUP_PAGE" resultType="com.system.auth.authuser.AuthUser">
+    <select id="SELECT_JOIN_COMMON_USER_GROUP_PAGE" resultType="com.vims.common.usergroup.CommonUserGroup">
         SELECT
         row_number() over ()AS no,
         a.id,
-        a.email,
-        a.password,
-        a.role,
+        a.email AS user_email,
         a.user_id,
         a.office_code
         FROM COMMON_USER a
@@ -240,16 +238,12 @@
             AND b.group_id = #{group_id}
             )
             <if test="id != null and id != ''">AND a.id=#{id}</if>
-            <if test="email != null and email != ''">AND a.email=#{email}</if>
-            <if test="password != null and password != ''">AND a.password=#{password}</if>
-            <if test="role != null and role != ''">AND a.role=#{role}</if>
+            <if test="user_email != null and user_email != ''">AND a.email=#{user_email}</if>
             <if test="user_id != null and user_id != ''">AND a.user_id=#{user_id}</if>
             <if test="office_code != null and office_code != ''">AND a.office_code=#{office_code}</if>
 
             <if test="_id != null and _id != ''">AND a.id LIKE CONCAT('%', #{_id}, '%')</if>
-            <if test="_email != null and _email != ''">AND a.email LIKE CONCAT('%', #{_email}, '%')</if>
-            <if test="_password != null and _password != ''">AND a.password LIKE CONCAT('%', #{_password}, '%')</if>
-            <if test="_role != null and _role != ''">AND a.role LIKE CONCAT('%', #{_role}, '%')</if>
+            <if test="_user_email != null and _user_email != ''">AND a.email LIKE CONCAT('%', #{_user_email}, '%')</if>
             <if test="_user_id != null and _user_id != ''">AND a.user_id LIKE CONCAT('%', #{_user_id}, '%')</if>
             <if test="_office_code != null and _office_code != ''">AND a.office_code LIKE CONCAT('%', #{_office_code}, '%')</if>
         </where>
@@ -266,16 +260,12 @@
             AND b.group_id = #{group_id}
             )
             <if test="id != null and id != ''">AND a.id=#{id}</if>
-            <if test="email != null and email != ''">AND a.email=#{email}</if>
-            <if test="password != null and password != ''">AND a.password=#{password}</if>
-            <if test="role != null and role != ''">AND a.role=#{role}</if>
+            <if test="user_email != null and user_email != ''">AND a.email=#{user_email}</if>
             <if test="user_id != null and user_id != ''">AND a.user_id=#{user_id}</if>
             <if test="office_code != null and office_code != ''">AND a.office_code=#{office_code}</if>
 
             <if test="_id != null and _id != ''">AND a.id LIKE CONCAT('%', #{_id}, '%')</if>
-            <if test="_email != null and _email != ''">AND a.email LIKE CONCAT('%', #{_email}, '%')</if>
-            <if test="_password != null and _password != ''">AND a.password LIKE CONCAT('%', #{_password}, '%')</if>
-            <if test="_role != null and _role != ''">AND a.role LIKE CONCAT('%', #{_role}, '%')</if>
+            <if test="_user_email != null and _user_email != ''">AND a.email LIKE CONCAT('%', #{_user_email}, '%')</if>
             <if test="_user_id != null and _user_id != ''">AND a.user_id LIKE CONCAT('%', #{_user_id}, '%')</if>
             <if test="_office_code != null and _office_code != ''">AND a.office_code LIKE CONCAT('%', #{_office_code}, '%')</if>
         </where>

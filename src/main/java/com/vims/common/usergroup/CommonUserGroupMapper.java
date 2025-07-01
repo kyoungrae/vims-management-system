@@ -10,6 +10,6 @@ import java.util.List;
 public interface CommonUserGroupMapper extends CommonMapper<CommonUserGroup> {
     int INSERT_OR_UPDATE(CommonUserGroup vo) throws Exception;
     List<CommonUserGroup> SELECT_BY_GROUP_ID_LIST(List<String> targetGroups) throws Exception;
-    List<AuthUser> SELECT_JOIN_COMMON_USER_GROUP_PAGE(AuthUser vo);
-    int SELECT_JOIN_COMMON_USER_GROUP_PAGING_TOTAL_NUMBER(AuthUser vo);
+    List<CommonUserGroup> SELECT_JOIN_COMMON_USER_GROUP_PAGE(CommonUserGroup vo);
+    int SELECT_JOIN_COMMON_USER_GROUP_PAGING_TOTAL_NUMBER(CommonUserGroup vo);
 }

@@ -22,3 +22,5 @@ Message.Label.Array["COMMON_GROUP.SYSTEM_CREATE_DATE"] = "작성일자";
 Message.Label.Array["COMMON_GROUP.SYSTEM_CREATE_USERID"] = "작성자ID";
 Message.Label.Array["COMMON_GROUP.SYSTEM_UPDATE_DATE"] = "수정일자";
 Message.Label.Array["COMMON_GROUP.SYSTEM_UPDATE_USERID"] = "수정자ID";
+
+Message.Label.Array["COMMON_GROUP.CHECK.GROUP_USER_CONTAIN"] = "그룹에 사용자가 포함되어 있는지 확인하세요";

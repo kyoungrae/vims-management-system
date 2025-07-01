@@ -54,7 +54,7 @@ public class CommonUserGroupController extends AbstractCommonController<CommonUs
         return commonUserGroupService.registerImpl(request);
     }
     @PostMapping("/findJoinCommonUserGroupPage")
-    public Map<String,List<?>> findJoinCommonUserGroupPage(@RequestBody AuthUser reqeust) throws Exception{
+    public Map<String,List<?>> findJoinCommonUserGroupPage(@RequestBody CommonUserGroup reqeust) throws Exception{
         return commonUserGroupService.findJoinCommonUserGroupPage(reqeust);
     }
 }
