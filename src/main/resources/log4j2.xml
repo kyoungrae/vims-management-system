@@ -19,10 +19,14 @@
             <AppenderRef ref="Console"/>
             <AppenderRef ref="File"/>
         </Root>
-<!--                <Logger name="org.mybatis" level="debug" additivity="false">-->
-<!--                    <AppenderRef ref="Console"/>-->
-<!--                    <AppenderRef ref="File"/>-->
-<!--                </Logger>-->
+<!--        <Logger name="org.mybatis" level="debug" additivity="false">-->
+<!--            <AppenderRef ref="Console"/>-->
+<!--            <AppenderRef ref="File"/>-->
+<!--        </Logger>-->
+<!--        <Logger name="org.mybatis.spring" level="debug" additivity="false">-->
+<!--            <AppenderRef ref="Console"/>-->
+<!--            <AppenderRef ref="File"/>-->
+<!--        </Logger>-->
 <!--    &lt;!&ndash;         Logger for JDBC SQL timing&ndash;&gt;-->
 <!--                <Logger name="com.cambodia.Login" level="info" additivity="false">-->
 <!--                    <AppenderRef ref="Console"/>-->

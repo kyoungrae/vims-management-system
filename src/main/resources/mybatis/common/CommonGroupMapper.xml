@@ -16,6 +16,7 @@
 
     <select id="SELECT_PAGE" resultType="com.vims.common.group.CommonGroup">
         SELECT
+        row_number() over ()AS no,
         group_id,
         group_name,
         group_level,

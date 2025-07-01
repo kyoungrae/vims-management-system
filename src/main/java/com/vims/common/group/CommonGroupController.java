@@ -36,7 +36,7 @@ public class CommonGroupController extends AbstractCommonController<CommonGroup>
 
     @PostMapping("/remove")
     @Override
-    protected int removeImpl(@RequestBody CommonGroup request) {
+    protected int removeImpl(@RequestBody CommonGroup request) throws Exception {
         return commonGroupService.removeImpl(request);
     }
 

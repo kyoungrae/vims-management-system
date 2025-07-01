@@ -33,7 +33,7 @@ public class CommonUserGroupController extends AbstractCommonController<CommonUs
     @PostMapping("/find")
     @Override
     protected List<CommonUserGroup> findImpl(@RequestBody CommonUserGroup request) throws Exception{
-        return commonUserGroupService.findImpl(request);
+            return commonUserGroupService.findImpl(request);
     }
 
     @PostMapping("/remove")

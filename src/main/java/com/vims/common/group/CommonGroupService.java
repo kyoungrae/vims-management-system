@@ -4,9 +4,14 @@
 package com.vims.common.group;
 
 import com.system.common.base.AbstractCommonService;
+import com.system.common.exception.CustomException;
+import com.vims.common.usergroup.CommonUserGroup;
 import lombok.RequiredArgsConstructor;
+import org.springframework.context.MessageSource;
+import org.springframework.context.i18n.LocaleContextHolder;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -14,7 +19,11 @@ import java.util.List;
 public class CommonGroupService extends AbstractCommonService<CommonGroup> {
     private final CommonGroupMapper commonGroupMapper;
     private final CommonGroupRepository commonGroupRepository;
+    private final MessageSource messageSource;
 
+    private String getMessage(String code) {
+        return messageSource.getMessage(code, null, LocaleContextHolder.getLocale());
+    }
     @Override
     protected List<CommonGroup> selectPage(CommonGroup request) throws Exception {
         return commonGroupMapper.SELECT_PAGE(request);
@@ -30,8 +39,19 @@ public class CommonGroupService extends AbstractCommonService<CommonGroup> {
     }
 
     @Override
-    protected int removeImpl(CommonGroup request) {
-        return commonGroupMapper.DELETE(request);
+    protected int removeImpl(CommonGroup request) throws Exception{
+        List<CommonGroup> list = null;
+        try{
+            var commonGroup = CommonGroup.builder().top_group_id(request.getGroup_id()).build();
+            list = commonGroupMapper.SELECT(commonGroup);
+            if(list.isEmpty()){
+                return commonGroupMapper.DELETE(request);
+            }else{
+                throw new CustomException(getMessage("EXCEPTION.DELETE.EXIST.SBU_DATA"));
+            }
+        }catch (CustomException e){
+            throw e;
+        }
     }
 
     @Override

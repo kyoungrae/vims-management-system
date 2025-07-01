@@ -304,6 +304,7 @@
             $("#group_level").val("0");
             commonTag.inputTagReset($("#group_level"));
             commonTag.inputTagReset($("#top_group_id"));
+            $("#top_group_id").val("-");
             $("#top_group_id-layout").addClass("gi-hidden");
             $("#top_group_id").attr("data-required",false);
             $("#"+COMMON_GROUP_REGISTER_PRGMID).attr("data-popup-open",true);
@@ -320,6 +321,7 @@
 
     }
     function commonGroupRegisterBtnClickEventHandler(){
+
         let data = data_binding.getData("gi-common_group_register-popup");
         if(registerCommonGroupValidationCheck()){
             registerCommonGroup(data);
@@ -445,7 +447,6 @@
             if (status === 200) {
                 let data = response.data.DATA;
                 let paging = response.data.TOTAL_PAGING[0];
-
                 // 그리드 헤더 설정
                 let commonUserGroup_menuGrid_header = {
                     title : "사용자그룹목록",
@@ -641,6 +642,7 @@
     }
     async function removeCommonGroup(data){
         let flag = await findByExistCommonUserGroup(data);
+        console.log(flag)
         if(flag){
             let url = "/cms/common/commonGroup/remove";
             let param = {
@@ -653,7 +655,7 @@
                     findByCommonGroupList();
                 }
             }).catch(error =>{
-                formUtil.alertPopup(error + "");
+                formUtil.alertPopup(error.response.data);
             })
         }else{
             formUtil.alertPopup(Message.Label.Array["COMMON_CODE_GROUP.CHECK.COMMON_CODE_EXIT"]);
@@ -683,6 +685,7 @@
             let param = {
                 group_id : data.group_id
             };
+            console.log(param)
             axios.post(url , param).then(response =>{
                 let status = response.status;
                 if(status === 200){
