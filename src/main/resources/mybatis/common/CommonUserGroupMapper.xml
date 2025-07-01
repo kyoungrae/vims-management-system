@@ -228,7 +228,8 @@
         a.id,
         a.email AS user_email,
         a.user_id,
-        a.office_code
+        a.office_code,
+        FN_GET_OFFICE_NAME(a.office_code) AS office_name
         FROM COMMON_USER a
         <where>
             NOT EXISTS (

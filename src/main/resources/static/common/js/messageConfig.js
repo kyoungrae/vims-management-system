@@ -4,7 +4,8 @@ class loadToScript{
         const scriptsToLoad = [
             "CommonMenuMessage",
             "CommonGroupMessage",
-            "CommonUserGroupMessage"
+            "CommonUserGroupMessage",
+            "CommonUserMessage"
         ];
         this.loadScripts(scriptsToLoad)
     }

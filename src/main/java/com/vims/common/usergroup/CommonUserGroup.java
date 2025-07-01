@@ -64,6 +64,10 @@ public class CommonUserGroup extends Common {
     @Transient
 	private String user_name;
 
+    /***<pre> office_name : 소속 </pre> */
+    @Transient
+    private String office_name;
+
     /***<pre> _id : 아이디 </pre> */
     @Transient
     private String _id;

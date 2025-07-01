@@ -24,15 +24,14 @@
                     <!--      더보기,초기화 버튼 영역      -->
                     <div class="gi-col-100 gi-flex gi-flex-align-items-center">
                         <div class="gi-btn-section gi-input-container gi-col-100 gi-flex gi-flex-justify-content-space-evenly">
-                            <!--                            <button id="more-btn" class="gi-btn-more  gi-input-container-box-shadow" type="button"><i class="fa-solid fa-gear gi-row-30px"></i>더보기</button>-->
-                            <button id="reset-btn" class="gi-btn-reset  gi-input-container-box-shadow" type="button"><i class="fa-solid fa-rotate-right gi-row-30px"></i>초기화</button>
+                            <button id="search-btn" class="gi-btn-search gi-row-40px gi-input-container-box-shadow" type="button">조회</button>
                         </div>
                     </div>
                     <!--/     더보기,초기화 버튼 영역      -->
                     <!--     조회 버튼 영역      -->
                     <div class="gi-row-70 gi-col-100 gi-flex  gi-flex-justify-content-flex-end ">
                         <div class="gi-btn-section gi-input-container gi-row-40 gi-col-100 gi-flex  gi-flex-justify-content-flex-end">
-                            <button id="search-btn" class="gi-btn-search gi-row-40px gi-input-container-box-shadow" type="button">조회</button>
+                            <button id="reset-btn" class="gi-btn-reset  gi-input-container-box-shadow" type="button"><i class="fa-solid fa-rotate-right gi-row-30px"></i>초기화</button>
                         </div>
                     </div>
                 </div>
@@ -64,7 +63,7 @@
     </section>
 </article>
 <article id="gi-common_group_register-popup" class="gi-popup" data-popup-open="false">
-    <div class="gi-popup-body">
+    <div class="gi-popup-body gi-row-30-important" style="height: 300px !important;">
         <div class="gi-popup-header">
             <span>그룹등록</span>
         </div>
@@ -73,11 +72,7 @@
             <div class="gi-row-100 gi-col-100 gi-flex gi-flex-center">
                 <form id="commonGroupRegister" class="gi-row-100">
                     <div class="gi-row-100 gi-padding-5px gi-grid-container gi-grid gi-grid-justify-items-center gi-grid-gap-10px gi-margin-bottom-15px">
-
-                        <div class="gi-row-60 gi-col-100 gi-grid gi-grid-template-columns-repeat-1-1fr-2fr gi-grid-rows-container">
-                            <div class="gi-row-100 gi-col-100 gi-flex gi-flex-center">
-                                <span>그룹아이디</span>
-                            </div>
+                        <div class="gi-row-90 gi-col-100 gi-grid gi-grid-template-columns-repeat-1-1fr gi-grid-rows-container">
                             <div class="gi-row-100 gi-col-100">
                                 <div class="gi-row-100 gi-input-container gi-input-container-box-border-shadow gi-flex gi-flex-center ">
                                     <label for="group_id" class="gi-input-label" data-focus-label="true" data-focus-label-text-align="default" data-required="true">그룹아이디</label>
@@ -85,10 +80,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="gi-row-60 gi-col-100 gi-grid gi-grid-template-columns-repeat-1-1fr-2fr gi-grid-rows-container">
-                            <div class="gi-row-100 gi-col-100 gi-flex gi-flex-center">
-                                <span>그룹이름</span>
-                            </div>
+                        <div class="gi-row-90 gi-col-100 gi-grid gi-grid-template-columns-repeat-1-1fr gi-grid-rows-container">
                             <div class="gi-row-100 gi-col-100">
                                 <div class="gi-row-100 gi-input-container gi-input-container-box-border-shadow gi-flex gi-flex-center ">
                                     <label for="group_name" class="gi-input-label" data-focus-label="true" data-focus-label-text-align="default" data-required="true">그룹이름</label>
@@ -97,9 +89,6 @@
                             </div>
                         </div>
                         <div id="top_group_id-layout" class="gi-row-60 gi-col-100 gi-grid gi-grid-template-columns-repeat-1-1fr-2fr gi-grid-rows-container">
-                            <div class="gi-row-100 gi-col-100 gi-flex gi-flex-center">
-                                <span>상위그룹아이디</span>
-                            </div>
                             <div class="gi-row-100 gi-col-100">
                                 <div class="gi-row-100 gi-input-container gi-input-container-box-border-shadow gi-flex gi-flex-center ">
                                     <label for="top_group_id" class="gi-input-label" data-focus-label="true" data-focus-label-text-align="default" data-required="true">상위그룹아이디</label>
@@ -107,20 +96,12 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="gi-row-60 gi-col-100 gi-grid gi-grid-template-columns-repeat-1-1fr-2fr gi-grid-rows-container">
-                            <div class="gi-row-100 gi-col-100 gi-flex gi-flex-center">
-                                <span>그룹레벨</span>
-                            </div>
+                        <div class="gi-row-90 gi-col-100 gi-grid gi-grid-template-columns-repeat-2-1fr gi-grid-rows-container">
                             <div class="gi-row-100 gi-col-100">
                                 <div class="gi-row-100 gi-input-container gi-input-container-box-border-shadow gi-flex gi-flex-center ">
                                     <label for="group_level" class="gi-input-label" data-focus-label="true" data-focus-label-text-align="default" data-required="true">그룹레벨</label>
                                     <input data-gi-tag-disabled data-field="group_level" id="group_level" name="group_level" class="gi-input" data-focus-span-text-align="default" data-required="true" autocomplete="off"/>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="gi-row-60 gi-col-100 gi-grid gi-grid-template-columns-repeat-1-1fr-2fr gi-grid-rows-container">
-                            <div class="gi-row-100 gi-col-100 gi-flex gi-flex-center">
-                                <span>사용여부</span>
                             </div>
                             <div class="gi-row-100 gi-col-100">
                                 <div class="gi-row-100 gi-input-container gi-input-container-box-border-shadow gi-flex gi-flex-center ">
@@ -143,7 +124,7 @@
     </div>
 </article>
 <article id="gi-common_group_update-popup" class="gi-popup" data-popup-open="false">
-    <div class="gi-popup-body">
+    <div class="gi-popup-body gi-row-30-important" style="height: 300px !important;">
         <div class="gi-popup-header">
             <span>그룹수정</span>
         </div>
@@ -153,7 +134,7 @@
                 <form id="commonGroupUpdate" class="gi-row-100">
                     <div class="gi-row-100 gi-padding-5px gi-grid-container gi-grid gi-grid-justify-items-center gi-grid-gap-10px gi-margin-bottom-15px">
 
-                        <div class="gi-row-60 gi-col-100 gi-grid gi-grid-template-columns-repeat-1-1fr-2fr gi-grid-rows-container">
+                        <div class="gi-row-90 gi-col-100 gi-grid gi-grid-template-columns-repeat-1-1fr-2fr gi-grid-rows-container">
                             <div class="gi-row-100 gi-col-100 gi-flex gi-flex-center">
                                 <span>그룹아이디</span>
                             </div>
@@ -164,7 +145,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="gi-row-60 gi-col-100 gi-grid gi-grid-template-columns-repeat-1-1fr-2fr gi-grid-rows-container">
+                        <div class="gi-row-90 gi-col-100 gi-grid gi-grid-template-columns-repeat-1-1fr-2fr gi-grid-rows-container">
                             <div class="gi-row-100 gi-col-100 gi-flex gi-flex-center">
                                 <span>그룹이름</span>
                             </div>
@@ -175,7 +156,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="gi-row-60 gi-col-100 gi-grid gi-grid-template-columns-repeat-1-1fr-2fr gi-grid-rows-container">
+                        <div class="gi-row-90 gi-col-100 gi-grid gi-grid-template-columns-repeat-1-1fr-2fr gi-grid-rows-container">
                             <div class="gi-row-100 gi-col-100 gi-flex gi-flex-center">
                                 <span>사용여부</span>
                             </div>
@@ -255,7 +236,7 @@
 
         //데이터 조회
         findByCommonGroupList();
-        // findByCommonUserGroupList();
+        findByCommonUserGroupList("","","","","init");
 
         setTimeout(function(){
             //클릭 이벤트
@@ -431,17 +412,18 @@
         let cont2 = $("#from_date").val();
         let cont3 = $("#to_date").val();
         let cont4 = groupId;
+
         if(formUtil.checkEmptyValue(cont1)) param.searchDesc1 = cont1;
         if(formUtil.checkEmptyValue(cont2)) param.from_date = cont2;
         if(formUtil.checkEmptyValue(cont3)) param.to_date   = cont3;
         if(formUtil.checkEmptyValue(cont4)) param.group_id   = cont4;
-
-
+        if(!groupId){
+            param.group_id = data_binding.getData(COMMON_USER_GROUP_REGISTER_PRGMID).group_id;
+        }
 
         // 정렬조건추가 (기준id, 순서)
         if(formUtil.checkEmptyValue(sortId)) param.sort_id = sortId;
         if(formUtil.checkEmptyValue(sortOrder)) param.sort_order = sortOrder;
-
         axios.post(url, param).then(response => {
             let status = response.status;
             if (status === 200) {
@@ -469,17 +451,11 @@
                 //그리드 생성 <div id="gi-Grid"></div>
                 let commonUserGroup_menu_grid = formUtil.giGrid(commonUserGroup_menuGrid_header,paging,page,"gi-Grid2");
 
-                if(!formUtil.checkEmptyValue(groupId)){
-                    commonUserGroup_menu_grid.DataSet();
-                }else{
-                    //그리드 데이터 설정
-                    commonUserGroup_menu_grid.DataSet(data);
+                commonUserGroup_menu_grid.DataSet(data);
 
-                }
 
-                //그리드 row 개수 변경 및 페이징 버튼 이벤트 설정
+                //그리드 row 개수 변s경 및 페이징 버튼 이벤트 설정
                 commonUserGroup_menu_grid.pagingSet(findByCommonUserGroupList);
-
                 //그리스 내부의 header click 정렬 이벤트 설정
                 commonUserGroup_menu_grid.sortDataSet(findByCommonUserGroupList);
 
