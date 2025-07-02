@@ -186,8 +186,9 @@
     <select id="SELECT_GROUP_BY_CONFIG_GROUP_ID_PAGE" resultType="com.vims.common.site.CommonSiteConfig">
         SELECT * FROM(
             SELECT
-            row_number() over (ORDER BY system_create_date DESC )AS no,
-            config_group_id
+                row_number() over (ORDER BY system_create_date DESC )AS no,
+                config_group_id,
+                use_yn
             FROM COMMON_SITE_CONFIG
             <where>
                 <if test="_config_group_id != null and _config_group_id != ''">AND UPPER(config_group_id) like CONCAT('%', UPPER(#{_config_group_id}) ,'%')</if>

@@ -5,7 +5,9 @@ class loadToScript{
             "CommonMenuMessage",
             "CommonGroupMessage",
             "CommonUserGroupMessage",
-            "CommonUserMessage"
+            "CommonUserMessage",
+            "CommonSiteConfigMessage"
+
         ];
         this.loadScripts(scriptsToLoad)
     }

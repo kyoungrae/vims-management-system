@@ -19,6 +19,16 @@
                     </div>
                     <!--/     검색기능 영역      -->
                     <div id="gi-Grid"></div>
+
+                    <div id="site_group_code_register-area" class="gi-col-25px gi-padding-left-right-20px gi-flex">
+                        <div class="gi-row-100 gi-flex">
+                            <div class="gi-row-100 gi-flex gi-flex-align-items-center gi-flex-justify-content-flex-end">
+                                <div class="gi-btn-section gi-row-30 gi-col-100 gi-flex gi-flex-justify-content-flex-end">
+                                    <button id="site-group_code-register-btn" class="gi-btn" type="button" gi-popup-open-id="siteGroupCodeRegister-gi-popup">그룹 추가</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="gi-row-70 gi-col-90">
@@ -52,71 +62,24 @@
         </article>
     </section>
 </article>
-<article id="gi-popup" class="gi-popup" data-popup-open="false">
+<article id="siteGroupCodeRegister-gi-popup" class="gi-popup" data-popup-open="false">
     <div class="gi-popup-body">
         <div class="gi-popup-header">
-            <span>설정코드 <span id="register-or-modify-span"></span></span>
+            <span>설정코드</span>
         </div>
         <div class="gi-popup-contents">
             <!--      팝업내용 삽입 영역      -->
             <div class="gi-row-100 gi-col-100 gi-flex gi-flex-center">
-                <form id="siteConfigRegisterOrModify" class="gi-row-100">
+                <form id="siteGroupCodeRegister" class="gi-row-100">
                     <div class="gi-row-100 gi-padding-5px gi-grid-container gi-grid gi-grid-justify-items-center gi-grid-gap-10px gi-margin-bottom-15px">
                         <div class="gi-row-60 gi-col-100 gi-grid gi-grid-template-columns-repeat-1-1fr-2fr gi-grid-rows-container">
                             <div class="gi-row-100 gi-col-100 gi-flex gi-flex-center">
                                 <span>설정그룹</span>
                             </div>
                             <div class="gi-row-100 gi-col-100 gi-flex">
-                                <div id="config_group_id-div" class="gi-row-100 gi-input-container gi-input-container-box-border-shadow gi-flex gi-flex-center">
+                                <div id="-div" class="gi-row-100 gi-input-container gi-input-container-box-border-shadow gi-flex gi-flex-center">
                                     <label for="config_group_id" class="gi-input-label" data-focus-label="true" data-focus-label-text-align="default" data-required="true">설정그룹</label>
-                                    <input gi-selectbox-custom data-field="config_group_id" id="config_group_id" name="config_group_id" class="gi-input" data-focus-span-text-align="default" data-required="true" autocomplete="off"/>
-                                </div>
-                                <div id="add-group-button-div" class="gi-grid gi-input-container gi-flex gi-flex-center " style="width: 30%;">
-                                    <button id="add-group-btn" class="gi-input-btn" type="button" style="box-shadow: 2px 2px 4px #9999995c; border-radius: 5px;">추가</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="gi-row-60 gi-col-100 gi-grid gi-grid-template-columns-repeat-1-1fr-2fr gi-grid-rows-container">
-                            <div class="gi-row-100 gi-col-100 gi-flex gi-flex-center">
-                                <span>설정키</span>
-                            </div>
-                            <div class="gi-row-100 gi-col-100">
-                                <div class="gi-row-100 gi-input-container gi-input-container-box-border-shadow gi-flex gi-flex-center ">
-                                    <label for="config_key" class="gi-input-label" data-focus-label="true" data-focus-label-text-align="default" data-required="true">설정키</label>
-                                    <input data-field="config_key" id="config_key" name="config_key" class="gi-input" data-focus-span-text-align="default" data-required="true" autocomplete="off" gi-maxlength="500"/>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="gi-row-60 gi-col-100 gi-grid gi-grid-template-columns-repeat-1-1fr-2fr gi-grid-rows-container">
-                            <div class="gi-row-100 gi-col-100 gi-flex gi-flex-center">
-                                <span>설정값</span>
-                            </div>
-                            <div class="gi-row-100 gi-col-100">
-                                <div class="gi-row-100 gi-input-container gi-input-container-box-border-shadow gi-flex gi-flex-center ">
-                                    <label for="config_value" class="gi-input-label" data-focus-label="true" data-focus-label-text-align="default" data-required="true">설정값</label>
-                                    <input data-field="config_value" id="config_value" name="config_value" class="gi-input" data-focus-span-text-align="default" data-required="true" autocomplete="off" gi-maxlength="100"/>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="gi-row-60 gi-col-100 gi-grid gi-grid-template-columns-repeat-1-1fr-2fr gi-grid-rows-container">
-                            <div class="gi-row-100 gi-col-100 gi-flex gi-flex-center">
-                                <span>설명</span>
-                            </div>
-                            <div class="gi-row-100 gi-col-100">
-                                <div class="gi-row-100 gi-input-container gi-input-container-box-border-shadow gi-flex gi-flex-center ">
-                                    <label for="description" class="gi-input-label" data-focus-label="true" data-focus-label-text-align="default" data-required="false">설명</label>
-                                    <input data-field="description" id="description" name="description" class="gi-input" data-focus-span-text-align="default" data-required="false" autocomplete="off" gi-maxlength="500"/>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="gi-row-60 gi-col-100 gi-grid gi-grid-template-columns-repeat-1-1fr-2fr gi-grid-rows-container">
-                            <div class="gi-row-100 gi-col-100 gi-flex gi-flex-center">
-                                <span>사용여부</span>
-                            </div>
-                            <div class="gi-row-100 gi-col-100">
-                                <div class="gi-row-100 gi-input-container gi-input-container-box-border-shadow gi-flex gi-flex-center ">
-                                    <label for="use_yn" class="gi-input-label" data-focus-label="true" data-focus-label-text-align="default" data-required="true">사용여부</label>
-                                    <input gi-selectbox data-selectbox-field="use_yn" data-field="use_yn" id="use_yn" name="use_yn" class="gi-input" data-focus-span-text-align="default" data-required="true" autocomplete="off"/>
+                                    <input data-field="config_group_id" id="config_group_id" name="config_group_id" class="gi-input" data-focus-span-text-align="default" data-required="true" autocomplete="off"/>
                                 </div>
                             </div>
                         </div>
@@ -127,12 +90,93 @@
         </div>
         <div class="gi-popup-footer">
             <div class="gi-btn-section gi-row-30 gi-col-30px gi-padding-left-right-20px gi-flex gi-flex-justify-content-center gi-flex-align-items-center">
-                <button id="siteConfigRegisterOrModify-btn" class="gi-popup-register-btn" type="button"></button>
-                <button class="gi-popup-close-btn" type="button">닫기</button>
+                <button id="siteGroupCodeRegister-btn" class="gi-popup-register-btn" type="button">[Page.Message].Message.Label.Array["REGISTER_BTN"]</button>
+                <button class="gi-popup-close-btn" type="button">[Page.Message].Message.Label.Array["CLOSE"]</button>
             </div>
         </div>
     </div>
 </article>
+<!--<article id="gi-popup" class="gi-popup" data-popup-open="false">-->
+<!--    <div class="gi-popup-body">-->
+<!--        <div class="gi-popup-header">-->
+<!--            <span>설정코드 <span id="register-or-modify-span"></span></span>-->
+<!--        </div>-->
+<!--        <div class="gi-popup-contents">-->
+<!--            &lt;!&ndash;      팝업내용 삽입 영역      &ndash;&gt;-->
+<!--            <div class="gi-row-100 gi-col-100 gi-flex gi-flex-center">-->
+<!--                <form id="siteConfigRegisterOrModify" class="gi-row-100">-->
+<!--                    <div class="gi-row-100 gi-padding-5px gi-grid-container gi-grid gi-grid-justify-items-center gi-grid-gap-10px gi-margin-bottom-15px">-->
+<!--                        <div class="gi-row-60 gi-col-100 gi-grid gi-grid-template-columns-repeat-1-1fr-2fr gi-grid-rows-container">-->
+<!--                            <div class="gi-row-100 gi-col-100 gi-flex gi-flex-center">-->
+<!--                                <span>설정그룹</span>-->
+<!--                            </div>-->
+<!--                            <div class="gi-row-100 gi-col-100 gi-flex">-->
+<!--                                <div id="config_group_id-div" class="gi-row-100 gi-input-container gi-input-container-box-border-shadow gi-flex gi-flex-center">-->
+<!--                                    <label for="config_group_id" class="gi-input-label" data-focus-label="true" data-focus-label-text-align="default" data-required="true">설정그룹</label>-->
+<!--                                    <input gi-selectbox-custom data-field="config_group_id" id="config_group_id" name="config_group_id" class="gi-input" data-focus-span-text-align="default" data-required="true" autocomplete="off"/>-->
+<!--                                </div>-->
+<!--                                <div id="add-group-button-div" class="gi-grid gi-input-container gi-flex gi-flex-center " style="width: 30%;">-->
+<!--                                    <button id="add-group-btn" class="gi-input-btn" type="button" style="box-shadow: 2px 2px 4px #9999995c; border-radius: 5px;">추가</button>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                        <div class="gi-row-60 gi-col-100 gi-grid gi-grid-template-columns-repeat-1-1fr-2fr gi-grid-rows-container">-->
+<!--                            <div class="gi-row-100 gi-col-100 gi-flex gi-flex-center">-->
+<!--                                <span>설정키</span>-->
+<!--                            </div>-->
+<!--                            <div class="gi-row-100 gi-col-100">-->
+<!--                                <div class="gi-row-100 gi-input-container gi-input-container-box-border-shadow gi-flex gi-flex-center ">-->
+<!--                                    <label for="config_key" class="gi-input-label" data-focus-label="true" data-focus-label-text-align="default" data-required="true">설정키</label>-->
+<!--                                    <input data-field="config_key" id="config_key" name="config_key" class="gi-input" data-focus-span-text-align="default" data-required="true" autocomplete="off" gi-maxlength="500"/>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                        <div class="gi-row-60 gi-col-100 gi-grid gi-grid-template-columns-repeat-1-1fr-2fr gi-grid-rows-container">-->
+<!--                            <div class="gi-row-100 gi-col-100 gi-flex gi-flex-center">-->
+<!--                                <span>설정값</span>-->
+<!--                            </div>-->
+<!--                            <div class="gi-row-100 gi-col-100">-->
+<!--                                <div class="gi-row-100 gi-input-container gi-input-container-box-border-shadow gi-flex gi-flex-center ">-->
+<!--                                    <label for="config_value" class="gi-input-label" data-focus-label="true" data-focus-label-text-align="default" data-required="true">설정값</label>-->
+<!--                                    <input data-field="config_value" id="config_value" name="config_value" class="gi-input" data-focus-span-text-align="default" data-required="true" autocomplete="off" gi-maxlength="100"/>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                        <div class="gi-row-60 gi-col-100 gi-grid gi-grid-template-columns-repeat-1-1fr-2fr gi-grid-rows-container">-->
+<!--                            <div class="gi-row-100 gi-col-100 gi-flex gi-flex-center">-->
+<!--                                <span>설명</span>-->
+<!--                            </div>-->
+<!--                            <div class="gi-row-100 gi-col-100">-->
+<!--                                <div class="gi-row-100 gi-input-container gi-input-container-box-border-shadow gi-flex gi-flex-center ">-->
+<!--                                    <label for="description" class="gi-input-label" data-focus-label="true" data-focus-label-text-align="default" data-required="false">설명</label>-->
+<!--                                    <input data-field="description" id="description" name="description" class="gi-input" data-focus-span-text-align="default" data-required="false" autocomplete="off" gi-maxlength="500"/>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                        <div class="gi-row-60 gi-col-100 gi-grid gi-grid-template-columns-repeat-1-1fr-2fr gi-grid-rows-container">-->
+<!--                            <div class="gi-row-100 gi-col-100 gi-flex gi-flex-center">-->
+<!--                                <span>사용여부</span>-->
+<!--                            </div>-->
+<!--                            <div class="gi-row-100 gi-col-100">-->
+<!--                                <div class="gi-row-100 gi-input-container gi-input-container-box-border-shadow gi-flex gi-flex-center ">-->
+<!--                                    <label for="use_yn" class="gi-input-label" data-focus-label="true" data-focus-label-text-align="default" data-required="true">사용여부</label>-->
+<!--                                    <input gi-selectbox data-selectbox-field="use_yn" data-field="use_yn" id="use_yn" name="use_yn" class="gi-input" data-focus-span-text-align="default" data-required="true" autocomplete="off"/>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </form>-->
+<!--            </div>-->
+<!--            &lt;!&ndash;/      팝업내용 삽입 영역      &ndash;&gt;-->
+<!--        </div>-->
+<!--        <div class="gi-popup-footer">-->
+<!--            <div class="gi-btn-section gi-row-30 gi-col-30px gi-padding-left-right-20px gi-flex gi-flex-justify-content-center gi-flex-align-items-center">-->
+<!--                <button id="siteConfigRegisterOrModify-btn" class="gi-popup-register-btn" type="button"></button>-->
+<!--                <button class="gi-popup-close-btn" type="button">닫기</button>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</article>-->
 <script type="text/javascript">
     var PRGMID = "siteConfigList";	//page id
     var FORMID = "siteConfigRegisterOrModify";
@@ -256,7 +300,8 @@
                     title: " 목록",
                     list: [
                         {HEADER: "No", ID: "no", WIDTH: "20", TYPE: "text", FONT_SIZE: "12px", TEXT_ALIGN: "center", HIDDEN: false},
-                        {HEADER: "그룹", ID: "config_group_id", WIDTH: "80", TYPE: "text", FONT_SIZE: "12px", TEXT_ALIGN: "center", HIDDEN: false},
+                        {HEADER:'[Page.Message].Message.Label.Array["COMMON_SITE_CONFIG.CONFIG_GROUP_ID"]',  ID:'config_group_id',  WIDTH:'80',TYPE:'text',FONT_SIZE:'12px',TEXT_ALIGN:'center',HIDDEN:false},
+                        {HEADER:'[Page.Message].Message.Label.Array["COMMON_SITE_CONFIG.USE_YN"]',  ID:'use_yn',  WIDTH:'40',TYPE:'text',FONT_SIZE:'12px',TEXT_ALIGN:'center',COMMON_CODE_GROUP_ID:"USE_YN",HIDDEN:false},
                         <!--{HEADER:"사이드 그리드",  ID:"sideGridOpen_btn",  WIDTH:"15",TYPE:"button",FONT_SIZE:"12px",TEXT_ALIGN:"center",HIDDEN:false}-->
                     ]
                 }
@@ -400,7 +445,7 @@
     }
 
     function findAllGroups() {
-        let url = "/common/site/siteConfig/findGroup";
+        let url = "/cms/common/site/siteConfig/findGroup";
         axios.post(url, {}).then(response => {
             let status = response.status;
             if (status === 200) {
