@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.vims.common.commoncodegroup.CommonCodeGroupMapper">
+<mapper namespace="com.vims.common.codegroup.CommonCodeGroupMapper">
     <sql id="sortFilter">
         ORDER BY
         <choose>
@@ -14,7 +14,7 @@
         </choose>
     </sql>
 
-    <select id="SELECT_PAGE" resultType="com.vims.common.commoncodegroup.CommonCodeGroup">
+    <select id="SELECT_PAGE" resultType="com.vims.common.codegroup.CommonCodeGroup">
         SELECT
             
             group_id, 
@@ -74,7 +74,7 @@
         </where>
     </select>
 
-    <select id="SELECT" resultType="com.vims.common.commoncodegroup.CommonCodeGroup">
+    <select id="SELECT" resultType="com.vims.common.codegroup.CommonCodeGroup">
         SELECT
             
             group_id,

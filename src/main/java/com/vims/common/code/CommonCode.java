@@ -1,4 +1,4 @@
-package com.vims.common.commoncode;
+package com.vims.common.code;
 
 import com.system.common.base.Common;
 import jakarta.persistence.Entity;

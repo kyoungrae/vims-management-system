@@ -8,14 +8,14 @@ import java.util.List;
 import java.util.Map;
 
 @Mapper
-public interface SiteConfigMapper extends CommonMapper<SiteConfig> {
+public interface CommonSiteConfigMapper extends CommonMapper<CommonSiteConfig> {
     Map<String, String> SELECT_VALUES_BY_KEYS(List<String> config_keys);
 
-    int MERGE(SiteConfig siteConfig);
+    int MERGE(CommonSiteConfig commonSiteConfig);
 
-    List<SiteConfig> SELECT_GROUP_PAGE(SiteConfig siteConfig);
+    List<CommonSiteConfig> SELECT_GROUP_BY_CONFIG_GROUP_ID_PAGE(CommonSiteConfig commonSiteConfig);
 
-    int SELECT_GROUP_PAGING_TOTAL_NUMBER(SiteConfig siteConfig);
+    int SELECT_GROUP_BY_CONFIG_GROUP_ID_PAGING_TOTAL_NUMBER(CommonSiteConfig commonSiteConfig);
 
     String[] SELECT_GROUP();
 

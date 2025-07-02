@@ -1,4 +1,4 @@
-package com.vims.common.commoncodegroup;
+package com.vims.common.codegroup;
 
 import com.system.common.base.AbstractCommonService;
 import lombok.AllArgsConstructor;

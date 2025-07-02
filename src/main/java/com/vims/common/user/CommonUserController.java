@@ -52,28 +52,28 @@ public class CommonUserController extends AbstractCommonController<CommonUser> {
         return commonUserService.registerImpl(request);
     }
 
-    @PostMapping("/matchToPassword")
-    public boolean matchToPassword(@RequestBody CommonUser request){
-        return commonUserService.matchToPassword(request);
-    }
-
-    @PostMapping("/getUserImageUrlByUserEmail")
-    protected String getUserImageUrlByUserEmail(@RequestBody CommonUser request) throws Exception{
-        return commonUserService.getUserImageUrlByUserEmail(request.getEmail());
-    }
+//    @PostMapping("/matchToPassword")
+//    public boolean matchToPassword(@RequestBody CommonUser request){
+//        return commonUserService.matchToPassword(request);
+//    }
+//
+//    @PostMapping("/getUserImageUrlByUserEmail")
+//    protected String getUserImageUrlByUserEmail(@RequestBody CommonUser request) throws Exception{
+//        return commonUserService.getUserImageUrlByUserEmail(request.getEmail());
+//    }
 
     @PostMapping("/changePassword")
     public int changePassword(@RequestBody CommonUser request) {
         return commonUserService.changePassword(request);
     }
 
-    @PostMapping("/validatePasswordPolicy")
-    public List<String> validatePasswordPolicy(@RequestBody String request) {
-        return commonUserService.validatePasswordPolicy(request);
-    }
-
-    @PostMapping("/initializePassword")
-    public int initializePassword(@RequestBody CommonUser request) {
-        return commonUserService.initializePassword(request);
-    }
+//    @PostMapping("/validatePasswordPolicy")
+//    public List<String> validatePasswordPolicy(@RequestBody String request) {
+//        return commonUserService.validatePasswordPolicy(request);
+//    }
+//
+//    @PostMapping("/initializePassword")
+//    public int initializePassword(@RequestBody CommonUser request) {
+//        return commonUserService.initializePassword(request);
+//    }
 }

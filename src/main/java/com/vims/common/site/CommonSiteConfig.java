@@ -21,13 +21,14 @@ import java.util.Arrays;
 @NoArgsConstructor
 @SuperBuilder
 @Table(name = "SITE_CONFIG")
-public class SiteConfig extends Common {
+public class CommonSiteConfig extends Common {
     @Transient
     private String keys = Arrays.toString(new String[]{"config_key"});
 
-    @Id
 
-    /***<pre> config_group_id : 설정그룹ID </pre> */ private String config_group_id;
+    /***<pre> config_group_id : 설정그룹ID </pre> */
+    @Id
+    private String config_group_id;
 
     /***<pre> config_key : 설정 키 </pre> */
     private String config_key;

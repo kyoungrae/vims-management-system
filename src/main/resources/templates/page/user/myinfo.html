@@ -240,33 +240,34 @@
         // formUtil.createImgFileUpload("imgFileUpload", "/common/file/commonFileDetail", {FOLDER_NAME: "userImgFolder"}, modifyUserImage);
     }
 
-    async function modify() {
-        if (!checkValidation()) return false;
-        if (!await formUtil.confirm(Message.Label.Array["CONFIRM.UPDATE"])) return false;
+    // async function modify() {
+    //     if (!checkValidation()) return false;
+    //     if (!await formUtil.confirm(Message.Label.Array["CONFIRM.UPDATE"])) return false;
+    //
+    //     let data = new dataBinding().getData(PRGMID);
+    //     let url = "/cms/common/user/commonUser/update";
+    //     let param = {
+    //         id: data.id,
+    //         user_name: data.user_name,
+    //         tel: data.tel,
+    //         address: data.address,
+    //         address_detail: data.address_detail,
+    //         postal_code: data.postal_code,
+    //     };
+    //     axios.post(url, param).then(response => {
+    //         let status = response.status;
+    //         if (status === 200) {
+    //             (new GiFormatCheck).resetToggleIcon();
+    //             formUtil.showMessage(Message.Label.Array["COMPLETE.UPDATE"]);
+    //         } else {
+    //             formUtil.alertPopup("response status is :" + status);
+    //         }
+    //     }).catch(error => {
+    //         formUtil.alertPopup(error);
+    //     })
+    // }
 
-        let data = new dataBinding().getData(PRGMID);
-        let url = "/cms/common/user/commonUser/update";
-        let param = {
-            id: data.id,
-            user_name: data.user_name,
-            tel: data.tel,
-            address: data.address,
-            address_detail: data.address_detail,
-            postal_code: data.postal_code,
-        };
-        axios.post(url, param).then(response => {
-            let status = response.status;
-            if (status === 200) {
-                (new GiFormatCheck).resetToggleIcon();
-                formUtil.showMessage(Message.Label.Array["COMPLETE.UPDATE"]);
-            } else {
-                formUtil.alertPopup("response status is :" + status);
-            }
-        }).catch(error => {
-            formUtil.alertPopup(error);
-        })
-    }
-
+    //NOTE : 비밀번호 변경 로직
     async function changePassword() {
         $("#change-password-popup").attr("data-popup-open","true");
         $(".popup_success_btn")
@@ -312,29 +313,29 @@
         }
     }
 
-    function modifyUserImage() {
-        let flag = checkValidation();
-        if (flag) {
-            let data = new dataBinding().getData(PRGMID);
-            let url = "/common/common/commonUser/update";
-            let param = {
-                id: data.id,
-                uuid: data.uuid,
-            };
-            axios.post(url, param).then(response => {
-                let status = response.status;
-                if (status === 200) {
-                    formUtil.showMessage(Message.Label.Array["COMPLETE.UPDATE"]);
-
-                    findImgFile();
-                } else {
-                    formUtil.alertPopup("response status is :" + status);
-                }
-            }).catch(error => {
-                formUtil.alertPopup(error);
-            })
-        }
-    }
+    // function modifyUserImage() {
+    //     let flag = checkValidation();
+    //     if (flag) {
+    //         let data = new dataBinding().getData(PRGMID);
+    //         let url = "/common/common/commonUser/update";
+    //         let param = {
+    //             id: data.id,
+    //             uuid: data.uuid,
+    //         };
+    //         axios.post(url, param).then(response => {
+    //             let status = response.status;
+    //             if (status === 200) {
+    //                 formUtil.showMessage(Message.Label.Array["COMPLETE.UPDATE"]);
+    //
+    //                 findImgFile();
+    //             } else {
+    //                 formUtil.alertPopup("response status is :" + status);
+    //             }
+    //         }).catch(error => {
+    //             formUtil.alertPopup(error);
+    //         })
+    //     }
+    // }
 
     function checkValidation() {
         let flag = false;
@@ -354,54 +355,54 @@
         return flag;
     }
 
-    function findImgFile() {
-        let url = "/common/file/commonFileDetail/find";
-        let param = {
-            uuid: $('#uuid').val()
-        }
-        axios.post(url, param).then(response => {
-            let status = response.status;
-            if (status === 200) {
-                if (formUtil.checkEmptyValue(response.data)) {
-                    let data = response.data[0];
-                    let filePath = data.file_path;
-                    let fileId = data.file_id + "." + data.file_extension;
-                    let cont = {
-                        path: filePath,
-                        file_id: fileId
-                    }
-                    findFileManagerGetImg(cont);
-                }
-            }
-        }).catch(error => {
-            formUtil.alertPopup(error + "");
-        })
-    }
+    // function findImgFile() {
+    //     let url = "/common/file/commonFileDetail/find";
+    //     let param = {
+    //         uuid: $('#uuid').val()
+    //     }
+    //     axios.post(url, param).then(response => {
+    //         let status = response.status;
+    //         if (status === 200) {
+    //             if (formUtil.checkEmptyValue(response.data)) {
+    //                 let data = response.data[0];
+    //                 let filePath = data.file_path;
+    //                 let fileId = data.file_id + "." + data.file_extension;
+    //                 let cont = {
+    //                     path: filePath,
+    //                     file_id: fileId
+    //                 }
+    //                 findFileManagerGetImg(cont);
+    //             }
+    //         }
+    //     }).catch(error => {
+    //         formUtil.alertPopup(error + "");
+    //     })
+    // }
 
-    function findFileManagerGetImg(data) {
-        let url = "/fileManager/searchImg";
-        let param = {
-            file_path: data.path + "/",
-            file_id: data.file_id
-        }
-        axios.post(url, param).then(response => {
-            let status = response.status;
-            if (status === 200) {
-                if (formUtil.checkEmptyValue(response.data)) {
-                    let data = response.data;
-                    $(".userIcon").css("background-image", "url('" + data + "')");
+    // function findFileManagerGetImg(data) {
+    //     let url = "/fileManager/searchImg";
+    //     let param = {
+    //         file_path: data.path + "/",
+    //         file_id: data.file_id
+    //     }
+    //     axios.post(url, param).then(response => {
+    //         let status = response.status;
+    //         if (status === 200) {
+    //             if (formUtil.checkEmptyValue(response.data)) {
+    //                 let data = response.data;
+    //                 $(".userIcon").css("background-image", "url('" + data + "')");
+    //
+    //                 setImageSource(data);
+    //
+    //                 $('#formUtil_fileUpload').empty(); // TODO
+    //             }
+    //         }
+    //     }).catch(error => {
+    //         formUtil.alertPopup(error + "");
+    //     })
+    // }
 
-                    setImageSource(data);
-
-                    $('#formUtil_fileUpload').empty(); // TODO
-                }
-            }
-        }).catch(error => {
-            formUtil.alertPopup(error + "");
-        })
-    }
-
-    function setImageSource(url) {
-        $('#user-image').attr('src', url);
-    }
+    // function setImageSource(url) {
+    //     $('#user-image').attr('src', url);
+    // }
 </script>
