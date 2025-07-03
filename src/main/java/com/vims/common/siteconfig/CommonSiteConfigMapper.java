@@ -1,4 +1,4 @@
-package com.vims.common.site;
+package com.vims.common.siteconfig;
 
 import com.system.common.base.CommonMapper;
 import com.system.common.util.passwordvalidation.PasswordPolicy;
@@ -12,10 +12,6 @@ public interface CommonSiteConfigMapper extends CommonMapper<CommonSiteConfig> {
     Map<String, String> SELECT_VALUES_BY_KEYS(List<String> config_keys);
 
     int MERGE(CommonSiteConfig commonSiteConfig);
-
-    List<CommonSiteConfig> SELECT_GROUP_BY_CONFIG_GROUP_ID_PAGE(CommonSiteConfig commonSiteConfig);
-
-    int SELECT_GROUP_BY_CONFIG_GROUP_ID_PAGING_TOTAL_NUMBER(CommonSiteConfig commonSiteConfig);
 
     String[] SELECT_GROUP();
 

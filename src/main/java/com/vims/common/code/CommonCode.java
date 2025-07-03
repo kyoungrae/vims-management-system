@@ -20,7 +20,6 @@ import java.util.Date;
 @AllArgsConstructor
 @NoArgsConstructor
 @SuperBuilder
-@Table(name = "COMMON_CODE")
 public class CommonCode extends Common {
     @Transient
     private String keys = Arrays.toString(new String[]{"code_id","group_id"});

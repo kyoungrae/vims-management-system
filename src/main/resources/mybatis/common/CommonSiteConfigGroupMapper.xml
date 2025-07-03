@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.vims.common.siteconfig.CommonSiteConfigMapper">
+<mapper namespace="com.vims.common.siteConfigGroup.CommonSiteConfigGroupMapper">
     <sql id="sortFilter">
         ORDER BY
         <choose>
@@ -14,36 +14,31 @@
         </choose>
     </sql>
 
-    <select id="SELECT_PAGE" resultType="com.vims.common.siteconfig.CommonSiteConfig">
+    <select id="SELECT_PAGE" resultType="com.vims.common.siteConfigGroup.CommonSiteConfigGroup">
         SELECT * FROM (
             SELECT
                 row_number() over (ORDER BY system_create_date DESC )AS no,
-                config_group_id,
-                config_key,
-                config_value,
-                description,
-                use_yn,
-                system_create_date,
-                system_create_userid,
-                system_update_date,
-                system_update_userid
-            FROM COMMON_SITE_CONFIG
+                
+                config_group_id, 
+                config_group_name, 
+                use_yn, 
+                system_create_date, 
+                system_create_userid, 
+                system_update_date, 
+                system_update_userid 
+            FROM COMMON_SITE_CONFIG_GROUP
             <where>
-
+                
                 <if test="config_group_id != null and config_group_id != ''">AND config_group_id = #{config_group_id}</if>
-                <if test="config_key != null and config_key != ''">AND config_key = #{config_key}</if>
-                <if test="config_value != null and config_value != ''">AND config_value = #{config_value}</if>
-                <if test="description != null and description != ''">AND description = #{description}</if>
+                <if test="config_group_name != null and config_group_name != ''">AND config_group_name = #{config_group_name}</if>
                 <if test="use_yn != null and use_yn != ''">AND use_yn = #{use_yn}</if>
                 <if test="system_create_date != null and system_create_date != ''">AND system_create_date = #{system_create_date}</if>
                 <if test="system_create_userid != null and system_create_userid != ''">AND system_create_userid = #{system_create_userid}</if>
                 <if test="system_update_date != null and system_update_date != ''">AND system_update_date = #{system_update_date}</if>
                 <if test="system_update_userid != null and system_update_userid != ''">AND system_update_userid = #{system_update_userid}</if>
-
+                
                 <if test="_config_group_id != null and _config_group_id != ''">AND config_group_id LIKE CONCAT('%', #{_config_group_id}, '%')</if>
-                <if test="_config_key != null and _config_key != ''">AND config_key LIKE CONCAT('%', #{_config_key}, '%')</if>
-                <if test="_config_value != null and _config_value != ''">AND config_value LIKE CONCAT('%', #{_config_value}, '%')</if>
-                <if test="_description != null and _description != ''">AND description LIKE CONCAT('%', #{_description}, '%')</if>
+                <if test="_config_group_name != null and _config_group_name != ''">AND config_group_name LIKE CONCAT('%', #{_config_group_name}, '%')</if>
                 <if test="_use_yn != null and _use_yn != ''">AND use_yn LIKE CONCAT('%', #{_use_yn}, '%')</if>
                 <if test="_system_create_date != null and _system_create_date != ''">AND system_create_date LIKE CONCAT('%', #{_system_create_date}, '%')</if>
                 <if test="_system_create_userid != null and _system_create_userid != ''">AND system_create_userid LIKE CONCAT('%', #{_system_create_userid}, '%')</if>
@@ -56,13 +51,11 @@
     </select>
 
     <select id="SELECT_PAGING_TOTAL_NUMBER" resultType="int">
-        SELECT CEIL(COUNT(*) / #{row_range}) FROM COMMON_SITE_CONFIG
+        SELECT CEIL(COUNT(*) / #{row_range}) FROM COMMON_SITE_CONFIG_GROUP
         <where>
             
             <if test="config_group_id != null and config_group_id != ''">AND config_group_id = #{config_group_id}</if>
-            <if test="config_key != null and config_key != ''">AND config_key = #{config_key}</if>
-            <if test="config_value != null and config_value != ''">AND config_value = #{config_value}</if>
-            <if test="description != null and description != ''">AND description = #{description}</if>
+            <if test="config_group_name != null and config_group_name != ''">AND config_group_name = #{config_group_name}</if>
             <if test="use_yn != null and use_yn != ''">AND use_yn = #{use_yn}</if>
             <if test="system_create_date != null and system_create_date != ''">AND system_create_date = #{system_create_date}</if>
             <if test="system_create_userid != null and system_create_userid != ''">AND system_create_userid = #{system_create_userid}</if>
@@ -70,9 +63,7 @@
             <if test="system_update_userid != null and system_update_userid != ''">AND system_update_userid = #{system_update_userid}</if>
             
             <if test="_config_group_id != null and _config_group_id != ''">AND config_group_id LIKE CONCAT('%', #{_config_group_id}, '%')</if>
-            <if test="_config_key != null and _config_key != ''">AND config_key LIKE CONCAT('%', #{_config_key}, '%')</if>
-            <if test="_config_value != null and _config_value != ''">AND config_value LIKE CONCAT('%', #{_config_value}, '%')</if>
-            <if test="_description != null and _description != ''">AND description LIKE CONCAT('%', #{_description}, '%')</if>
+            <if test="_config_group_name != null and _config_group_name != ''">AND config_group_name LIKE CONCAT('%', #{_config_group_name}, '%')</if>
             <if test="_use_yn != null and _use_yn != ''">AND use_yn LIKE CONCAT('%', #{_use_yn}, '%')</if>
             <if test="_system_create_date != null and _system_create_date != ''">AND system_create_date LIKE CONCAT('%', #{_system_create_date}, '%')</if>
             <if test="_system_create_userid != null and _system_create_userid != ''">AND system_create_userid LIKE CONCAT('%', #{_system_create_userid}, '%')</if>
@@ -81,25 +72,21 @@
         </where>
     </select>
 
-    <select id="SELECT" resultType="com.vims.common.siteconfig.CommonSiteConfig">
+    <select id="SELECT" resultType="com.vims.common.siteConfigGroup.CommonSiteConfigGroup">
         SELECT
             
             config_group_id,
-            config_key,
-            config_value,
-            description,
+            config_group_name,
             use_yn,
             system_create_date,
             system_create_userid,
             system_update_date,
             system_update_userid
-        FROM COMMON_SITE_CONFIG
+        FROM COMMON_SITE_CONFIG_GROUP
         <where>
             
             <if test="config_group_id != null and config_group_id != ''">AND config_group_id = #{config_group_id}</if>
-            <if test="config_key != null and config_key != ''">AND config_key = #{config_key}</if>
-            <if test="config_value != null and config_value != ''">AND config_value = #{config_value}</if>
-            <if test="description != null and description != ''">AND description = #{description}</if>
+            <if test="config_group_name != null and config_group_name != ''">AND config_group_name = #{config_group_name}</if>
             <if test="use_yn != null and use_yn != ''">AND use_yn = #{use_yn}</if>
             <if test="system_create_date != null and system_create_date != ''">AND system_create_date = #{system_create_date}</if>
             <if test="system_create_userid != null and system_create_userid != ''">AND system_create_userid = #{system_create_userid}</if>
@@ -107,9 +94,7 @@
             <if test="system_update_userid != null and system_update_userid != ''">AND system_update_userid = #{system_update_userid}</if>
             
             <if test="_config_group_id != null and _config_group_id != ''">AND config_group_id LIKE CONCAT('%', #{_config_group_id}, '%')</if>
-            <if test="_config_key != null and _config_key != ''">AND config_key LIKE CONCAT('%', #{_config_key}, '%')</if>
-            <if test="_config_value != null and _config_value != ''">AND config_value LIKE CONCAT('%', #{_config_value}, '%')</if>
-            <if test="_description != null and _description != ''">AND description LIKE CONCAT('%', #{_description}, '%')</if>
+            <if test="_config_group_name != null and _config_group_name != ''">AND config_group_name LIKE CONCAT('%', #{_config_group_name}, '%')</if>
             <if test="_use_yn != null and _use_yn != ''">AND use_yn LIKE CONCAT('%', #{_use_yn}, '%')</if>
             <if test="_system_create_date != null and _system_create_date != ''">AND system_create_date LIKE CONCAT('%', #{_system_create_date}, '%')</if>
             <if test="_system_create_userid != null and _system_create_userid != ''">AND system_create_userid LIKE CONCAT('%', #{_system_create_userid}, '%')</if>
@@ -119,43 +104,37 @@
     </select>
 
     <insert id="INSERT">
-        INSERT INTO COMMON_SITE_CONFIG(
+        INSERT INTO COMMON_SITE_CONFIG_GROUP(
             
              config_group_id 
-            , config_key 
-            , config_value 
+            , config_group_name 
             , use_yn 
             , system_create_date 
             , system_create_userid 
             
-            <if test="description != null">, description</if>
             <if test="system_update_date != null">, system_update_date</if>
             <if test="system_update_userid != null">, system_update_userid</if>
         )
         VALUES(
             
              #{config_group_id}
-            , #{config_key}
-            , #{config_value}
+            , #{config_group_name}
             , #{use_yn}
             , #{system_create_date}
             , #{system_create_userid}
             
-            <if test="description != null">, #{description}</if>
             <if test="system_update_date != null">, #{system_update_date}</if>
             <if test="system_update_userid != null">, #{system_update_userid}</if>
         )
     </insert>
 
     <delete id="DELETE">
-        DELETE FROM COMMON_SITE_CONFIG
+        DELETE FROM COMMON_SITE_CONFIG_GROUP
         <where>
             
-            AND config_key = #{config_key}
+            AND config_group_id = #{config_group_id}
             
-            <if test="config_group_id != null">AND config_group_id = #{config_group_id}</if>
-            <if test="config_value != null">AND config_value = #{config_value}</if>
-            <if test="description != null">AND description = #{description}</if>
+            <if test="config_group_name != null">AND config_group_name = #{config_group_name}</if>
             <if test="use_yn != null">AND use_yn = #{use_yn}</if>
             <if test="system_create_date != null">AND system_create_date = #{system_create_date}</if>
             <if test="system_create_userid != null">AND system_create_userid = #{system_create_userid}</if>
@@ -165,12 +144,10 @@
     </delete>
 
     <update id="UPDATE">
-        UPDATE COMMON_SITE_CONFIG
+        UPDATE COMMON_SITE_CONFIG_GROUP
         <set>
             
-            <if test="config_group_id != null">config_group_id = #{config_group_id}</if>
-            <if test="config_value != null">config_value = #{config_value}</if>
-            <if test="description != null">description = #{description}</if>
+            <if test="config_group_name != null">config_group_name = #{config_group_name}</if>
             <if test="use_yn != null">use_yn = #{use_yn}</if>
             <if test="system_create_date != null">system_create_date = #{system_create_date}</if>
             <if test="system_create_userid != null">system_create_userid = #{system_create_userid}</if>
@@ -178,7 +155,8 @@
             <if test="system_update_userid != null">system_update_userid = #{system_update_userid}</if>
         </set>
         <where>
-            AND config_key = #{config_key}
+            
+            AND config_group_id = #{config_group_id}
         </where>
     </update>
 </mapper>

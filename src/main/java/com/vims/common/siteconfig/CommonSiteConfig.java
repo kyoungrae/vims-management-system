@@ -1,4 +1,4 @@
-package com.vims.common.site;
+package com.vims.common.siteconfig;
 
 import com.system.common.base.Common;
 import jakarta.persistence.Entity;
@@ -20,7 +20,6 @@ import java.util.Arrays;
 @AllArgsConstructor
 @NoArgsConstructor
 @SuperBuilder
-@Table(name = "SITE_CONFIG")
 public class CommonSiteConfig extends Common {
     @Transient
     private String keys = Arrays.toString(new String[]{"config_key"});

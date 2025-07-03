@@ -1,18 +1,15 @@
-package com.vims.common.group;
+package com.vims.common.siteConfigGroup;
 
 import com.system.common.base.Common;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import jakarta.persistence.Transient;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import lombok.experimental.SuperBuilder;
 
-import java.sql.Date;
 import java.util.Arrays;
+import java.util.Date;
 
 @EqualsAndHashCode(callSuper = true)
 @Entity
@@ -20,28 +17,21 @@ import java.util.Arrays;
 @AllArgsConstructor
 @NoArgsConstructor
 @SuperBuilder
-public class CommonGroup extends Common {
+public class CommonSiteConfigGroup extends Common {
     @Transient
-	private String keys = Arrays.toString(new String[]{"group_id"});
+	private String keys = Arrays.toString(new String[]{"config_group_id"});
 
     @Id
+    /***<pre> config_group_id : 설정그룹아이디 </pre> */
+	private String config_group_id;
 
-    /***<pre> group_id :  </pre> */
-	private String group_id;
-
-    /***<pre> group_name : 그룹이름 </pre> */
-	private String group_name;
-
-    /***<pre> group_level : 그룹레벨 </pre> */
-	private String group_level;
-
-    /***<pre> top_group_id : 상위 그룹아이디 </pre> */
-	private String top_group_id;
+    /***<pre> config_group_name : 설정그룹이름 </pre> */
+	private String config_group_name;
 
     /***<pre> use_yn : 사용여부 </pre> */
 	private String use_yn;
 
-    /***<pre> system_create_date : 작성일자 </pre> */
+    /***<pre> system_create_date : 등록일자 </pre> */
 	private Date system_create_date;
 
     /***<pre> system_create_userid : 작성자ID </pre> */
@@ -55,27 +45,19 @@ public class CommonGroup extends Common {
 
 
 
-    /***<pre> group_id :  </pre> */
+    /***<pre> config_group_id : 설정그룹아이디 </pre> */
     @Transient
-	private String _group_id;
+	private String _config_group_id;
 
-    /***<pre> group_name : 그룹이름 </pre> */
+    /***<pre> config_group_name : 설정그룹이름 </pre> */
     @Transient
-	private String _group_name;
-
-    /***<pre> group_level : 그룹레벨 </pre> */
-    @Transient
-	private String _group_level;
-
-    /***<pre> top_group_id : 상위 그룹아이디 </pre> */
-    @Transient
-	private String _top_group_id;
+	private String _config_group_name;
 
     /***<pre> use_yn : 사용여부 </pre> */
     @Transient
 	private String _use_yn;
 
-    /***<pre> system_create_date : 작성일자 </pre> */
+    /***<pre> system_create_date : 등록일자 </pre> */
     @Transient
 	private Date _system_create_date;
 

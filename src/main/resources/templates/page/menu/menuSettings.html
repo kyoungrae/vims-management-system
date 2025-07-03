@@ -457,7 +457,7 @@
         // })
     }
     function findByCommonCodeMenuList(page,range,sortId,sortOrder) {
-        let url = "/cms/common/menu/commonMenu/findHierarchy";
+        let url = "/cms/common/commonMenu/findHierarchy";
         let param = {
         };
         // 검색조건 설정 (추가해서 사용)
@@ -564,7 +564,7 @@
     function commonMenuRegister(){
         let flag =  checkRegisterPopupValidation();
         if(flag){
-            let url = "/cms/common/menu/commonMenu/register"
+            let url = "/cms/common/commonMenu/register"
             let data = new dataBinding().getData(COMMON_MENU_REGISTER_PRGMID);
             let param = {
                 menu_code : data.menu_code,
@@ -598,7 +598,7 @@
     function commonMenuDepthRegister(){
         let flag =  checkDepthRegisterPopupValidation();
         if(flag){
-            let url = "/cms/common/menu/commonMenu/register"
+            let url = "/cms/common/commonMenu/register"
             let data = new dataBinding().getData(COMMON_MENU_DEPTH_REGISTER_PRGMID);
             let param = {
                 menu_code : data.menu_code,
@@ -630,7 +630,7 @@
      */
     function commonMenuUpdate(){
         let data = new dataBinding().getData(COMMON_MENU_UPDATE_PRGMID);
-        let url = "/cms/common/menu/commonMenu/update";
+        let url = "/cms/common/commonMenu/update";
         let param = {
             menu_code :data.menu_code ,
             menu_name_kr :data.menu_name_kr ,
@@ -664,7 +664,7 @@
      */
     function commonMenuDelete(cont){
         let data = cont;
-        let url = "/cms/common/menu/commonMenu/removeMenuCode";
+        let url = "/cms/common/commonMenu/removeMenuCode";
         let param = {
             menu_code : data.menu_code,
             menu_sequence: data.menu_sequence

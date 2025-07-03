@@ -9,7 +9,7 @@ import com.system.common.exception.CustomException;
 import com.system.common.util.passwordvalidation.PasswordPolicy;
 import com.system.common.util.passwordvalidation.PasswordValidationUtil;
 import com.system.common.util.validation.ValidationService;
-import com.vims.common.site.CommonSiteConfigService;
+import com.vims.common.siteconfig.CommonSiteConfigService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.MessageSource;
 import org.springframework.context.i18n.LocaleContextHolder;

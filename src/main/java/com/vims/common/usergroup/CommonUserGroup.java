@@ -20,7 +20,6 @@ import java.util.Arrays;
 @AllArgsConstructor
 @NoArgsConstructor
 @SuperBuilder
-@Table(name = "COMMON_USER_GROUP")
 public class CommonUserGroup extends Common {
     @Transient
 	private String keys = Arrays.toString(new String[]{"group_id","user_email"});

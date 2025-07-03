@@ -1,4 +1,4 @@
-package com.vims.common.site;
+package com.vims.common.siteconfig;
 
 import com.system.common.base.AbstractCommonController;
 import com.system.common.exception.CustomException;
@@ -13,7 +13,7 @@ import java.util.List;
 import java.util.Map;
 
 @RestController
-@RequestMapping("/cms/common/site/siteConfig")
+@RequestMapping("/cms/common/commonSiteConfig")
 @RequiredArgsConstructor
 public class CommonSiteConfigController extends AbstractCommonController<CommonSiteConfig> {
 
@@ -24,12 +24,6 @@ public class CommonSiteConfigController extends AbstractCommonController<CommonS
     public Map<String, List<?>> findPage(@RequestBody CommonSiteConfig reqeust) throws Exception {
         return commonSiteConfigService.findPage(reqeust);
     }
-
-    @PostMapping("/findGroupByConfigGroupIdPage")
-    public Map<String, List<?>> findGroupPage(@RequestBody CommonSiteConfig reqeust) throws Exception {
-        return commonSiteConfigService.findGroupByConfigGroupIdPage(reqeust);
-    }
-
     @PostMapping("/findAll")
     protected List<CommonSiteConfig> findAll(@RequestBody CommonSiteConfig request) throws Exception {
         return commonSiteConfigRepository.findAll();
@@ -77,14 +71,5 @@ public class CommonSiteConfigController extends AbstractCommonController<CommonS
     @Override
     protected int registerImpl(@RequestBody CommonSiteConfig request) {
         return commonSiteConfigService.registerImpl(request);
-    }
-
-    @PostMapping("/registerWithConflictCheck")
-    protected int registerWithConflictCheck(@RequestBody CommonSiteConfig request) {
-        try {
-            return commonSiteConfigService.registerImpl(request);
-        } catch (DuplicateKeyException e) {
-            throw new CustomException("IS_ALREADY_EXISTS");
-        }
     }
 }

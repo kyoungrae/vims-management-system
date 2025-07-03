@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.Map;
 
 @RestController
-@RequestMapping("/cms/common/user/commonUser")
+@RequestMapping("/cms/common/commonUser")
 @RequiredArgsConstructor
 public class CommonUserController extends AbstractCommonController<CommonUser> {
 

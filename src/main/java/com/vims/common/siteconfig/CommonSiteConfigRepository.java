@@ -1,4 +1,4 @@
-package com.vims.common.site;
+package com.vims.common.siteconfig;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

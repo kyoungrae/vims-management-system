@@ -1,7 +1,7 @@
 /**
  * ++ giens Product ++
  */
-package com.vims.common.site;
+package com.vims.common.siteconfig;
 
 import com.system.common.base.AbstractCommonService;
 import com.system.common.util.passwordvalidation.PasswordPolicy;
@@ -32,34 +32,6 @@ public class CommonSiteConfigService extends AbstractCommonService<CommonSiteCon
     @Override
     protected int selectPagingTotalNumber(CommonSiteConfig request) throws Exception {
         return commonSiteConfigMapper.SELECT_PAGING_TOTAL_NUMBER(request);
-    }
-
-    public Map<String, List<?>> findGroupByConfigGroupIdPage(CommonSiteConfig request) throws Exception {
-
-        List<CommonSiteConfig> list;
-        Map<String, List<?>> result = new HashMap<>();
-        int pagingNum;
-        try {
-            list = selectGroupByConfigGroupIdPage(request);
-            pagingNum = selectGroupByConfigGroupIdPagingTotalNumber(request);
-
-            List<Integer> pagingList = new ArrayList<>();
-            pagingList.add(pagingNum);
-
-            result.put("DATA", list);
-            result.put("TOTAL_PAGING", pagingList);
-        } catch (Exception e) {
-            throw new Exception(e);
-        }
-        return result;
-    }
-
-    protected List<CommonSiteConfig> selectGroupByConfigGroupIdPage(CommonSiteConfig request) throws Exception {
-        return commonSiteConfigMapper.SELECT_GROUP_BY_CONFIG_GROUP_ID_PAGE(request);
-    }
-
-    protected int selectGroupByConfigGroupIdPagingTotalNumber(CommonSiteConfig request) throws Exception {
-        return commonSiteConfigMapper.SELECT_GROUP_BY_CONFIG_GROUP_ID_PAGING_TOTAL_NUMBER(request);
     }
 
     public String[] findGroup() throws Exception {

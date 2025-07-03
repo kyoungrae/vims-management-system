@@ -17,7 +17,6 @@ import java.util.Arrays;
 @AllArgsConstructor
 @NoArgsConstructor
 @SuperBuilder
-@Table(name = "COMMON_USER")
 public class CommonUser extends Common {
     @Transient
 	private String keys = Arrays.toString(new String[]{"id"});

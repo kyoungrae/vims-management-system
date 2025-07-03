@@ -19,7 +19,6 @@ import java.util.Arrays;
 @AllArgsConstructor
 @NoArgsConstructor
 @SuperBuilder
-@Table(name = "COMMON_MENU")
 public class CommonMenu extends Common {
     @Transient
 	private String keys = Arrays.toString(new String[]{"menu_code","menu_sequence"});
