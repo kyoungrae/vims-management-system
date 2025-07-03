@@ -24,7 +24,7 @@
                         <div class="gi-row-100 gi-flex">
                             <div class="gi-row-100 gi-flex gi-flex-align-items-center gi-flex-justify-content-flex-end">
                                 <div class="gi-btn-section gi-row-30 gi-col-100 gi-flex gi-flex-justify-content-flex-end">
-                                    <button class="gi-btn" type="button" gi-popup-open-id="siteGroupCodeRegister-gi-popup">[Page.Message].Message.Label.Array["COMMON_SITE_CONFIG.REGISTER_CONFIG_GROUP_ID_BTN"]</button>
+                                    <button class="gi-btn" type="button" gi-popup-open-id="siteConfigGroupRegister_gi-popup">[Page.Message].Message.Label.Array["COMMON_SITE_CONFIG_GROUP.REGISTER_CONFIG_GROUP_ID_BTN"]</button>
                                 </div>
                             </div>
                         </div>
@@ -52,7 +52,7 @@
                         <div class="gi-row-100 gi-flex">
                             <div class="gi-row-100 gi-flex gi-flex-align-items-center gi-flex-justify-content-flex-end">
                                 <div class="gi-btn-section gi-row-20 gi-col-100 gi-flex gi-flex-justify-content-flex-end">
-                                    <button id="siteConfigRegister-btn" class="gi-btn" type="button" gi-popup-open-id="gi-popup">코드 추가</button>
+                                    <button id="siteConfigRegister-btn" class="gi-btn gi-hidden" type="button" gi-popup-open-id="siteConfigRegister_gi-popup">[Page.Message].Message.Label.Array["COMMON_SITE_CONFIG.REGISTER_CONFIG_KEY_BTN"]</button>
                                 </div>
                             </div>
                         </div>
@@ -62,15 +62,15 @@
         </article>
     </section>
 </article>
-<article id="siteGroupCodeRegister-gi-popup" class="gi-popup" data-popup-open="false">
+<article id="siteConfigGroupRegister_gi-popup" class="gi-popup" data-popup-open="false">
     <div class="gi-popup-body" style="width:350px !important; height: 300px !important;">
         <div class="gi-popup-header">
-            <span>[Page.Message].Message.Label.Array["COMMON_SITE_CONFIG.REGISTER_CONFIG_GROUP_ID"]</span>
+            <span>[Page.Message].Message.Label.Array["COMMON_SITE_CONFIG_GROUP.TITLE_REGISTER_CONFIG_GROUP_ID"]</span>
         </div>
         <div class="gi-popup-contents">
             <!--      팝업내용 삽입 영역      -->
             <div class="gi-row-100 gi-col-100 gi-flex gi-flex-center">
-                <form id="siteGroupCodeRegister" class="gi-row-100">
+                <form id="siteConfigGroupCodeRegister" class="gi-row-100">
                     <div class="gi-row-100 gi-padding-5px gi-grid-container gi-grid gi-grid-justify-items-center gi-grid-gap-10px gi-margin-bottom-15px">
                         <div class="gi-row-90 gi-col-100 gi-grid gi-grid-template-columns-repeat-1-1fr gi-grid-rows-container">
                             <div class="gi-row-100 gi-col-100 gi-flex">
@@ -99,7 +99,62 @@
         </div>
         <div class="gi-popup-footer">
             <div class="gi-btn-section gi-row-30 gi-col-30px gi-padding-left-right-20px gi-flex gi-flex-justify-content-center gi-flex-align-items-center">
-                <button id="siteGroupCodeRegister-btn" class="gi-popup-register-btn" type="button">[Page.Message].Message.Label.Array["REGISTER_BTN"]</button>
+                <button id="siteConfigGroupCodeRegister-btn" class="gi-popup-register-btn" type="button">[Page.Message].Message.Label.Array["REGISTER_BTN"]</button>
+                <button class="gi-popup-close-btn" type="button">[Page.Message].Message.Label.Array["CLOSE"]</button>
+            </div>
+        </div>
+    </div>
+</article>
+<article id="siteConfigRegister_gi-popup" class="gi-popup" data-popup-open="false">
+    <div class="gi-popup-body" style="width:350px !important; height: 400px !important;">
+        <div class="gi-popup-header">
+            <span>[Page.Message].Message.Label.Array["COMMON_SITE_CONFIG.TITLE_REGISTER_CONFIG_KEY"]</span>
+        </div>
+        <div class="gi-popup-contents">
+            <!--      팝업내용 삽입 영역      -->
+            <div class="gi-row-100 gi-col-100 gi-flex gi-flex-center">
+                <form id="siteConfigCodeRegister" class="gi-row-100">
+                    <div class="gi-row-100 gi-padding-5px gi-grid-container gi-grid gi-grid-justify-items-center gi-grid-gap-10px gi-margin-bottom-15px">
+                        <div class="gi-row-90 gi-col-100 gi-grid gi-grid-template-columns-repeat-1-1fr gi-grid-rows-container">
+                            <div class="gi-row-100 gi-col-100 gi-flex">
+                                <div class="gi-row-100 gi-input-container gi-input-container-box-border-shadow gi-flex gi-flex-center">
+                                    <label for="code-config_group_id" class="gi-input-label" data-focus-label="true" data-focus-label-text-align="default" data-required="true">[Page.Message].Message.Label.Array["COMMON_SITE_CONFIG_GROUP.CONFIG_GROUP_ID"]</label>
+                                    <input data-gi-tag-disabled data-field="config_group_id" id="code-config_group_id" name="config_group_id" class="gi-input" data-focus-span-text-align="default" data-required="true" autocomplete="off"/>
+                                </div>
+                            </div>
+                            <div class="gi-row-100 gi-col-100 gi-flex">
+                                <div class="gi-row-100 gi-input-container gi-input-container-box-border-shadow gi-flex gi-flex-center">
+                                    <label for="config_key" class="gi-input-label" data-focus-label="true" data-focus-label-text-align="default" data-required="true">[Page.Message].Message.Label.Array["COMMON_SITE_CONFIG.CONFIG_KEY"]</label>
+                                    <input data-field="config_key" id="config_key" name="config_key" class="gi-input" data-focus-span-text-align="default" data-required="true" autocomplete="off"/>
+                                </div>
+                            </div>
+                            <div class="gi-row-100 gi-col-100 gi-flex">
+                                <div class="gi-row-100 gi-input-container gi-input-container-box-border-shadow gi-flex gi-flex-center">
+                                    <label for="config_value" class="gi-input-label" data-focus-label="true" data-focus-label-text-align="default" data-required="true">[Page.Message].Message.Label.Array["COMMON_SITE_CONFIG.CONFIG_VALUE"]</label>
+                                    <input data-field="config_value" id="config_value" name="config_value" class="gi-input" data-focus-span-text-align="default" data-required="true" autocomplete="off"/>
+                                </div>
+                            </div>
+                            <div class="gi-row-100 gi-col-100 gi-flex">
+                                <div class="gi-row-100 gi-input-container gi-input-container-box-border-shadow gi-flex gi-flex-center">
+                                    <label for="description" class="gi-input-label" data-focus-label="true" data-focus-label-text-align="default" data-required="true">[Page.Message].Message.Label.Array["COMMON_SITE_CONFIG.DESCRIPTION"]</label>
+                                    <input data-field="description" id="description" name="description" class="gi-input" data-focus-span-text-align="default" data-required="true" autocomplete="off"/>
+                                </div>
+                            </div>
+                            <div class="gi-row-100 gi-col-100">
+                                <div class="gi-row-100 gi-input-container gi-input-container-box-border-shadow gi-flex gi-flex-center ">
+                                    <label for="code-use_yn" class="gi-input-label" data-focus-label="true" data-focus-label-text-align="default" data-required="true">[Page.Message].Message.Label.Array["COMMON_SITE_CONFIG.USE_YN"]</label>
+                                    <input gi-selectbox data-selectbox-field="use_yn" data-field="use_yn" id="code-use_yn" name="use_yn" class="gi-input" data-focus-span-text-align="default" data-required="true" autocomplete="off"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <!--/      팝업내용 삽입 영역      -->
+        </div>
+        <div class="gi-popup-footer">
+            <div class="gi-btn-section gi-row-30 gi-col-30px gi-padding-left-right-20px gi-flex gi-flex-justify-content-center gi-flex-align-items-center">
+                <button id="siteConfigCodeRegister-btn" class="gi-popup-register-btn" type="button">[Page.Message].Message.Label.Array["REGISTER_BTN"]</button>
                 <button class="gi-popup-close-btn" type="button">[Page.Message].Message.Label.Array["CLOSE"]</button>
             </div>
         </div>
@@ -107,11 +162,14 @@
 </article>
 <script type="text/javascript">
     var PRGMID = "siteConfigList";	//page id
-    var FORMID = "siteGroupCodeRegister";
+    var CONFIG_GROUP_FORMID = "siteConfigGroupCodeRegister";
+    var CONFIG_GROUP_POPUPID = "siteConfigGroupRegister_gi-popup";
+    var CONFIG_KEY_FORMID = "siteConfigCodeRegister";
+    var CONFIG_KEY_POPUPID = "siteConfigRegister_gi-popup";
     var data_binding = new dataBinding();
-    var configGroupId;
+    var configGroupId = "";
     var common_popup = new popup();
-
+    var commonTag = new CommonTag();
     init();
 
     function init() {
@@ -137,16 +195,15 @@
         //검색영역 값 초기화
         $("#search-area input").val("");
         $("#search-area select").val("");
-
+        $("#siteConfigRegister-btn").addClass("gi-hidden")
         resetEvent2();
-        configGroupId = null;
     }
 
     function resetEvent2() {
         //검색영역 값 초기화
         $("#search-area2 input").val("");
         $("#search-area2 select").val("");
-
+        commonTag.inputTagReset($(".gi-input"));
     }
 
     //클릭 이벤트
@@ -159,41 +216,19 @@
         });
         $("#reset-btn2").click(function () {
             resetEvent2();
-
-            findBySiteConfigList();
+            findBySiteConfigList(null, null, null, null, configGroupId);
         });
         $("#search-btn").click(function () {
+            configGroupId = null;
             findBySiteConfigGroupList();
+            findBySiteConfigList(null, null, null, null,configGroupId);
         });
         $("#search-btn2").click(function () {
-            findBySiteConfigList();
+            findBySiteConfigList(null, null, null, null,configGroupId);
         });
-        $("#siteGroupCodeRegister-btn").click(function(){
+        $("#siteConfigGroupCodeRegister-btn").click(function(){
             siteConfigGroupIdRegister();
         })
-        $("#siteConfigRegister-btn").click(function () {
-
-        });
-        // $('#add-group-btn').click(async function () {
-        //     const newConfigGroupId = await formUtil.prompt(Message.Label.Array["SITE_CONFIG.CHECK.NEW_CONFIG_GROUP_ID"], 100);
-        //     if (!newConfigGroupId) {
-        //         return false;
-        //     }
-        //
-        //     const groups = $("#config_group_id-div li button").map((_, btn) => $(btn).val()).get();
-        //     if (groups.includes(newConfigGroupId)) {
-        //         formUtil.alertPopup(Message.Label.Array["SITE_CONFIG.VALID.CONFIG_GROUP_ID"]);
-        //         return false;
-        //     }
-        //
-        //     giSelectBoxCustom.addOption('config_group_id', {code_id: newConfigGroupId, code_name: newConfigGroupId});
-        //     giSelectBoxCustom.selectValue('config_group_id', newConfigGroupId);
-        //     commonTag.tagDisabled(true, ['config_group_id', 'config_group_id_select']);
-        // });
-        // $('#siteConfigRegisterOrModify-btn').click(function () {
-        //     registerOrModify === 'REGISTER' ? register() : modify();
-        // });
-
     }
 
     function findBySiteConfigGroupList(page, range, sortId, sortOrder) {
@@ -259,10 +294,47 @@
                 //그리드 row 선택 이벤트 설정
                 siteConfig_group_list_grid.rowClick(siteConfigRowClickEvent);
 
-                function siteConfigRowClickEvent(row) {
-                    configGroupId = row.config_group_id;
-                    resetEvent2();
-                    findBySiteConfigList(null, null, null, null);
+                function siteConfigRowClickEvent(row,e) {
+                    let clickFlag = $(e.currentTarget).hasClass("gi-grid-list-select");
+
+                    //NOTE: 설정키 추가 버튼
+                    let siteConfigRegisterBtn = $("#siteConfigRegister-btn");
+
+                    //NOTE : 시스템 설정키 등록 팝업 등록 버튼
+                    let siteConfigCodeRegisterBtn = $("#siteConfigCodeRegister-btn");
+
+                    if(clickFlag){
+                        resetEvent2();
+                        configGroupId = row.config_group_id;
+                        findBySiteConfigList(null, null, null, null, configGroupId);
+                        siteConfigRegisterBtn.removeClass("gi-hidden");
+
+                        //NOTE: 스크립트 조작 방지를 위해 config_group_code row click 시 이벤트 활성화
+                        siteConfigRegisterBtn.off("click.siteConfigRegisterBtnClickEventHandler")
+                            .on("click.siteConfigRegisterBtnClickEventHandler",function(){
+                                siteConfigRegisterBtnClickEventHandler(row.config_group_id);
+                            });
+                    }else{
+                        siteConfigRegisterBtn.addClass("gi-hidden");
+                        configGroupId = null;
+                        findBySiteConfigList(null, null, null, null, null);
+                        
+                        //NOTE: 스크립트 조작 방지를 위해 Event 삭제
+                        siteConfigRegisterBtn.off("click.siteConfigRegisterBtnClickEventHandler");
+                        siteConfigCodeRegisterBtn.off("click.siteConfigCodeRegisterBtnClickEventHandler");
+                    }
+                    function siteConfigRegisterBtnClickEventHandler(v){
+                        let config_group_id_div = $("#siteConfigRegister_gi-popup").find("#code-config_group_id")[0];
+                        $(config_group_id_div).val(v);
+                        commonTag.inputTagReset($(".gi-input"));
+                        siteConfigCodeRegisterBtn.off("click.siteConfigCodeRegisterBtnClickEventHandler")
+                            .on("click.siteConfigCodeRegisterBtnClickEventHandler",siteConfigCodeRegisterBtnClickEventHandler);
+                    }
+                    function siteConfigCodeRegisterBtnClickEventHandler(){
+                        //NOTE: 설정키 등록 이벤트
+                        siteConfigKeyRegister(row.config_group_id);
+                    }
+
                 }
             } else {
                 formUtil.alertPopup("response status is :" + status);
@@ -272,23 +344,23 @@
         })
     }
 
-    function findBySiteConfigList(page, range, sortId, sortOrder) {
+    function findBySiteConfigList(page, range, sortId, sortOrder , p_configGroupId) {
         //default page
         if (!formUtil.checkEmptyValue(page)) page = 1;
         //default range(row)
         if (!formUtil.checkEmptyValue(range)) range = 10;
         let url = "/cms/common/commonSiteConfig/findPage";
         let param = {
-            page_no: configGroupId ? page : 0, // configGroupId 없을 때 'No Data' 표시하기 위해
+            page_no: page,
             row_range: range,
             offset: (page-1) * range,
-            config_group_id: configGroupId,
         };
         // 검색조건 설정 (추가해서 사용)
         let cont1 = $("#search_use_yn").val();
         let cont2 = $("#search_config_key").val();
-        if (formUtil.checkEmptyValue(cont1)) param.use_yn = cont1;
-        if (formUtil.checkEmptyValue(cont2)) param._config_key = cont2;
+        if(formUtil.checkEmptyValue(cont1)) param.use_yn = cont1;
+        if(formUtil.checkEmptyValue(cont2)) param._config_key = cont2
+        if(formUtil.checkEmptyValue(p_configGroupId)) param.config_group_id = p_configGroupId;
 
         // 정렬조건추가 (기준id, 순서)
         if (formUtil.checkEmptyValue(sortId)) param.sort_id = sortId;
@@ -305,17 +377,17 @@
                     title: " 목록",
                     list: [
                         {HEADER: "No", ID: "no", WIDTH: "7", TYPE: "text", FONT_SIZE: "12px", TEXT_ALIGN: "center", HIDDEN: false},
-                        {HEADER: "그룹", ID: "config_group_id", WIDTH: "40", TYPE: "text", FONT_SIZE: "12px", TEXT_ALIGN: "center", HIDDEN: false},
-                        {HEADER: "설정 키", ID: "config_key", WIDTH: "40", TYPE: "text", FONT_SIZE: "12px", TEXT_ALIGN: "center", HIDDEN: false},
-                        {HEADER: "설정 값", ID: "config_value", WIDTH: "20", TYPE: "text", FONT_SIZE: "12px", TEXT_ALIGN: "center", HIDDEN: false},
-                        {HEADER: "설명", ID: "description", WIDTH: "60", TYPE: "text", FONT_SIZE: "12px", TEXT_ALIGN: "center", HIDDEN: false},
-                        {HEADER: "사용여부", ID: "use_yn", WIDTH: "40", TYPE: "text", FONT_SIZE: "12px", TEXT_ALIGN: "center",COMMON_CODE_GROUP_ID:"USE_YN", HIDDEN: false},
-                        {HEADER: "작성일자", ID: "system_create_date", WIDTH: "40", TYPE: "text", FONT_SIZE: "12px", TEXT_ALIGN: "center", HIDDEN: true},
-                        {HEADER: "작성자ID", ID: "system_create_userid", WIDTH: "40", TYPE: "text", FONT_SIZE: "12px", TEXT_ALIGN: "center", HIDDEN: true},
-                        {HEADER: "수정일자", ID: "system_update_date", WIDTH: "40", TYPE: "text", FONT_SIZE: "12px", TEXT_ALIGN: "center", HIDDEN: true},
-                        {HEADER: "수정자ID", ID: "system_update_userid", WIDTH: "40", TYPE: "text", FONT_SIZE: "12px", TEXT_ALIGN: "center", HIDDEN: true},
-                        {HEADER: "수정", ID: "modify_btn", WIDTH: "15", TYPE: "button", FONT_SIZE: "12px", TEXT_ALIGN: "center", HIDDEN: false},
-                        {HEADER: "삭제", ID: "delete_btn", WIDTH: "15", TYPE: "button", FONT_SIZE: "12px", TEXT_ALIGN: "center", HIDDEN: false},
+                        {HEADER: '[Page.Message].Message.Label.Array["COMMON_SITE_CONFIG.CONFIG_GROUP_ID"]', ID: "config_group_id", WIDTH: "40", TYPE: "text", FONT_SIZE: "12px", TEXT_ALIGN: "center", HIDDEN: false},
+                        {HEADER: '[Page.Message].Message.Label.Array["COMMON_SITE_CONFIG.CONFIG_KEY"]', ID: "config_key", WIDTH: "40", TYPE: "text", FONT_SIZE: "12px", TEXT_ALIGN: "center", HIDDEN: false},
+                        {HEADER: '[Page.Message].Message.Label.Array["COMMON_SITE_CONFIG.CONFIG_VALUE"]', ID: "config_value", WIDTH: "20", TYPE: "text", FONT_SIZE: "12px", TEXT_ALIGN: "center", HIDDEN: false},
+                        {HEADER: '[Page.Message].Message.Label.Array["COMMON_SITE_CONFIG.DESCRIPTION"]', ID: "description", WIDTH: "60", TYPE: "text", FONT_SIZE: "12px", TEXT_ALIGN: "center", HIDDEN: false},
+                        {HEADER: '[Page.Message].Message.Label.Array["COMMON_SITE_CONFIG.USE_YN"]', ID: "use_yn", WIDTH: "40", TYPE: "text", FONT_SIZE: "12px", TEXT_ALIGN: "center",COMMON_CODE_GROUP_ID:"USE_YN", HIDDEN: false},
+                        {HEADER: '[Page.Message].Message.Label.Array["COMMON_SITE_CONFIG.SYSTEM_CREATE_DATE"]', ID: "system_create_date", WIDTH: "40", TYPE: "text", FONT_SIZE: "12px", TEXT_ALIGN: "center", HIDDEN: true},
+                        {HEADER: '[Page.Message].Message.Label.Array["COMMON_SITE_CONFIG.SYSTEM_CREATE_USERID"]', ID: "system_create_userid", WIDTH: "40", TYPE: "text", FONT_SIZE: "12px", TEXT_ALIGN: "center", HIDDEN: true},
+                        {HEADER: '[Page.Message].Message.Label.Array["COMMON_SITE_CONFIG.SYSTEM_UPDATE_DATE"]', ID: "system_update_date", WIDTH: "40", TYPE: "text", FONT_SIZE: "12px", TEXT_ALIGN: "center", HIDDEN: true},
+                        {HEADER: '[Page.Message].Message.Label.Array["COMMON_SITE_CONFIG.SYSTEM_UPDATE_USERID"]', ID: "system_update_userid", WIDTH: "40", TYPE: "text", FONT_SIZE: "12px", TEXT_ALIGN: "center", HIDDEN: true},
+                        {HEADER: '[Page.Message].Message.Label.Array["MODIFY_BTN"]', ID: "modify_btn", WIDTH: "15", TYPE: "button", FONT_SIZE: "12px", TEXT_ALIGN: "center", HIDDEN: false},
+                        {HEADER: '[Page.Message].Message.Label.Array["DETAIL_BTN"]', ID: "delete_btn", WIDTH: "15", TYPE: "button", FONT_SIZE: "12px", TEXT_ALIGN: "center", HIDDEN: false},
                         <!--{HEADER:"사이드 그리드",  ID:"sideGridOpen_btn",  WIDTH:"15",TYPE:"button",FONT_SIZE:"12px",TEXT_ALIGN:"center",HIDDEN:false}-->
                     ]
                 }
@@ -330,7 +402,11 @@
                 //siteConfig_menu_grid.sideOpenBtnClick("gi-Grid-side","sideGridOpen_btn");
 
                 //그리드 데이터 설정
-                siteConfig_list_grid.DataSet(data);
+                if(formUtil.checkEmptyValue(p_configGroupId)){
+                    siteConfig_list_grid.DataSet(data);
+                }else{
+                    siteConfig_list_grid.DataSet();
+                }
 
                 //그리드 row 개수 변경 및 페이징 버튼 이벤트 설정
                 siteConfig_list_grid.pagingSet(findBySiteConfigList);
@@ -348,7 +424,7 @@
                 siteConfig_list_grid.updateBtnClick("", "modify_btn");
 
                 //그리드 내부의 삭제 버튼 클릭 이벤트 설정
-                siteConfig_list_grid.deleteBtnClick(remove, "delete_btn");
+                siteConfig_list_grid.deleteBtnClick("", "delete_btn");
             } else {
                 formUtil.alertPopup("response status is :" + status);
             }
@@ -357,44 +433,52 @@
         })
     }
 
-    // function togglePopup(mode) {
-    //     registerOrModify = mode;
-    //
-    //     if (registerOrModify === 'REGISTER') {
-    //         $('#register-or-modify-span, #siteConfigRegisterOrModify-btn').text('등록');
-    //         $('#add-group-button-div').removeClass('gi-hidden');
-    //         commonTag.tagDisabled(false, ['config_group_id', 'config_group_id_select', 'config_key']);
-    //
-    //         $(`#${FORMID} input`).val('');
-    //         $(`#${FORMID} select`).val('');
-    //         new afterLoadDataEvent();
-    //
-    //     } else {
-    //         $('#register-or-modify-span, #siteConfigRegisterOrModify-btn').text('수정');
-    //         $('#add-group-button-div').addClass('gi-hidden');
-    //         commonTag.tagDisabled(true, ['config_group_id', 'config_group_id_select', 'config_key']);
-    //     }
-    // }
+    function siteConfigGroupIdRegister(){
+        let flag = checkValidation(CONFIG_GROUP_FORMID);
+        if(flag){
+            let data = data_binding.getData(CONFIG_GROUP_FORMID);
+            let url = "/cms/common/commonSiteConfigGroup/register";
+            let param = {
+                config_group_id : data.config_group_id,
+                config_group_name : data.config_group_name,
+                use_yn : data.use_yn
+            }
+            axios.post(url, param).then(response =>{
+                if(response.status === 200){
+                    formUtil.showMessage(Message.Label.Array["COMPLETE.INSERT"]);
+                    common_popup.close(CONFIG_GROUP_POPUPID);
+                    findBySiteConfigGroupList();
+                }
+                s            }).catch(error =>{
+                formUtil.alertPopup(error.response.data);
+            })
 
-    // function findAllGroups() {
-    //     let url = "/cms/common/siteConfig/findGroup";
-    //     axios.post(url, {}).then(response => {
-    //         let status = response.status;
-    //         if (status === 200) {
-    //             const selectBoxOptions = response?.data?.map(d => ({
-    //                 code_id: d,
-    //                 code_name: d
-    //             }));
-    //
-    //             giSelectBoxCustom = new GiSelectBoxCustom({'config_group_id': selectBoxOptions});
-    //         } else {
-    //             formUtil.alertPopup("response status is :" + status);
-    //         }
-    //     }).catch(error => {
-    //         formUtil.alertPopup(error);
-    //     });
-    // }
+        }
+    }
+    function siteConfigKeyRegister(p_config_group_id){
+        let flag = checkValidation(CONFIG_KEY_FORMID);
+        if(flag){
+            let data = data_binding.getData(CONFIG_KEY_FORMID);
+            let url = "/cms/common/commonSiteConfig/register";
+            let param = {
+                config_group_id : data.config_group_id,
+                config_key : data.config_key,
+                config_value : data.config_value,
+                description : data.description,
+                use_yn : data.use_yn
+            }
+            axios.post(url, param).then(response =>{
+                if(response.status === 200){
+                    formUtil.showMessage(Message.Label.Array["COMPLETE.INSERT"]);
+                    common_popup.close(CONFIG_KEY_POPUPID);
+                    findBySiteConfigList(null, null, null, null, p_config_group_id);
+                }
+            }).catch(error =>{
+                formUtil.alertPopup(error.response.data);
+            })
 
+        }
+    }
     function checkValidation(form_id) {
         let flag = false;
 
@@ -411,124 +495,5 @@
             flag = true;
         }
         return flag;
-    }
-    function siteConfigGroupIdRegister(){
-        let flag = checkValidation(FORMID);
-        if(flag){
-            let data = data_binding.getData(FORMID);
-            let url = "/cms/common/commonSiteConfigGroup/register";
-            let param = {
-                config_group_id : data.config_group_id,
-                config_group_name : data.config_group_name,
-                use_yn : data.use_yn
-            }
-            axios.post(url, param).then(response =>{
-                if(response.data.status === 200){
-                    // formUtil.showMessage(Message.Label.Array["COMPLETE.INSERT"]);
-                    common_popup.close("siteGroupCodeRegister-gi-popup");
-                    // findBySiteConfigGroupList();
-                }
-
-            }).catch(error =>{
-                formUtil.alertPopup(error.response.data);
-            })
-
-        }
-    }
-
-    // function register() {
-    //     let flag = checkValidation();
-    //     if (flag) {
-    //         let data = new dataBinding().getData(FORMID);
-    //         let url = "/common/site/siteConfig/registerWithConflictCheck";
-    //         let param = {
-    //             config_group_id: data.config_group_id,
-    //             config_key: data.config_key,
-    //             config_value: data.config_value,
-    //             description: data.description,
-    //             use_yn: data.use_yn,
-    //         };
-    //         axios.post(url, param).then(response => {
-    //             let status = response.status;
-    //             if (status === 200) {
-    //                 resetEvent();
-    //                 $("#gi-popup").attr("data-popup-open", "false");
-    //
-    //                 configGroupId = param.config_group_id;
-    //                 findBySiteConfigGroupList();
-    //                 findBySiteConfigList();
-    //             } else {
-    //                 formUtil.alertPopup("response status is :" + status);
-    //             }
-    //         }).catch(error => {
-    //             if (error.response?.data && Message.Label.Array["SITE_CONFIG.ERROR." + error.response?.data]) {
-    //                 formUtil.alertPopup(Message.Label.Array["SITE_CONFIG.ERROR." + error.response.data]);
-    //             } else {
-    //                 formUtil.alertPopup(error);
-    //             }
-    //         })
-    //     }
-    // }
-
-    // async function openModifyPopup(row) {
-    //     togglePopup('MODIFY');
-    //
-    //     newSession.setItem("DATA", row);
-    //     await data_binding.setData(FORMID);
-    //     giSelectBoxCustom?.selectValue('config_group_id', row.config_group_id)
-    //
-    //     $("#gi-popup").attr("data-popup-open", "true");
-    // }
-
-    function modify() {
-        let flag = checkValidation();
-        if (flag) {
-            let data = new dataBinding().getData(FORMID);
-            let url = "/common/site/siteConfig/update";
-            //console.log(data);
-            let param = {
-                config_key: data.config_key,
-                config_value: data.config_value,
-                description: data.description,
-                use_yn: data.use_yn,
-            };
-            axios.post(url, param).then(response => {
-                let status = response.status;
-                if (status === 200) {
-                    formUtil.showMessage(Message.Label.Array["COMPLETE.UPDATE"]);
-                    findBySiteConfigList();
-                    $("#gi-popup").attr("data-popup-open", "false");
-                } else {
-                    resetEvent();
-                    formUtil.alertPopup("response status is :" + status);
-                }
-            }).catch(error => {
-                resetEvent();
-                formUtil.alertPopup(error);
-            })
-        }
-    }
-
-
-    function remove(row) {
-        const url = "/common/site/siteConfig/remove";
-        const param = {
-            config_key: row.config_key
-        };
-
-        axios.post(url, param).then(response => {
-            let status = response.status;
-            if (status === 200) {
-                formUtil.showMessage(Message.Label.Array["COMPLETE.DELETE"]);
-
-                $("#gi-popup").attr("data-popup-open", "false");
-
-                findBySiteConfigList();
-            } else {
-                formUtil.alertPopup("response status is :" + status);
-            }
-        }).catch(error => {
-            formUtil.alertPopup(error);
-        })
     }
 </script>

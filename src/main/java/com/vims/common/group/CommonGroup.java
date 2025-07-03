@@ -11,7 +11,7 @@ import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import lombok.experimental.SuperBuilder;
 
-import java.sql.Date;
+import java.util.Date;
 import java.util.Arrays;
 
 @EqualsAndHashCode(callSuper = true)

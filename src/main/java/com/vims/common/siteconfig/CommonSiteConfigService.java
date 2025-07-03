@@ -4,10 +4,12 @@
 package com.vims.common.siteconfig;
 
 import com.system.common.base.AbstractCommonService;
+import com.system.common.exception.CustomException;
 import com.system.common.util.passwordvalidation.PasswordPolicy;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.MessageSource;
 import org.springframework.context.i18n.LocaleContextHolder;
+import org.springframework.dao.DuplicateKeyException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -34,17 +36,9 @@ public class CommonSiteConfigService extends AbstractCommonService<CommonSiteCon
         return commonSiteConfigMapper.SELECT_PAGING_TOTAL_NUMBER(request);
     }
 
-    public String[] findGroup() throws Exception {
-        return commonSiteConfigMapper.SELECT_GROUP();
-    }
-
     @Override
     protected List<CommonSiteConfig> findImpl(CommonSiteConfig request) throws Exception {
         return commonSiteConfigMapper.SELECT(request);
-    }
-
-    public Map<String, String> findValuesByKeys(List<String> request) throws Exception {
-        return commonSiteConfigMapper.SELECT_VALUES_BY_KEYS(request);
     }
 
     @Override
@@ -57,26 +51,13 @@ public class CommonSiteConfigService extends AbstractCommonService<CommonSiteCon
         return commonSiteConfigMapper.UPDATE(request);
     }
     @Override
-    protected int registerImpl(CommonSiteConfig request) {
-        return commonSiteConfigMapper.INSERT(request);
-    }
-
-    public int merge(CommonSiteConfig request) {
-        return commonSiteConfigMapper.MERGE(request);
-    }
-
-    @Transactional(rollbackFor = Exception.class)
-    public int merge(List<CommonSiteConfig> request) {
-        int result = 0;
-
-        for (CommonSiteConfig commonSiteConfig : request) {
-            result += commonSiteConfigMapper.MERGE(commonSiteConfig);
+    protected int registerImpl(CommonSiteConfig request) throws Exception{
+        try{
+            return commonSiteConfigMapper.INSERT(request);
+        }catch (DuplicateKeyException dke){
+            throw new CustomException(getMessage("EXCEPTION.PK.EXIST"));
         }
-
-        return result;
     }
-
-
 
     public PasswordPolicy getPasswordPolicy() {
         return commonSiteConfigMapper.SELECT_PASSWORD_POLICY();

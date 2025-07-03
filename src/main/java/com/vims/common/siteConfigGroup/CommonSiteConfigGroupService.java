@@ -8,6 +8,7 @@ import com.system.common.exception.CustomException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.MessageSource;
 import org.springframework.context.i18n.LocaleContextHolder;
+import org.springframework.dao.DuplicateKeyException;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -71,8 +72,10 @@ public class CommonSiteConfigGroupService extends AbstractCommonService<CommonSi
     protected int registerImpl(CommonSiteConfigGroup request){
         try{
             return commonSiteConfigGroupMapper.INSERT(request);
+        }catch (DuplicateKeyException dke){
+            throw new CustomException(getMessage("EXCEPTION.PK.EXIST"));
         }catch (Exception e){
-            throw new CustomException(getMessage(""));
+            throw e;
         }
 
     }

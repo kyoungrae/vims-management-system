@@ -35,16 +35,6 @@ public class CommonSiteConfigController extends AbstractCommonController<CommonS
         return commonSiteConfigService.findImpl(request);
     }
 
-    @PostMapping("/findGroup")
-    public String[] findGroup() throws Exception {
-        return commonSiteConfigService.findGroup();
-    }
-
-    @PostMapping("/findValuesByKeys")
-    protected Map<String, String> findValuesByKeys(@RequestBody List<String> request) throws Exception {
-        return commonSiteConfigService.findValuesByKeys(request);
-    }
-
     @PostMapping("/remove")
     @Override
     protected int removeImpl(@RequestBody CommonSiteConfig request) {
@@ -57,19 +47,9 @@ public class CommonSiteConfigController extends AbstractCommonController<CommonS
         return commonSiteConfigService.updateImpl(request);
     }
 
-//    @PostMapping("/merge")
-//    protected int merge(@RequestBody CommonSiteConfig request) {
-//        return commonSiteConfigService.merge(request);
-//    }
-
-//    @PostMapping("/mergeList")
-//    protected int mergeList(@RequestBody List<CommonSiteConfig> request) {
-//        return commonSiteConfigService.merge(request);
-//    }
-
     @PostMapping("/register")
     @Override
-    protected int registerImpl(@RequestBody CommonSiteConfig request) {
+    protected int registerImpl(@RequestBody CommonSiteConfig request) throws Exception {
         return commonSiteConfigService.registerImpl(request);
     }
 }

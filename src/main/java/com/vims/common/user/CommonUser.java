@@ -8,7 +8,7 @@ import jakarta.persistence.Transient;
 import lombok.*;
 import lombok.experimental.SuperBuilder;
 
-import java.sql.Date;
+import java.util.Date;
 import java.util.Arrays;
 
 @EqualsAndHashCode(callSuper = true)

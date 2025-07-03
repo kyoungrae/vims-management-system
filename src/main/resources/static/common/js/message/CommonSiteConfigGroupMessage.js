@@ -5,6 +5,7 @@ Message.Label.Array["COMMON_SITE_CONFIG_GROUP.TITLE_DETAIL"] = " 상세";
 Message.Label.Array["COMMON_SITE_CONFIG_GROUP.TITLE_LIST"] = " 목록";
 Message.Label.Array["COMMON_SITE_CONFIG_GROUP.TITLE_MODIFY"] = " 수정";
 Message.Label.Array["COMMON_SITE_CONFIG_GROUP.TITLE_REGISTER"] = " 등록";
+Message.Label.Array["COMMON_SITE_CONFIG_GROUP.TITLE_REGISTER_CONFIG_GROUP_ID"] = "시스템설정 그룹 아이디 등록";
 
 Message.Label.Array["COMMON_SITE_CONFIG_GROUP.CHECK.CONFIG_GROUP_ID"] = "설정그룹아이디(을)를 입력해 주세요";
 Message.Label.Array["COMMON_SITE_CONFIG_GROUP.CHECK.CONFIG_GROUP_NAME"] = "설정그룹이름(을)를 입력해 주세요";
@@ -22,3 +23,6 @@ Message.Label.Array["COMMON_SITE_CONFIG_GROUP.SYSTEM_CREATE_DATE"] = "등록일�
 Message.Label.Array["COMMON_SITE_CONFIG_GROUP.SYSTEM_CREATE_USERID"] = "작성자ID";
 Message.Label.Array["COMMON_SITE_CONFIG_GROUP.SYSTEM_UPDATE_DATE"] = "수정일자";
 Message.Label.Array["COMMON_SITE_CONFIG_GROUP.SYSTEM_UPDATE_USERID"] = "수정자ID";
+
+
+Message.Label.Array["COMMON_SITE_CONFIG_GROUP.REGISTER_CONFIG_GROUP_ID_BTN"] = "그룹추가";
