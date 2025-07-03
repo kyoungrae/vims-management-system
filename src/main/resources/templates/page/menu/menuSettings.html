@@ -484,8 +484,8 @@
                         {HEADER:'[Page.Message].Message.Label.Array["COMMON_MENU.PRGM_URL"]',     ID:"prgm_url",      WIDTH:"5",TYPE:"text",FONT_SIZE:"12px",TEXT_ALIGN:"left",HIDDEN:false},
                         {HEADER:'[Page.Message].Message.Label.Array["COMMON_MENU.URL"]',         ID:"url",          WIDTH:"20",TYPE:"text",FONT_SIZE:"12px",TEXT_ALIGN:"left",HIDDEN:false},
                         {HEADER:'[Page.Message].Message.Label.Array["COMMON_MENU.USE_YN"]',     ID:"use_yn",        WIDTH:"7",TYPE:"text",FONT_SIZE:"12px",TEXT_ALIGN:"center",COMMON_CODE_GROUP_ID:"USE_YN",HIDDEN:false},
-                        {HEADER:'[Page.Message].Message.Label.Array["COMMON_MENU.TITLE_MODIFY"]',        ID:"update_menu_btn",     WIDTH:"5",TYPE:"button",FONT_SIZE:"12px",TEXT_ALIGN:"center",HIDDEN:false},
-                        {HEADER:"삭제",        ID:"delete_menu_btn",     WIDTH:"5",TYPE:"button",FONT_SIZE:"12px",TEXT_ALIGN:"center",HIDDEN:false},
+                        {HEADER:'[Page.Message].Message.Label.Array["MODIFY_BTN"]',        ID:"update_menu_btn",     WIDTH:"5",TYPE:"button",FONT_SIZE:"12px",TEXT_ALIGN:"center",HIDDEN:false},
+                        {HEADER:'[Page.Message].Message.Label.Array["DELETE_BTN"]',        ID:"delete_menu_btn",     WIDTH:"5",TYPE:"button",FONT_SIZE:"12px",TEXT_ALIGN:"center",HIDDEN:false},
 
                         {HEADER:'[Page.Message].Message.Label.Array["COMMON_MENU.MENU_SEQUENCE"]',  ID:"menu_sequence",  WIDTH:"5",TYPE:"text",FONT_SIZE:"12px",TEXT_ALIGN:"center",HIDDEN:true},
                         {HEADER:'[Page.Message].Message.Label.Array["COMMON_MENU.MENU_NAME_EN"]',      ID:"menu_name_en",     WIDTH:"15",TYPE:"text",FONT_SIZE:"12px",TEXT_ALIGN:"left",HIDDEN:true},
@@ -515,15 +515,21 @@
                 menu_grid.sideOpenBtnClick("access_group_grid","access_right_group_setting-btn")
                 //그리드 row 선택 이벤트 설정
                 menu_grid.rowClick(rowClickEvent);
-                function rowClickEvent(rows){
-                    if(rows.menu_level !== "2"){
-                        $("#menu_depth_register_btn").removeClass("gi-hidden");
-                        $("#access_right_group_setting-btn").addClass("gi-hidden");
-                        rowClickData = rows;
+                function rowClickEvent(rows,e){
+                    let clickFlag = $(e.currentTarget).hasClass("gi-grid-list-select");
+                    if(clickFlag){
+                        if(rows.menu_level !== "2"){
+                            $("#menu_depth_register_btn").removeClass("gi-hidden");
+                            $("#access_right_group_setting-btn").addClass("gi-hidden");
+                            rowClickData = rows;
+                        }else{
+                            $("#menu_depth_register_btn").addClass("gi-hidden");
+                            $("#access_right_group_setting-btn").removeClass("gi-hidden");
+                            rowClickData = rows;
+                        }
                     }else{
                         $("#menu_depth_register_btn").addClass("gi-hidden");
-                        $("#access_right_group_setting-btn").removeClass("gi-hidden");
-                        rowClickData = rows;
+                        $("#access_right_group_setting-btn").addClass("gi-hidden");
                     }
                 }
             } else {

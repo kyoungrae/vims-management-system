@@ -103,6 +103,7 @@ Message.Label.Array["SAVE"] = "저장";
 Message.Label.Array["CLOSE"] = "닫기";
 Message.Label.Array["REGISTER_BTN"] = "등록";
 Message.Label.Array["MODIFY_BTN"] = "수정";
+Message.Label.Array["DELETE_BTN"] = "삭제";
 Message.Label.Array["DETAIL_BTN"] = "상세";
 Message.Label.Array["SEARCH_BTN"] = "조회";
 Message.Label.Array["RESET_BTN"] = "초기화";
