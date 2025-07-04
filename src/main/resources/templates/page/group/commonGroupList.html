@@ -43,8 +43,8 @@
                     <div id="gi-Grid1" class="gi-Grid"></div>
                     <div class="gi-row-100">
                         <div class="gi-btn-section gi-row-100 gi-float-right gi-padding-left-right-20px gi-flex gi-flex-justify-content-flex-end">
-                            <button id="insert_group-btn" class="gi-btn gi-float-right gi-col-30px" type="button">그룹등록</button>
-                            <button id="insert_child_group-btn" class="gi-btn gi-float-right gi-col-30px gi-hidden" type="button">하위그룹등록</button>
+                            <button id="insert_group-btn" class="gi-btn gi-float-right gi-col-30px" gi-popup-open-id="gi-common_group_register-popup" type="button">그룹등록</button>
+                            <button id="insert_child_group-btn" class="gi-btn gi-float-right gi-col-30px gi-hidden" gi-popup-open-id="gi-common_group_register-popup" type="button">하위그룹등록</button>
                         </div>
                     </div>
                 </div>
@@ -53,7 +53,7 @@
                     <div id="gi-Grid2" class="gi-Grid"></div>
                     <div class="gi-row-100">
                         <div class="gi-btn-section gi-row-30 gi-float-right gi-padding-left-right-20px">
-                            <button id="insert_user_group-btn" class="gi-btn gi-float-right gi-hidden gi-col-30px" type="button">사용자등록</button>
+                            <button id="insert_user_group-btn" class="gi-btn gi-float-right gi-hidden gi-col-30px" gi-popup-open-id="gi-common_user_group_register-popup" type="button">[Page.Message].Message.Label.Array["COMMON_USER_GROUP.REGISTER_GROUP_USER_BTN"]</button>
                         </div>
                     </div>
                 </div>
@@ -62,8 +62,9 @@
         </article>
     </section>
 </article>
+<!--NOTE: 그룹등록 팝업-->
 <article id="gi-common_group_register-popup" class="gi-popup" data-popup-open="false">
-    <div class="gi-popup-body gi-row-30-important" style="height: 300px !important;">
+    <div class="gi-popup-body gi-row-30-important" style="height: 350px !important;">
         <div class="gi-popup-header">
             <span>그룹등록</span>
         </div>
@@ -72,6 +73,14 @@
             <div class="gi-row-100 gi-col-100 gi-flex gi-flex-center">
                 <form id="commonGroupRegister" class="gi-row-100">
                     <div class="gi-row-100 gi-padding-5px gi-grid-container gi-grid gi-grid-justify-items-center gi-grid-gap-10px gi-margin-bottom-15px">
+                        <div id="top_group_id-layout" class="gi-row-90 gi-col-100 gi-grid gi-grid-template-columns-repeat-1-1fr gi-grid-rows-container">
+                            <div class="gi-row-100 gi-col-100">
+                                <div class="gi-row-100 gi-input-container gi-input-container-box-border-shadow gi-flex gi-flex-center ">
+                                    <label for="top_group_id" class="gi-input-label" data-focus-label="true" data-focus-label-text-align="default" data-required="true">상위그룹아이디</label>
+                                    <input data-gi-tag-disabled data-field="top_group_id" id="top_group_id" name="top_group_id" class="gi-input" data-focus-span-text-align="default" data-required="true" autocomplete="off"/>
+                                </div>
+                            </div>
+                        </div>
                         <div class="gi-row-90 gi-col-100 gi-grid gi-grid-template-columns-repeat-1-1fr gi-grid-rows-container">
                             <div class="gi-row-100 gi-col-100">
                                 <div class="gi-row-100 gi-input-container gi-input-container-box-border-shadow gi-flex gi-flex-center ">
@@ -85,14 +94,6 @@
                                 <div class="gi-row-100 gi-input-container gi-input-container-box-border-shadow gi-flex gi-flex-center ">
                                     <label for="group_name" class="gi-input-label" data-focus-label="true" data-focus-label-text-align="default" data-required="true">그룹이름</label>
                                     <input data-field="group_name" id="group_name" name="group_id" class="gi-input" data-focus-span-text-align="default" data-required="true" autocomplete="off"/>
-                                </div>
-                            </div>
-                        </div>
-                        <div id="top_group_id-layout" class="gi-row-60 gi-col-100 gi-grid gi-grid-template-columns-repeat-1-1fr-2fr gi-grid-rows-container">
-                            <div class="gi-row-100 gi-col-100">
-                                <div class="gi-row-100 gi-input-container gi-input-container-box-border-shadow gi-flex gi-flex-center ">
-                                    <label for="top_group_id" class="gi-input-label" data-focus-label="true" data-focus-label-text-align="default" data-required="true">상위그룹아이디</label>
-                                    <input data-gi-tag-disabled data-field="top_group_id" id="top_group_id" name="top_group_id" class="gi-input" data-focus-span-text-align="default" data-required="true" autocomplete="off"/>
                                 </div>
                             </div>
                         </div>
@@ -123,6 +124,7 @@
         </div>
     </div>
 </article>
+<!--NOTE: 그룹수정 팝업-->
 <article id="gi-common_group_update-popup" class="gi-popup" data-popup-open="false">
     <div class="gi-popup-body gi-row-30-important" style="height: 300px !important;">
         <div class="gi-popup-header">
@@ -180,10 +182,11 @@
         </div>
     </div>
 </article>
+<!--NOTE: 그룹 사용자 등록 팝업-->
 <article id="gi-common_user_group_register-popup" class="gi-popup" data-popup-open="false">
-    <div class="gi-popup-body" style="height: 801px !important;">
+    <div class="gi-popup-body" style="height: 700px !important;">
         <div class="gi-popup-header">
-            <span>사용자등록</span>
+            <span>[Page.Message].Message.Label.Array["COMMON_USER_GROUP.REGISTER_GROUP_USER_BTN"]</span>
         </div>
         <div class="gi-popup-contents">
             <!--      팝업내용 삽입 영역      -->
@@ -224,6 +227,7 @@
     var COMMON_GROUP_REGISTER_PRGMID = "gi-common_group_register-popup";
     var COMMON_GROUP_UPDATE_PRGMID = "gi-common_group_update-popup";
     var COMMON_USER_GROUP_REGISTER_PRGMID = "gi-common_user_group_register-popup";
+    var groupId = null;
     init();
     function init(){
 
@@ -245,33 +249,24 @@
     }
 
     function resetEvent(){
+        groupId = null;
         //검색영역 값 초기화
         $("#search-area input").val("");
         $("#search-area select").val("");
     }
-
+    function fnReset(){
+        groupId = null;
+        findByCommonGroupList();
+        findByCommonUserGroupList();
+        $("#insert_child_group-btn").addClass("gi-hidden");
+        $("#insert_user_group-btn").addClass("gi-hidden");
+    }
     //클릭 이벤트
     function clickEvent(){
-        $(document).off("click.removeBtn").on("click.removeBtn", function(event) {
-            if (!$(event.target).closest('.gi-grid-list, .gi-figure-content *, #insert_user_group-btn').length) {
-                removeInsertUserGroupBtnEventHandler();
-            }
-            if (!$(event.target).closest('.gi-grid-list, .gi-figure-content *, #insert_child_group-btn').length) {
-                removeInsertChildGroupBtnEventHandler();
-            }
-        });
-        function removeInsertUserGroupBtnEventHandler(){
-            $("#insert_user_group-btn").addClass("gi-hidden");
-        }
-        function removeInsertChildGroupBtnEventHandler(){
-            $("#insert_child_group-btn").addClass("gi-hidden");
-        }
-
         // 초기화버튼 클릭 이벤트
         $(".gi-btn-reset").click(function(){
             resetEvent();
-            findByCommonGroupList();
-            findByCommonUserGroupList();
+            fnReset();
         });
         //조회버튼 클릭 이벤트
         $("#search-btn").click(function(){
@@ -286,7 +281,6 @@
             $("#top_group_id").val("-");
             $("#top_group_id-layout").addClass("gi-hidden");
             $("#top_group_id").attr("data-required",false);
-            $("#"+COMMON_GROUP_REGISTER_PRGMID).attr("data-popup-open",true);
         });
         //그룹등록 팝업 등록 버튼
         $("#commonGroupRegister-btn").off("click.").on("click.",function(){
@@ -353,39 +347,48 @@
 
                 function commonGroupRowClickEvent(rows,e){
                     let clickFlag = $(e.currentTarget).hasClass("gi-grid-list-select");
+                    let insertUserGroupBtn = $("#insert_user_group-btn");
+                    let insertChildGroupBtn = $("#insert_child_group-btn");
+                    if(clickFlag){
+                        groupId = rows.group_id;
+                        findByCommonUserGroupList();
+                        //NOTE: 사용자 등록 버튼 활성화
+                        insertUserGroupBtn.removeClass("gi-hidden");
+                        insertUserGroupBtn.off("click.insertUserGroupBtnClickEventHandler")
+                            .on("click.insertUserGroupBtnClickEventHandler",insertUserGroupBtnClickEventHandler);
 
-                    findByCommonUserGroupList("","","","",rows.group_id);
-                    data_binding.setDataForm(COMMON_USER_GROUP_REGISTER_PRGMID,rows)
-                    $("#insert_user_group-btn").removeClass("gi-hidden");
-                    //그룹유저등록 버튼
-                    $("#insert_user_group-btn").off("click.insertUserGroupBtnClickEventHandler").on("click.insertUserGroupBtnClickEventHandler",function(){
-                        insertUserGroupBtnClickEventHandler();
-                    })
-                    function insertUserGroupBtnClickEventHandler(){
-                        $("#"+COMMON_USER_GROUP_REGISTER_PRGMID).attr("data-popup-open",true);
-                        findByCommonUserList('','','','',rows.group_id);
-                    }
-
-                    if(rows.group_level === "0"){
-                        topLevelGroupRowsClickEventHandler(true);
+                        if(rows.group_level === "0"){
+                            topLevelGroupRowsClickEventHandler(true);
+                        }else{
+                            topLevelGroupRowsClickEventHandler(false);
+                        }
                     }else{
+                        groupId = null;
+                        findByCommonUserGroupList();
+                        //NOTE: 사용자 등록 버튼 비활성화
+                        insertUserGroupBtn.addClass("gi-hidden");
+                        insertUserGroupBtn.off("click.insertUserGroupBtnClickEventHandler");
                         topLevelGroupRowsClickEventHandler(false);
                     }
+                    function insertUserGroupBtnClickEventHandler(){
+                        findByCommonUserList(null,null,null,null,groupId);
+                    }
                     function topLevelGroupRowsClickEventHandler(flag){
-                        $("#insert_child_group-btn").off("click.").on("click.",function(){
-                            $("#group_level").val("1");
-                            $("#top_group_id").val(rows.group_id);
-                            commonTag.inputTagReset($("#group_level"));
-                            commonTag.inputTagReset($("#top_group_id"));
-                            $("#top_group_id-layout").removeClass("gi-hidden");
-                            $("#top_group_id").attr("data-required",true);
-                            $("#"+COMMON_GROUP_REGISTER_PRGMID).attr("data-popup-open",true);
-                        })
                         if(flag){
-                            $("#insert_child_group-btn").removeClass("gi-hidden");
+                            insertChildGroupBtn.removeClass("gi-hidden");
+                            insertChildGroupBtn.off("click.insertChildGroupBtnClickEventHandler")
+                                .on("click.insertChildGroupBtnClickEventHandler",insertChildGroupBtnClickEventHandler);
                         }else{
-                            $("#insert_child_group-btn").addClass("gi-hidden");
+                            insertChildGroupBtn.addClass("gi-hidden");
+                            insertChildGroupBtn.off("click.insertChildGroupBtnClickEventHandler");
                         }
+                    }
+                    function insertChildGroupBtnClickEventHandler(){
+                        $("#top_group_id-layout").removeClass("gi-hidden");
+                        $("#group_level").val("1");
+                        $("#top_group_id").val(rows.group_id);
+                        $("#top_group_id").attr("data-required",true);
+                        commonTag.inputTagReset($(".gi-input"));
                     }
                 }
             } else {
@@ -395,7 +398,7 @@
             formUtil.alertPopup(error);
         })
     }
-    function findByCommonUserGroupList(page,range,sortId,sortOrder,groupId) {
+    function findByCommonUserGroupList(page,range,sortId,sortOrder) {
         //default page
         if(!formUtil.checkEmptyValue(page)) page = 1;
         //default range(row)
@@ -468,7 +471,7 @@
             formUtil.alertPopup(error);
         })
     }
-    function findByCommonUserList(page,range,sortId,sortOrder,groupId) {
+    function findByCommonUserList(page,range,sortId,sortOrder) {
         //default page
         if(!formUtil.checkEmptyValue(page)) page = 1;
         //default range(row)
@@ -484,13 +487,12 @@
         let cont1 = $("#searchDesc1").val();
         let cont2 = $("#from_date").val();
         let cont3 = $("#to_date").val();
-        let cont4 = groupId;
-        let cont5 = $("#user_id-search").val();
+        let cont4 = $("#user_id-search").val();
         if(formUtil.checkEmptyValue(cont1)) param.searchDesc1 = cont1;
         if(formUtil.checkEmptyValue(cont2)) param.from_date = cont2;
         if(formUtil.checkEmptyValue(cont3)) param.to_date   = cont3;
-        if(formUtil.checkEmptyValue(cont4)) param.group_id   = cont4;
-        if(formUtil.checkEmptyValue(cont5)) param.user_id   = cont5;
+        if(formUtil.checkEmptyValue(groupId)) param.group_id   = groupId;
+        if(formUtil.checkEmptyValue(cont4)) param.user_id   = cont4;
 
         // 정렬조건추가 (기준id, 순서)
         if(formUtil.checkEmptyValue(sortId)) param.sort_id = sortId;
@@ -517,23 +519,28 @@
                     ]
                 }
                 //그리드 생성 <div id="gi-Grid"></div>
-                let commonUser_menu_grid = formUtil.giGrid(commonUser_menuGrid_header,paging,page,"gi-Grid3");
+                let commonUser_grid = formUtil.giGrid(commonUser_menuGrid_header,paging,page,"gi-Grid3");
                 //let commonUser_menu_grid = formUtil.giGridHierarchy(commonUser_menuGrid_header,paging,page);
                 //commonUser_menu_grid.HierarchyOption({level_column:"",parent_depth_column:"",child_depth_column:""});
+
                 //그리드 데이터 설정
-                commonUser_menu_grid.DataSet(data);
+                if(formUtil.checkEmptyValue(groupId)){
+                    commonUser_grid.DataSet(data);
+                }else{
+                    commonUser_grid.DataSet();
+                }
 
                 //그리드 row 개수 변경 및 페이징 버튼 이벤트 설정
-                commonUser_menu_grid.pagingSet(findByCommonUserList);
+                commonUser_grid.pagingSet(findByCommonUserList);
 
                 //그리드 내부의 상세 버튼 클릭 이벤트 설정(버튼클릭시 호출될 함수, 그리드 헤더 부분에 설정한 버튼 ID)
-                commonUser_menu_grid.detailBtnClick(registerCommonUserGroupPopup,"register_btn");
+                commonUser_grid.detailBtnClick(registerCommonUserGroupPopup,"register_btn");
 
                 //그리스 내부의 header click 정렬 이벤트 설정
-                // commonUser_menu_grid.sortDataSet(findByCommonUserList);
+                // commonUser_grid.sortDataSet(findByCommonUserList);
 
                 //그리드 row 선택 이벤트 설정
-                // commonUser_menu_grid.rowClick(commonUserRowClickEvent);
+                // commonUser_grid.rowClick(commonUserRowClickEvent);
                 // function commonUserRowClickEvent(rows){
                 //     console.log(rows);
                 // }
@@ -545,15 +552,13 @@
         })
     }
     function registerCommonUserGroupPopup(data){
-        let selectedGroupData = data_binding.getData(COMMON_USER_GROUP_REGISTER_PRGMID);
-        data["group_id"] = selectedGroupData.group_id;
         registerCommonUserGroup(data);
     }
     function registerCommonUserGroup(data){
         let url = "/cms/common/commonUserGroup/register";
         let param ={
             id : data.id,
-            group_id : data.group_id,
+            group_id : groupId,
             user_email : data.user_email,
             user_id : data.user_id,
             office_code : data.office_code
@@ -562,8 +567,8 @@
             let status = response.status;
             if(status === 200){
                 formUtil.showMessage(Message.Label.Array["COMPLETE.INSERT"]);
-                findByCommonUserList('','','','',data.group_id);
-                findByCommonUserGroupList('','','','',data.group_id);
+                findByCommonUserList();
+                findByCommonUserGroupList();
             }
         }).catch(error => {
             formUtil.alertPopup(error.response.data + "");
@@ -582,16 +587,20 @@
             let status = response.status;
             if(status === 200){
                 formUtil.showMessage(Message.Label.Array["COMPLETE.INSERT"]);
+                groupId = null;
                 findByCommonGroupList();
+                findByCommonUserGroupList();
+                $("#insert_child_group-btn").addClass("gi-hidden");
+                $("#insert_user_group-btn").addClass("gi-hidden");
                 common_popup.close("gi-common_group_register-popup");
             }
         }).catch(error =>{
-            formUtil.alertPopup(error + "");
+            formUtil.alertPopup(error.response.data);
         })
     }
     function updatePopupCommonGroup(data){
         $("#"+COMMON_GROUP_UPDATE_PRGMID).attr("data-popup-open",true);
-        common_popup.popupSetData(COMMON_GROUP_UPDATE_PRGMID,data);
+        data_binding.setDataForm("commonGroupUpdate",data);
         data_binding.setDataSelectBox("use_yn-update",data.use_yn);
         $("#commonGroupUpdate-btn").off("click.updateCommonGroup").on("click.updateCommonGroup",function(){
             let param = data_binding.getData(COMMON_GROUP_UPDATE_PRGMID);
@@ -609,8 +618,8 @@
             let status = response.status;
             if(status === 200){
                 formUtil.showMessage(Message.Label.Array["COMPLETE.UPDATE"]);
-                findByCommonGroupList();
-                common_popup.close("gi-common_group_update-popup");
+                fnReset();
+                common_popup.close(COMMON_GROUP_UPDATE_PRGMID);
             }
         }).catch(error => {
             formUtil.alertPopup(error + "");
@@ -687,7 +696,7 @@
             let status = response.status;
             if(status === 200){
                 formUtil.showMessage(Message.Label.Array["COMPLETE.DELETE"]);
-                findByCommonUserGroupList('','','','',data.group_id);
+                findByCommonUserGroupList();
             }
         }).catch(error =>{
             formUtil.alertPopup(error + "");

@@ -9,6 +9,7 @@ import com.system.common.exception.CustomException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.MessageSource;
 import org.springframework.context.i18n.LocaleContextHolder;
+import org.springframework.dao.DuplicateKeyException;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -55,8 +56,8 @@ public class CommonUserGroupService extends AbstractCommonService<CommonUserGrou
         int rtn = 0;
         try {
             rtn = commonUserGroupMapper.INSERT(request);
-        }catch (Exception e){
-            throw new Exception(e);
+        }catch (DuplicateKeyException dke){
+            throw new CustomException(getMessage("EXCEPTION.PK.EXIST.USER"));
         }
         return rtn;
     }

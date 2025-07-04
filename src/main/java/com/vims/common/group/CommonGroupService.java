@@ -9,6 +9,7 @@ import com.vims.common.usergroup.CommonUserGroup;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.MessageSource;
 import org.springframework.context.i18n.LocaleContextHolder;
+import org.springframework.dao.DuplicateKeyException;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -61,6 +62,10 @@ public class CommonGroupService extends AbstractCommonService<CommonGroup> {
 
     @Override
     protected int registerImpl(CommonGroup request) {
-        return commonGroupMapper.INSERT(request);
+        try{
+            return commonGroupMapper.INSERT(request);
+        }catch(DuplicateKeyException dke){
+            throw new CustomException(getMessage("EXCEPTION.PK.EXIST"));
+        }
     }
 }

@@ -20,3 +20,6 @@ Message.Label.Array["COMMON_USER_GROUP.SYSTEM_CREATE_DATE"] = "작성일자";
 Message.Label.Array["COMMON_USER_GROUP.SYSTEM_CREATE_USERID"] = "작성자ID";
 Message.Label.Array["COMMON_USER_GROUP.SYSTEM_UPDATE_DATE"] = "수정일자";
 Message.Label.Array["COMMON_USER_GROUP.SYSTEM_UPDATE_USERID"] = "수정자ID";
+
+Message.Label.Array["COMMON_USER_GROUP.REGISTER_GROUP_USER_BTN"] = "사용자등록";
+
