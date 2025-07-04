@@ -61,9 +61,8 @@
             <!--      추가버튼 영역      -->
             <div class="gi-row-100 gi-col-30px">
                 <div class="gi-btn-section gi-row-30 gi-float-right gi-padding-left-right-20px gi-flex gi-flex-justify-content-flex-end">
-                    <button id="menu_depth0_register_btn" class="gi-btn gi-float-right" type="button">메뉴추가</button>
-                    <button id="menu_depth_register_btn" class="gi-btn gi-float-right gi-hidden" type="button">하위메뉴추가</button>
-                    <button id="access_right_group_setting-btn" class="access_right_group_setting-btn gi-btn gi-float-right gi-hidden" type="button">접근권한그룹 관리</button>
+                    <button id="menu_depth0_register_btn" class="gi-btn gi-float-right" type="button">[Page.Message].Message.Label.Array["COMMON_MENU.REGISTER_MENU_CODE"]</button>
+                    <button id="menu_depth_register_btn" class="gi-btn gi-float-right gi-hidden" type="button">[Page.Message].Message.Label.Array["COMMON_MENU.REGISTER_SUB_MENU_CODE"]</button>
                 </div>
             </div>
             <!--/     추가버튼 영역      -->
@@ -83,7 +82,7 @@
                         <div class="gi-row-100 gi-col-100 gi-grid gi-grid-template-columns-repeat-1-1fr gi-grid-rows-container">
                             <div class="gi-row-100 gi-col-100">
                                 <div class="gi-row-100 gi-input-container gi-input-container-box-border-shadow gi-flex gi-flex-center ">
-                                    <label for="register_top_menu_code" class="gi-input-label" data-focus-label="true" data-focus-label-text-align="default" data-required="true">상위메뉴코드</label>
+                                    <label for="register_top_menu_code" class="gi-input-label" data-focus-label="true" data-focus-label-text-align="default" data-required="true">[Page.Message].Message.Label.Array["COMMON_MENU.TOP_MENU_CODE"]</label>
                                     <input data-gi-tag-disabled data-field="top_menu_code" id="register_top_menu_code" name="top_menu_code" class="gi-input" data-focus-span-text-align="default" data-required="true" autocomplete="off"/>
                                 </div>
                             </div>
@@ -91,13 +90,13 @@
                         <div class="gi-row-100 gi-col-100 gi-grid gi-grid-template-columns-repeat-2-1fr gi-grid-rows-container">
                             <div class="gi-row-100 gi-col-100">
                                 <div class="gi-row-100 gi-input-container gi-input-container-box-border-shadow gi-flex gi-flex-center ">
-                                    <label for="register_menu_name" class="gi-input-label" data-focus-label="true" data-focus-label-text-align="default" data-required="true">메뉴명</label>
+                                    <label for="register_menu_name" class="gi-input-label" data-focus-label="true" data-focus-label-text-align="default" data-required="true">[Page.Message].Message.Label.Array["COMMON_MENU.MENU_NAME"]</label>
                                     <input data-field="menu_name" id="register_menu_name" name="menu_name_kr" class="gi-input" data-focus-span-text-align="default" data-required="true" autocomplete="off"/>
                                 </div>
                             </div>
                             <div class="gi-row-100 gi-col-100">
                                 <div class="gi-row-100 gi-input-container gi-input-container-box-border-shadow gi-flex gi-flex-center ">
-                                    <label for="register_menu_code" class="gi-input-label" data-focus-label="true" data-focus-label-text-align="default" data-required="true">메뉴코드</label>
+                                    <label for="register_menu_code" class="gi-input-label" data-focus-label="true" data-focus-label-text-align="default" data-required="true">[Page.Message].Message.Label.Array["COMMON_MENU.MENU_CODE"]</label>
                                     <input data-field="menu_code" id="register_menu_code" name="menu_code" class="gi-input" data-focus-span-text-align="default" data-required="true" autocomplete="off"/>
                                 </div>
                             </div>
@@ -105,13 +104,13 @@
                         <div class="gi-row-100 gi-col-100 gi-grid gi-grid-template-columns-repeat-2-1fr gi-grid-rows-container">
                             <div class="gi-row-100 gi-col-100">
                                 <div class="gi-row-100 gi-input-container gi-input-container-box-border-shadow gi-flex gi-flex-center ">
-                                    <label for="register_prgm_url" class="gi-input-label" data-focus-label="true" data-focus-label-text-align="default" data-required="true">API 경로</label>
+                                    <label for="register_prgm_url" class="gi-input-label" data-focus-label="true" data-focus-label-text-align="default" data-required="true">[Page.Message].Message.Label.Array["COMMON_MENU.PRGM_URL"]</label>
                                     <input data-field="prgm_url" id="register_prgm_url" name="prgm_url" class="gi-input" data-focus-span-text-align="default" data-required="true" autocomplete="off"/>
                                 </div>
                             </div>
                             <div class="gi-row-100 gi-col-100">
                                 <div class="gi-row-100 gi-input-container gi-input-container-box-border-shadow gi-flex gi-flex-center ">
-                                    <label for="register_url" class="gi-input-label" data-focus-label="true" data-focus-label-text-align="default" data-required="true">경로</label>
+                                    <label for="register_url" class="gi-input-label" data-focus-label="true" data-focus-label-text-align="default" data-required="true">[Page.Message].Message.Label.Array["COMMON_MENU.URL"]</label>
                                     <input data-field="url" id="register_url" name="url" class="gi-input" data-focus-span-text-align="default" data-required="true" autocomplete="off"/>
                                 </div>
                             </div>
@@ -119,19 +118,19 @@
                         <div class="gi-row-100 gi-col-100 gi-grid gi-grid-template-columns-repeat-3-1fr gi-grid-rows-container">
                             <div class="gi-row-100 gi-col-100">
                                 <div class="gi-row-100 gi-input-container gi-input-container-box-border-shadow gi-flex gi-flex-center ">
-                                    <label for="register_menu_number" class="gi-input-label" data-focus-label="true" data-focus-label-text-align="default" data-required="true">메뉴순서</label>
+                                    <label for="register_menu_number" class="gi-input-label" data-focus-label="true" data-focus-label-text-align="default" data-required="true">[Page.Message].Message.Label.Array["COMMON_MENU.MENU_NUMBER"]</label>
                                     <input inputNumberOnly maxlength="1" data-field="menu_number" id="register_menu_number" name="menu_number" class="gi-input" data-focus-span-text-align="default" data-required="true" autocomplete="off"/>
                                 </div>
                             </div>
                             <div class="gi-row-100 gi-col-100">
                                 <div class="gi-row-100 gi-input-container gi-input-container-box-border-shadow gi-flex gi-flex-center ">
-                                    <label for="register_use_yn" class="gi-input-label" data-focus-label="true" data-focus-label-text-align="default" data-required="true">사용여부</label>
+                                    <label for="register_use_yn" class="gi-input-label" data-focus-label="true" data-focus-label-text-align="default" data-required="true">[Page.Message].Message.Label.Array["COMMON_MENU.USE_YN"]</label>
                                     <input gi-selectbox data-selectbox-field="USE_YN" data-field="use_yn" id="register_use_yn" name="use_yn" class="gi-input" data-focus-span-text-align="default" data-required="true" autocomplete="off"/>
                                 </div>
                             </div>
                             <div class="gi-row-100 gi-col-100">
                                 <div class="gi-row-100 gi-input-container gi-input-container-box-border-shadow gi-flex gi-flex-center ">
-                                    <label for="register_menu_level" class="gi-input-label" data-focus-label="true" data-focus-label-text-align="default" data-required="true">메뉴레벨</label>
+                                    <label for="register_menu_level" class="gi-input-label" data-focus-label="true" data-focus-label-text-align="default" data-required="true">[Page.Message].Message.Label.Array["COMMON_MENU.MENU_LEVEL"]</label>
                                     <input inputNumberOnly data-gi-tag-disabled data-field="menu_level" id="register_menu_level" name="menu_level" class="gi-input" data-focus-span-text-align="default" data-required="true" autocomplete="off" maxlength="1"/>
                                 </div>
                             </div>
@@ -143,16 +142,17 @@
         </div>
         <div class="gi-popup-footer">
             <div class="gi-btn-section gi-row-30 gi-col-30px gi-padding-left-right-20px gi-flex gi-flex-justify-content-center gi-flex-align-items-center">
-                <button id="menuRegister-btn" class="gi-popup-update-btn" type="button">등록</button>
-                <button class="gi-popup-close-btn" type="button">닫기</button>
+                <button id="menuRegister-btn" class="gi-popup-update-btn" type="button">[Page.Message].Message.Label.Array["REGISTER_BTN"]</button>
+                <button class="gi-popup-close-btn" type="button">[Page.Message].Message.Label.Array["CLOSE_BTN"]</button>
             </div>
         </div>
     </div>
 </article>
+<!--NOTE: 하위메뉴 등록 팝업-->
 <article id="gi-menuDepth_register-popup" class="gi-popup" data-popup-open="false">
     <div class="gi-popup-body gi-row-40-important">
         <div class="gi-popup-header">
-            <span>하위메뉴등록</span>
+            <span>[Page.Message].Message.Label.Array["COMMON_MENU.REGISTER_SUB_MENU_CODE"]s</span>
         </div>
         <div class="gi-popup-contents gi-overflow-scroll">
             <!--      팝업내용 삽입 영역      -->
@@ -162,7 +162,7 @@
                         <div class="gi-row-100 gi-col-100 gi-grid gi-grid-template-columns-repeat-1-1fr gi-grid-rows-container">
                             <div class="gi-row-100 gi-col-100">
                                 <div class="gi-row-100 gi-input-container gi-input-container-box-border-shadow gi-flex gi-flex-center ">
-                                    <label for="register_depth_top_menu_code" class="gi-input-label" data-focus-label="true" data-focus-label-text-align="default" data-required="true">상위메뉴코드</label>
+                                    <label for="register_depth_top_menu_code" class="gi-input-label" data-focus-label="true" data-focus-label-text-align="default" data-required="true">[Page.Message].Message.Label.Array["COMMON_MENU.TOP_MENU_CODE"]</label>
                                     <input data-gi-tag-disabled data-field="top_menu_code" id="register_depth_top_menu_code" name="top_menu_code" class="gi-input" data-focus-span-text-align="default" data-required="true" autocomplete="off"/>
                                 </div>
                             </div>
@@ -170,13 +170,13 @@
                         <div class="gi-row-100 gi-col-100 gi-grid gi-grid-template-columns-repeat-2-1fr gi-grid-rows-container">
                             <div class="gi-row-100 gi-col-100">
                                 <div class="gi-row-100 gi-input-container gi-input-container-box-border-shadow gi-flex gi-flex-center ">
-                                    <label for="register_depth_menu_name" class="gi-input-label" data-focus-label="true" data-focus-label-text-align="default" data-required="true">메뉴명</label>
+                                    <label for="register_depth_menu_name" class="gi-input-label" data-focus-label="true" data-focus-label-text-align="default" data-required="true">[Page.Message].Message.Label.Array["COMMON_MENU.MENU_NAME"]</label>
                                     <input data-field="menu_name_kr" id="register_depth_menu_name" name="menu_name_kr" class="gi-input" data-focus-span-text-align="default" data-required="true" autocomplete="off"/>
                                 </div>
                             </div>
                             <div class="gi-row-100 gi-col-100">
                                 <div class="gi-row-100 gi-input-container gi-input-container-box-border-shadow gi-flex gi-flex-center ">
-                                    <label for="register_depth_menu_code" class="gi-input-label" data-focus-label="true" data-focus-label-text-align="default" data-required="true">메뉴코드</label>
+                                    <label for="register_depth_menu_code" class="gi-input-label" data-focus-label="true" data-focus-label-text-align="default" data-required="true">[Page.Message].Message.Label.Array["COMMON_MENU.MENU_CODE"]</label>
                                     <input data-field="menu_code" id="register_depth_menu_code" name="menu_code" class="gi-input" data-focus-span-text-align="default" data-required="true" autocomplete="off"/>
                                 </div>
                             </div>
@@ -184,13 +184,13 @@
                         <div class="gi-row-100 gi-col-100 gi-grid gi-grid-template-columns-repeat-2-1fr gi-grid-rows-container">
                             <div class="gi-row-100 gi-col-100">
                                 <div class="gi-row-100 gi-input-container gi-input-container-box-border-shadow gi-flex gi-flex-center ">
-                                    <label for="register_depth_prgm_url" class="gi-input-label" data-focus-label="true" data-focus-label-text-align="default" data-required="true">API 경로</label>
+                                    <label for="register_depth_prgm_url" class="gi-input-label" data-focus-label="true" data-focus-label-text-align="default" data-required="true">[Page.Message].Message.Label.Array["COMMON_MENU.PRGM_URL"]</label>
                                     <input data-field="prgm_url" id="register_depth_prgm_url" name="prgm_url" class="gi-input" data-focus-span-text-align="default" data-required="true" autocomplete="off"/>
                                 </div>
                             </div>
                             <div class="gi-row-100 gi-col-100">
                                 <div class="gi-row-100 gi-input-container gi-input-container-box-border-shadow gi-flex gi-flex-center ">
-                                    <label for="register_depth_url" class="gi-input-label" data-focus-label="true" data-focus-label-text-align="default" data-required="true">경로</label>
+                                    <label for="register_depth_url" class="gi-input-label" data-focus-label="true" data-focus-label-text-align="default" data-required="true">[Page.Message].Message.Label.Array["COMMON_MENU.URL"]</label>
                                     <input data-field="url" id="register_depth_url" name="url" class="gi-input" data-focus-span-text-align="default" data-required="true" autocomplete="off"/>
                                 </div>
                             </div>
@@ -228,6 +228,7 @@
         </div>
     </div>
 </article>
+<!--NOTE: 메뉴수정 팝업-->
 <article id="gi-menu_update-popup" class="gi-popup" data-popup-open="false">
     <div class="gi-popup-body gi-row-40-important">
         <div class="gi-popup-header">
@@ -300,33 +301,6 @@
                                 </div>
                             </div>
                         </div>
-<!--                        <div class="gi-row-60 gi-col-100 gi-grid gi-grid-template-columns-repeat-1-1fr-2fr gi-grid-rows-container">-->
-<!--                            <div class="gi-row-100 gi-col-100 gi-flex gi-flex-center">-->
-<!--                                <span>접근권한그룹 추가</span>-->
-<!--                            </div>-->
-<!--                            <div class="gi-row-100 gi-col-100 gi-grid gi-grid-template-columns-repeat-1-1fr-2fr">-->
-<!--                                <div class="gi-row-100 gi-input-container gi-input-container-box-border-shadow gi-flex gi-flex-center ">-->
-<!--                                    <label for="top_group_id" class="gi-input-label" data-focus-label="true" data-focus-label-text-align="default" data-required="true">상위그룹명</label>-->
-<!--                                    <input data-field="top_group_id" id="top_group_id" name="top_group_id" class="gi-input" data-focus-span-text-align="default" data-required="true" autocomplete="off" data-selectbox-field="none" gi-selectbox/>-->
-<!--                                </div>-->
-<!--                                <div class="gi-row-100 gi-input-container gi-input-container-box-border-shadow gi-flex gi-flex-center ">-->
-<!--                                    <label for="group_id" class="gi-input-label" data-focus-label="true" data-focus-label-text-align="default" data-required="true">하위그룹명</label>-->
-<!--                                    <input data-gi-tag-disabled data-field="group_id" id="group_id" name="group_id" class="gi-input" data-focus-span-text-align="default" data-required="true" autocomplete="off" data-selectbox-field="none" gi-selectbox/>-->
-<!--                                </div>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                        <div class="gi-row-60 gi-col-100 gi-grid gi-grid-template-columns-repeat-1-1fr-2fr gi-grid-rows-container">-->
-<!--                            <div class="gi-row-100 gi-col-100 gi-flex gi-flex-center">-->
-<!--                                <span>접근권한그룹</span>-->
-<!--                            </div>-->
-<!--                            <div class="gi-row-100 gi-col-100">-->
-<!--                                <div class="gi-row-100 gi-input-container gi-input-container-box-border-shadow gi-flex gi-flex-center ">-->
-<!--                                    <input data-field="access_right_group" id="access_right_group" name="url" class="gi-input gi-hidden" data-focus-span-text-align="default" data-required="true" autocomplete="off"/>-->
-<!--                                    <span class="formUtil-file-list-copy gi-grid gi-grid-template-columns-repeat-1-1fr-1fr-1fr" id="access_right_group_area">-->
-<!--                                    </span>-->
-<!--                                </div>-->
-<!--                            </div>-->
-<!--                        </div>-->
                     </div>
                 </form>
             </div>
@@ -341,62 +315,14 @@
     </div>
 </article>
 <!-- 접근권한 설정 popup -->
-<article id="gi-common_access_right_group-popup" class="gi-popup" data-popup-open="false">
-    <div class="gi-popup-body" style="height: 700px !important;">
-        <div class="gi-popup-header">
-            <span>접근권한그룹 설정 </span>
-            <span id="access_right_group_popup-menu_name"></span>
-        </div>
-        <div class="gi-popup-contents">
-            <!--      팝업내용 삽입 영역      -->
-            <div class="gi-row-100 gi-col-100 gi-flex gi-flex-center">
-                <form id="accessRightGroupSetting" class="gi-row-100  gi-flex gi-flex-align-items-center">
-                    <div class="gi-row-100 gi-padding-5px gi-grid-container gi-grid gi-grid-justify-items-center gi-grid-gap-10px gi-margin-bottom-15px gi-padding-40px">
-                        <div class="gi-row-100 gi-col-100 gi-grid gi-grid-rows-container gi-grid-template-columns-repeat-1-2fr-1fr-2fr gi-grid-gap-15px-15px">
-                            <div class="gi-grid-template-columns-repeat-1-1fr-1fr gi-figure-content gi-overflow-scroll gi-col-500px gi-row-100 gi-flex gi-flex-justify-content-center gi-flex gi-flex-direction-column">
-                                <div class="gi-col-40px gi-figure-content gi-flex">전체 그룹 목록 : </div>
-                                <div id="common_group_tree" class="gi-grid-template-columns-repeat-1-1fr-1fr gi-figure-content gi-overflow-scroll gi-col-500px gi-row-100 gi-flex gi-flex-justify-content-center gi-flex gi-flex-direction-column"></div>
-                            </div>
-                            <div id="btn_group" class="gi-grid-template-columns-repeat-1-1fr-1fr gi-figure-content gi-overflow-scroll gi-col-20 gi-row-100 gi-flex gi-flex-justify-content-center gi-flex gi-flex-direction-column">
-                                <button id="accessRightGroupSettingAdd-btn" class="gi-popup-register-btn" type="button">추가 ▶</button>
-                                <div class="gi-padding-bottom-20px"></div>
-                                <button id="accessRightGroupSettingRemove-btn" class="gi-popup-register-btn" type="button">◀ 삭제</button>
-                            </div>
-                            <div class="gi-grid-template-columns-repeat-1-1fr-1fr gi-figure-content gi-overflow-scroll gi-col-500px gi-row-100 gi-flex gi-flex-justify-content-center gi-flex gi-flex-direction-column">
-                                <div class="gi-col-40px gi-figure-content gi-flex">선택 그룹 : </div>
-                                <div id="access_right_group_tree" class="gi-grid-template-columns-repeat-1-1fr-1fr gi-figure-content gi-overflow-scroll gi-col-500px gi-row-100 gi-flex gi-flex-justify-content-center gi-flex gi-flex-direction-column"></div>
-                            </div>
-                        </div>
-                    </div>
-                </form>
-            </div>
-            <!--/      팝업내용 삽입 영역      -->
-        </div>
-        <div class="gi-popup-footer">
-            <div class="gi-btn-section gi-row-30 gi-col-30px gi-padding-left-right-20px gi-flex gi-flex-justify-content-center gi-flex-align-items-center">
-                <button id="accessRightGroupSettingRegister-btn" class="gi-popup-register-btn" type="button">등록</button>
-                <button id="accessRightGroupSettingClose-btn" class="gi-popup-close-btn" type="button">닫기</button>
-            </div>
-        </div>
-    </div>
-</article>
 <script type="text/javascript">
     var data_binding = new dataBinding();
     var COMMON_MENU_UPDATE_PRGMID = "commonMenuUpdate";
     var COMMON_MENU_REGISTER_PRGMID = "commonMenuRegister";
     var COMMON_MENU_DEPTH_REGISTER_PRGMID = "commonMenuDepthRegister";
-    var ACCESS_RIGHT_GROUP_SETTING_POPUP_PRGMID = "gi-common_access_right_group-popup";
     var common_popup = new popup();
     var rowClickData = [];
     var inputTageReset = new afterLoadDataEvent();
-
-    var boxList = [];   // 수정 팝업 내 접근권한그룹 box list
-    var $container;
-
-    // tree
-    var LeftTreeSelectedList = [];   // 왼쪽 트리에서 선택된 리스트
-    var RightTreeSelectedList = []; // 오른쪽 트리에서 선택된 리스트
-    var tempAccessRightGroup = [];  // 오른쪽 트리에 담겨있는 list
 
     init();
 
@@ -452,9 +378,6 @@
         $("#menuDepthRegister-btn").click(function(){
             commonMenuDepthRegister();
         })
-        // $("#access_right_group_setting-btn").click(function(){
-            // accessRightGroupSetting();
-        // })
     }
     function findByCommonCodeMenuList(page,range,sortId,sortOrder) {
         let url = "/cms/common/commonMenu/findHierarchy";
@@ -486,13 +409,13 @@
                         {HEADER:'[Page.Message].Message.Label.Array["COMMON_MENU.USE_YN"]',     ID:"use_yn",        WIDTH:"7",TYPE:"text",FONT_SIZE:"12px",TEXT_ALIGN:"center",COMMON_CODE_GROUP_ID:"USE_YN",HIDDEN:false},
                         {HEADER:'[Page.Message].Message.Label.Array["MODIFY_BTN"]',        ID:"update_menu_btn",     WIDTH:"5",TYPE:"button",FONT_SIZE:"12px",TEXT_ALIGN:"center",HIDDEN:false},
                         {HEADER:'[Page.Message].Message.Label.Array["DELETE_BTN"]',        ID:"delete_menu_btn",     WIDTH:"5",TYPE:"button",FONT_SIZE:"12px",TEXT_ALIGN:"center",HIDDEN:false},
+                        {HEADER:'[Page.Message].Message.Label.Array["COMMON_MENU.REGISTER_MENU_ACCESS_GROUP_BTN"]',ID:"access_right_group",     WIDTH:"5",TYPE:"button",FONT_SIZE:"12px",TEXT_ALIGN:"center",HIDDEN:false},
 
                         {HEADER:'[Page.Message].Message.Label.Array["COMMON_MENU.MENU_SEQUENCE"]',  ID:"menu_sequence",  WIDTH:"5",TYPE:"text",FONT_SIZE:"12px",TEXT_ALIGN:"center",HIDDEN:true},
                         {HEADER:'[Page.Message].Message.Label.Array["COMMON_MENU.MENU_NAME_EN"]',      ID:"menu_name_en",     WIDTH:"15",TYPE:"text",FONT_SIZE:"12px",TEXT_ALIGN:"left",HIDDEN:true},
                         {HEADER:'[Page.Message].Message.Label.Array["COMMON_MENU.MENU_NAME_MN"]',      ID:"menu_name_mn",     WIDTH:"15",TYPE:"text",FONT_SIZE:"12px",TEXT_ALIGN:"left",HIDDEN:true},
                         {HEADER:'[Page.Message].Message.Label.Array["COMMON_MENU.USE_YN"]',     ID:"use_yn",        WIDTH:"20",TYPE:"text",FONT_SIZE:"12px",TEXT_ALIGN:"center",HIDDEN:true},
                         {HEADER:"No",         ID:"no",              WIDTH:"7",TYPE:"text",FONT_SIZE:"12px",TEXT_ALIGN:"center",HIDDEN:true},
-                        {HEADER:"접근권한 그룹",ID:"access_right_group",     WIDTH:"15",TYPE:"text",FONT_SIZE:"12px",TEXT_ALIGN:"center",HIDDEN:true},
                         {HEADER:'[Page.Message].Message.Label.Array["COMMON_MENU.SYSTEM_CREATE_DATE"]',     ID:"system_create_date",   WIDTH:"15",TYPE:"text",FONT_SIZE:"12px",TEXT_ALIGN:"center",HIDDEN:true},
                         {HEADER:'[Page.Message].Message.Label.Array["COMMON_MENU.SYSTEM_CREATE_USERID"]',     ID:"system_create_userid", WIDTH:"15",TYPE:"text",FONT_SIZE:"12px",TEXT_ALIGN:"center",HIDDEN:true},
                         {HEADER:'[Page.Message].Message.Label.Array["COMMON_MENU.SYSTEM_UPDATE_DATE"]',     ID:"system_update_date",   WIDTH:"15",TYPE:"text",FONT_SIZE:"12px",TEXT_ALIGN:"center",HIDDEN:true},
@@ -512,7 +435,7 @@
                 //그리스 내부의 header click 정렬 이벤트 설정
                 //menu_grid.sortDataSet(findByCommonCodeMenuList);
 
-                menu_grid.sideOpenBtnClick("access_group_grid","access_right_group_setting-btn")
+                menu_grid.sideOpenBtnClick("access_group_grid","access_right_group");
                 //그리드 row 선택 이벤트 설정
                 menu_grid.rowClick(rowClickEvent);
                 function rowClickEvent(rows,e){
@@ -520,17 +443,17 @@
                     if(clickFlag){
                         if(rows.menu_level !== "2"){
                             $("#menu_depth_register_btn").removeClass("gi-hidden");
-                            $("#access_right_group_setting-btn").addClass("gi-hidden");
                             rowClickData = rows;
                         }else{
                             $("#menu_depth_register_btn").addClass("gi-hidden");
-                            $("#access_right_group_setting-btn").removeClass("gi-hidden");
                             rowClickData = rows;
                         }
                     }else{
                         $("#menu_depth_register_btn").addClass("gi-hidden");
-                        $("#access_right_group_setting-btn").addClass("gi-hidden");
                     }
+                }
+                function accessGroupBtnControl(){
+
                 }
             } else {
                 formUtil.alertPopup("response status is :" + status);
@@ -556,13 +479,6 @@
         $("#gi-menu_update-popup").attr("data-popup-open","true");
         data_binding.setDataSelectBox("update_use_yn",cont.use_yn);
         data_binding.setDataForm("gi-menu_update-popup",cont);
-
-        //data_binding.setDataBoxList("access_right_group_area", cont.access_right_group);
-
-        //접근권한그룹 박스리스트
-        //setDataBoxList(cont.access_right_group);
-        //접근권한그룹 추가용 데이터 조회
-        //findByCommonGroup();
     }
     /**
      * NOTE: 상위메뉴등록
@@ -649,8 +565,6 @@
             menu_sequence : data.menu_sequence
             //,access_right_group : data.access_right_group
         };
-        console.log(param)
-
          axios.post(url, param).then(response =>{
              if(response.status === 200){
                  formUtil.showMessage(Message.Label.Array["COMPLETE.UPDATE"]);
@@ -713,387 +627,10 @@
         return flag;
     }
 
-    // function renderBoxList() {
-    //     $container.empty();
-    //     let listHtml = "";
-    //     boxList.forEach(function(obj) {
-    //         if (obj.group_id !== '' && obj.group_name !== '') {
-    //             listHtml += `<ul class='gi-row-100'>
-    //             <li class='gi-row-75 gi-margin-left-2px' data-part-code='${obj.group_id}${obj.group_name}'>${obj.group_name}</li>
-    //             <li class='gi-row-10 formUtil-file_close_image formUtil-btn-delete' data-close-button></li>
-    //         </ul>`;
-    //         }
-    //     });
-    //     $container.append(listHtml);
-    //
-    //     // boxList의 group_id들을 access_right_group의 value로 넣기.
-    //     let groupIdsString = boxList
-    //         .filter(item => item.group_id !== '' && item.group_name !== '')
-    //         .map(item => item.group_id)
-    //         .join(',');
-    //     $("#access_right_group").val(groupIdsString);
-    //
-    //     boxListDeleteButtonClick();
-    // }
-    //
-    // function boxListDeleteButtonClick() {
-    //     $container.find("[data-close-button]").on("click", function () {
-    //         let targetCode = $(this).siblings("li").data("part-code");
-    //         boxList = boxList.filter(item => item.group_id + item.group_name !== targetCode);
-    //         setChangedBoxList();
-    //     });
-    // }
-    //
-    // function setChangedBoxList() {
-    //     renderBoxList();
-    //     if (boxList.length === 0) {
-    //         let selectedRadioType = $("input[data-structure-device-classification-radio-type]:checked").data("structure-device-classification-radio-type");
-    //         let target = selectedRadioType === "structure_device_change" ? $("#load_calculation_form") : $("#specification_comparison_form");
-    //         target.toggleClass("gi-hidden");
-    //     }
-    // }
-    // // 접근권한그룹 box list - end
-    //
-    //
-    //
-    // // 접근권한그룹 popup - start
-    //
-    // // hierarchyOptions
-    // var hierarchyOptions = {
-    //     level_column: "group_level",
-    //     parent_depth_column: "top_group_id",
-    //     child_depth_column: "group_id"
-    // };
-    //
-    // // 전체 그룹 트리(left tree) 조회
-    // function findByCommonGroupList(page,range,sortId,sortOrder) {
-    //     //default page
-    //     if(!formUtil.checkEmptyValue(page)) page = 1;
-    //     //default range(row)
-    //     if(!formUtil.checkEmptyValue(range)) range = 100;
-    //
-    //     let url = "/cms/common/commonGroup/findPage";
-    //     let param = {
-    //         page_no:page,
-    //         row_range : range
-    //     };
-    //
-    //     // 정렬조건추가 (기준id, 순서)
-    //     if(formUtil.checkEmptyValue(sortId)) param.sort_id = sortId;
-    //     if(formUtil.checkEmptyValue(sortOrder)) param.sort_order = sortOrder;
-    //
-    //     axios.post(url, param).then(response => {
-    //         let status = response.status;
-    //         if (status === 200) {
-    //             let data = response.data.DATA;
-    //             renderTree(data, hierarchyOptions, "common_group_tree");
-    //         } else {
-    //             formUtil.alertPopup("response status is :" + status);
-    //         }
-    //     }).catch(error => {
-    //         formUtil.alertPopup(error);
-    //     })
-    // }
-    //
-    // function accessRightGroupSetting() {
-    //     LeftTreeSelectedList = [];
-    //     RightTreeSelectedList = [];
-    //     tempAccessRightGroup = [];
-    //
-    //     // 메뉴 이름 setting
-    //     $("#access_right_group_popup-menu_name").text(' - ' + rowClickData.menu_name);
-    //
-    //     $("#"+ACCESS_RIGHT_GROUP_SETTING_POPUP_PRGMID).attr("data-popup-open","true");
-    //     var accessRightGroup = JSON.parse(`[${rowClickData.access_right_group}]`);
-    //     tempAccessRightGroup = accessRightGroup;
-    //
-    //     renderTree(accessRightGroup, hierarchyOptions, "access_right_group_tree");
-    //     findByCommonGroupList();
-    //
-    //     $("#accessRightGroupSettingAdd-btn").off("click");
-    //     $("#accessRightGroupSettingRemove-btn").off("click");
-    //     $("#accessRightGroupSettingRegister-btn").off("click");
-    //     $("#accessRightGroupSettingClose-btn").off("click");
-    //
-    //     $("#accessRightGroupSettingAdd-btn").click(function(){
-    //         accessRightGroupSettingAddBtnClickEvent();
-    //     });
-    //     $("#accessRightGroupSettingRemove-btn").click(function(){
-    //         accessRightGroupSettingRemoveBtnClickEvent();
-    //     });
-    //     $("#accessRightGroupSettingRegister-btn").click(function() {
-    //         accessRightGroupSettingRegisterBtnClickEvent(accessRightGroup);
-    //     });
-    //     $("#accessRightGroupSettingClose-btn").click(function() {
-    //         accessRightGroupSettingCloseBtnClickEvent(accessRightGroup);
-    //     });
-    // }
-    //
-    // function createTreeStructure(data, hierarchyOptions) {
-    //     let grid_list = '<div class="gi-tree-container gi-overflow-scroll gi-col-100 gi-row-100 gi-padding-left-20px">';
-    //     let application_level_column = hierarchyOptions.level_column;
-    //
-    //     const topLevelItems = data.filter(item => item[application_level_column] === "0");
-    //
-    //     // 하위 항목이 있는 상위 그룹만 필터링
-    //     const topLevelItemsWithChildren = topLevelItems.filter(topItem => {
-    //         const hasChildren = data.some(item =>
-    //             item[hierarchyOptions.parent_depth_column] === topItem[hierarchyOptions.child_depth_column] &&
-    //             item[hierarchyOptions.level_column] === "1"
-    //         );
-    //         return hasChildren;
-    //     });
-    //
-    //     topLevelItemsWithChildren.forEach(topItem => {
-    //         grid_list += createGroupHTML(topItem, data, hierarchyOptions);
-    //     });
-    //
-    //     if (data.length === 0 || topLevelItemsWithChildren.length === 0) {
-    //         grid_list += '<div class="gi-row-100 gi-col-100 gi-flex gi-flex-align-items-center gi-flex-justify-content-center bounce-in-top">No Data</div>';
-    //     }
-    //
-    //     grid_list += '</div>';
-    //     return grid_list;
-    // }
-    //
-    // function createGroupHTML(item, allData, hierarchyOptions) {
-    //     let level = item[hierarchyOptions.level_column];
-    //     let depthClass = 'gi-grid-hierarchy-depth' + level;
-    //
-    //     // 현재 항목의 하위 항목 찾기
-    //     const childItems = allData.filter(childItem =>
-    //         childItem[hierarchyOptions.parent_depth_column] === item[hierarchyOptions.child_depth_column] &&
-    //         childItem[hierarchyOptions.child_depth_column] !== item[hierarchyOptions.child_depth_column]
-    //     );
-    //
-    //     // 하위 항목이 없고 level이 0인 경우 빈 문자열 반환
-    //     if (childItems.length === 0 && level === "0") {
-    //         return '';
-    //     }
-    //
-    //     let html = `<ul class="gi-grid-list ${depthClass}" data-group-id="${item.group_id}">`;
-    //     html += `<li data-group-id="${item.group_id}" data-top-group-id="${item.top_group_id}" class="gi-cursor-pointer gi-tree-list gi-min-row-50px gi-row-100 gi-col-16px gi-flex gi-overflow-hidden gi-flex-justify-content-left gi-text-align-left ${depthClass}">
-    //     <span class="gi-row-80 gi-padding-left-right-20px gi-font-size-10">${item.group_name}</span>
-    // </li>`;
-    //
-    //     if (childItems.length > 0) {
-    //         childItems.forEach(childItem => {
-    //             html += createGroupHTML(childItem, allData, hierarchyOptions);
-    //         });
-    //     }
-    //
-    //     html += '</ul>';
-    //     return html;
-    // }
-    //
-    //
-    // function renderTree(data, hierarchyOptions, containerId) {
-    //     // 데이터를 계층과 이름 기준으로 정렬
-    //     const sortedData = data.sort((a, b) => {
-    //         // 1. 먼저 group_level로 정렬 (상위 그룹 우선)
-    //         if (a.group_level !== b.group_level) {
-    //             return a.group_level.localeCompare(b.group_level);
-    //         }
-    //         // 2. top_group_id 기준 정렬
-    //         if (a.top_group_id !== b.top_group_id) {
-    //             return (a.top_group_id || "").localeCompare(b.top_group_id || "");
-    //         }
-    //         // 3. 마지막으로 group_name으로 정렬
-    //         return a.group_name.localeCompare(b.group_name);
-    //     });
-    //
-    //     let treeStructure = createTreeStructure(sortedData, hierarchyOptions);
-    //     document.getElementById(containerId).innerHTML = treeStructure;
-    //
-    //     setTreeRowClickEvent();
-    // }
-    //
-    //
-    // function setTreeRowClickEvent() {
-    //     $('#common_group_tree > div, #access_right_group_tree > div').on('click', 'li', function(e) {
-    //         e.stopPropagation();
-    //         e.stopImmediatePropagation();
-    //
-    //         const $this = $(this);
-    //         const isLeftTree = $this.closest('#common_group_tree').length > 0;
-    //         const targetList = isLeftTree ? LeftTreeSelectedList : RightTreeSelectedList;
-    //
-    //         const clickedGroupId = $this.data('group-id');
-    //         const clickedTopGroupId = $this.data('top-group-id') || "";
-    //         const clickedGroupName = $this.find('span').text().trim();
-    //         const isTopGroup = $this.parent().hasClass('gi-grid-hierarchy-depth0');
-    //
-    //         // 자기 참조 그룹 검증
-    //         const isSelfReferential = clickedGroupId === clickedTopGroupId;
-    //
-    //         const groupData = {
-    //             "group_id": clickedGroupId,
-    //             "group_name": clickedGroupName,
-    //             "top_group_id": clickedTopGroupId,
-    //             "group_level": isTopGroup ? "0" : "1"
-    //         };
-    //
-    //         if (isSelfReferential) {
-    //             console.warn("Self-referential group detected:", groupData);
-    //             return;
-    //         }
-    //
-    //         if (isTopGroup) {
-    //             // 상위 그룹 선택 로직
-    //             const $subItems = $this.parent().find('ul.gi-grid-hierarchy-depth1 > li');
-    //             const wasSelected = $this.hasClass('gi-grid-list-hover');
-    //
-    //             $this.toggleClass('gi-grid-list-hover');
-    //             $subItems.toggleClass('gi-grid-list-hover', !wasSelected);
-    //
-    //             if (!wasSelected) {
-    //                 addToList(groupData, targetList);
-    //                 $subItems.each((_, item) => {
-    //                     const $item = $(item);
-    //                     addToList({
-    //                         "group_id": $item.data('group-id'),
-    //                         "group_name": $item.find('span').text().trim(),
-    //                         "top_group_id": clickedGroupId,
-    //                         "group_level": "1"
-    //                     }, targetList);
-    //                 });
-    //             } else {
-    //                 removeFromList(clickedGroupId, targetList);
-    //                 $subItems.each((_, item) => {
-    //                     removeFromList($(item).data('group-id'), targetList);
-    //                 });
-    //             }
-    //         } else {
-    //             // 하위 그룹 선택 로직
-    //             $this.toggleClass('gi-grid-list-hover');
-    //
-    //             if ($this.hasClass('gi-grid-list-hover')) {
-    //                 addToList(groupData, targetList);
-    //                 const $topGroup = $this.closest('ul.gi-grid-hierarchy-depth0').children('li').first();
-    //                 addToList({
-    //                     "group_id": $topGroup.data('group-id'),
-    //                     "group_name": $topGroup.find('span').text().trim(),
-    //                     "top_group_id": "",
-    //                     "group_level": "0"
-    //                 }, targetList);
-    //                 $topGroup.addClass('gi-grid-list-hover');
-    //             } else {
-    //                 removeFromList(clickedGroupId, targetList);
-    //                 const $siblings = $this.parent().parent().find('ul.gi-grid-hierarchy-depth1 > li');
-    //                 if ($siblings.filter('.gi-grid-list-hover').length === 0) {
-    //                     const $topGroup = $this.closest('ul.gi-grid-hierarchy-depth0').children('li').first();
-    //                     removeFromList($topGroup.data('group-id'), targetList);
-    //                     $topGroup.removeClass('gi-grid-list-hover');
-    //                 }
-    //             }
-    //         }
-    //     });
-    // }
-    //
-    //
-    // function addToList(item, targetList) {
-    //     const index = targetList.findIndex(listItem => listItem.group_id === item.group_id);
-    //     if (index === -1) {
-    //         targetList.push(item);
-    //     }
-    // }
-    //
-    // function removeFromList(groupId, targetList) {
-    //     const index = targetList.findIndex(item => item.group_id === groupId);
-    //     if (index !== -1) {
-    //         targetList.splice(index, 1);
-    //     }
-    // }
-    //
-    //
-    // function mergeListsWithoutDuplicates(list1, list2) {
-    //     const mergedMap = new Map();
-    //
-    //     // 상위 그룹 우선 병합
-    //     list1.concat(list2)
-    //         .filter(item => item.top_group_id === "")
-    //         .forEach(item => mergedMap.set(item.group_id, item));
-    //
-    //     // 하위 그룹 병합 (상위 그룹 존재시에만)
-    //     list1.concat(list2)
-    //         .filter(item => item.top_group_id !== "" && mergedMap.has(item.top_group_id))
-    //         .forEach(item => mergedMap.set(item.group_id, item));
-    //
-    //     return Array.from(mergedMap.values());
-    // }
-    //
-    //
-    // function removeOverlappingItems(list1, list2) {
-    //     // list2의 group_id를 Set으로 변환하여 검색 효율성 향상
-    //     const list2GroupIds = new Set(list2.map(item => item.group_id));
-    //
-    //     // list1에서 조건에 맞는 항목만 필터링
-    //     return list1.filter(item => {
-    //         // top_group_id가 빈 문자열("")인 경우 항상 유지
-    //         if (item.top_group_id === "") {
-    //             return true;
-    //         }
-    //         // list2에 없는 항목만 유지
-    //         return !list2GroupIds.has(item.group_id);
-    //     });
-    // }
-    //
-    // function accessRightGroupSettingAddBtnClickEvent() {
-    //     tempAccessRightGroup = mergeListsWithoutDuplicates(tempAccessRightGroup, LeftTreeSelectedList);
-    //
-    //
-    //     LeftTreeSelectedList.forEach(item => {
-    //         $(`#common_group_tree li[data-group-id="${item.group_id}"]`).removeClass('gi-grid-list-hover');
-    //     });
-    //     renderTree(tempAccessRightGroup, hierarchyOptions, "access_right_group_tree");
-    //
-    //     LeftTreeSelectedList = [];
-    // }
-    //
-    // function accessRightGroupSettingRemoveBtnClickEvent() {
-    //     tempAccessRightGroup = removeOverlappingItems(tempAccessRightGroup, RightTreeSelectedList);
-    //
-    //     RightTreeSelectedList.forEach(item => {
-    //         $(`#access_right_group_tree li[data-group-id="${item.group_id}"]`).removeClass('gi-grid-list-hover');
-    //     });
-    //     renderTree(tempAccessRightGroup, hierarchyOptions, "access_right_group_tree");
-    //
-    //     RightTreeSelectedList = [];
-    // }
-    //
-    //
-    // function accessRightGroupSettingCloseBtnClickEvent(accessRightGroup) {
-    //     let flag = hasChanged(tempAccessRightGroup, accessRightGroup);
-    //     if (flag) {
-    //         formUtil.popup("accessRightGroupSettingChanceCheckClose-btn",Message.Label.Array["CONFIRM.CLOSE_UNSAVED_CHANGES"],closePopup,null);
-    //         return false;
-    //     } else {
-    //         closePopup ();
-    //     }
-    // }
-    //
-    // function closePopup () {
-    //     common_popup.close("gi-common_access_right_group-popup");
-    // }
-    //
-    // // 메뉴에 권한이 부여된 그룹이 변경된 게 있는지 확인 (변경사항 있으면 true)
-    // function hasChanged (list1, list2) {
-    //     if (list1.length !== list2.length) {
-    //         return true;
-    //     }
-    //
-    //     const sortedList1 = list1.map(item => JSON.stringify(item)).sort();
-    //     const sortedList2 = list2.map(item => JSON.stringify(item)).sort();
-    //
-    //     // 정렬된 리스트를 비교
-    //     for (let i = 0; i < sortedList1.length; i++) {
-    //         if (sortedList1[i] !== sortedList2[i]) {
-    //             return true;
-    //         }
-    //     }
-    //     return false;
-    // }
-    // // 접근권한그룹 popup - end
-
-
+    /**
+     * NOTE: 접근권한 사이드 그리드 open
+     */
+    function accessGridOpen(){
+        console.log("gigig")
+    }
 </script>

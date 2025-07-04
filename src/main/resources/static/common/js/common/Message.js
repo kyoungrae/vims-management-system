@@ -100,7 +100,7 @@ Message.Label.Array["ALERT.NO.CHANGED.FILE"] = "변경 된 내용이 없습니�
 Message.Label.Array["CONFIRM.CLOSE_UNSAVED_CHANGES"] = "저장되지 않은 변경 사항이 있습니다. 창을 닫으시겠습니까?";
 
 Message.Label.Array["SAVE"] = "저장";
-Message.Label.Array["CLOSE"] = "닫기";
+Message.Label.Array["CLOSE_BTN"] = "닫기";
 Message.Label.Array["REGISTER_BTN"] = "등록";
 Message.Label.Array["MODIFY_BTN"] = "수정";
 Message.Label.Array["DELETE_BTN"] = "삭제";
