@@ -169,4 +169,23 @@
         </where>
     </update>
 
+    <select id="SELECT_NOT_EXISTS_COMMON_ACCESS_GROUP_MENU" resultType="com.vims.common.group.CommonGroup">
+        SELECT
+            group_id,
+            group_name,
+            group_level,
+            top_group_id,
+            use_yn,
+            system_create_date,
+            system_create_userid,
+            system_update_date,
+            system_update_userid
+        FROM COMMON_GROUP a
+        WHERE NOT EXISTS(
+            SELECT * FROM COMMON_ACCESS_GROUP_MENU b
+                     WHERE b.access_rights_group_id = a.group_id
+                     AND b.menu_code = #{menu_code}
+        )
+    </select>
+
 </mapper>

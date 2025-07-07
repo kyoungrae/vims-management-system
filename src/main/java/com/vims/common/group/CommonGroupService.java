@@ -38,6 +38,9 @@ public class CommonGroupService extends AbstractCommonService<CommonGroup> {
     protected List<CommonGroup> findImpl(CommonGroup request) throws Exception {
         return commonGroupMapper.SELECT(request);
     }
+    protected List<CommonGroup> findNotExistsCommonAccessGroupMenu(CommonGroup request) throws Exception {
+        return commonGroupMapper.SELECT_NOT_EXISTS_COMMON_ACCESS_GROUP_MENU(request);
+    }
 
     @Override
     protected int removeImpl(CommonGroup request) throws Exception{

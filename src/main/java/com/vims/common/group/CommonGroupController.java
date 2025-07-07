@@ -27,6 +27,11 @@ public class CommonGroupController extends AbstractCommonController<CommonGroup>
     protected List<CommonGroup> findAll(@RequestBody CommonGroup request) throws Exception{
         return commonGroupRepository.findAll();
     }
+    @PostMapping("/findNotExistsCommonAccessGroupMenu")
+    protected List<CommonGroup> findNotExistsCommonAccessGroupMenu(@RequestBody CommonGroup request) throws Exception{
+        return commonGroupService.findNotExistsCommonAccessGroupMenu(request);
+    }
+
 
     @PostMapping("/find")
     @Override

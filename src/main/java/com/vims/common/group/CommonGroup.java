@@ -54,6 +54,9 @@ public class CommonGroup extends Common {
 	private String system_update_userid;
 
 
+    /***<pre> menu_code : menu_code in common_menu </pre> */
+    @Transient
+    private String menu_code;
 
     /***<pre> group_id :  </pre> */
     @Transient
