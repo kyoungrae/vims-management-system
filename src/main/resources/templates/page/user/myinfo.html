@@ -67,29 +67,23 @@
                             </div>
                         </div>
                     </div>
-
-                    <div class="gi-row-60 gi-col-100 gi-grid gi-grid-template-columns-repeat-1-1fr-2fr gi-grid-rows-container">
-                        <div class="gi-row-100 gi-col-100 gi-flex gi-flex-center gi-layout-detail-title">
-                            <span>권한</span>
-                        </div>
-                        <div class="gi-row-100 gi-col-100 ">
-                            <div id="user-group-div" class="gi-row-100 gi-input-container gi-input-container-box-border gi-flex gi-col-100 gi-flex-wrap">
-                            </div>
-                        </div>
-                    </div>
-
                     <div class="gi-row-60 gi-col-100 gi-grid gi-grid-template-columns-repeat-1-1fr-2fr gi-grid-rows-container">
                         <div class="gi-row-100 gi-col-100 gi-flex gi-flex-center gi-layout-detail-title">
                             <span>[Page.Message].Message.Label.Array["COMMON_USER.MYINFO.MY_ROLE"]</span>
                         </div>
-                        <div class="gi-row-100 gi-col-100 gi-grid gi-grid-template-columns-2fr-2fr">
-                            <div class="gi-row-100 gi-input-container gi-input-container-box-border gi-flex gi-flex-center">
-                                <label for="office_name" class="gi-input-label" data-focus-label="true" data-focus-label-text-align="default">[Page.Message].Message.Label.Array["COMMON_USER.MYINFO.MY_OFFICE_NAME"]</label>
-                                <input data-field="office_name" id="office_name" name="office_name" class="gi-input" data-focus-span-text-align="default" autocomplete="off" data-gi-tag-disabled/>
+                        <div class="gi-row-100 gi-col-100 gi-grid gi-grid-template-rows-repeat-2-1fr">
+                            <div class="gi-row-100 gi-col-100 ">
+                                <div id="user-group-div" class="gi-row-100 gi-input-container gi-input-container-box-border gi-flex gi-col-100 gi-flex-wrap"></div>
                             </div>
-                            <div class="gi-row-100 gi-input-container gi-input-container-box-border gi-flex gi-flex-center">
-                                <label for="office_code" class="gi-input-label" data-focus-label="true" data-focus-label-text-align="default">[Page.Message].Message.Label.Array["COMMON_USER.MYINFO.MY_OFFICE_CODE"]</label>
-                                <input data-field="office_code" id="office_code" name="office_code" class="gi-input" data-focus-span-text-align="default" autocomplete="off" data-gi-tag-disabled/>
+                            <div class="gi-row-100 gi-col-100 gi-grid gi-grid-template-columns-2fr-2fr">
+                                <div class="gi-row-100 gi-input-container gi-input-container-box-border gi-flex gi-flex-center">
+                                    <label for="office_name" class="gi-input-label" data-focus-label="true" data-focus-label-text-align="default">[Page.Message].Message.Label.Array["COMMON_USER.MYINFO.MY_OFFICE_NAME"]</label>
+                                    <input data-field="office_name" id="office_name" name="office_name" class="gi-input" data-focus-span-text-align="default" autocomplete="off" data-gi-tag-disabled/>
+                                </div>
+                                <div class="gi-row-100 gi-input-container gi-input-container-box-border gi-flex gi-flex-center">
+                                    <label for="office_code" class="gi-input-label" data-focus-label="true" data-focus-label-text-align="default">[Page.Message].Message.Label.Array["COMMON_USER.MYINFO.MY_OFFICE_CODE"]</label>
+                                    <input data-field="office_code" id="office_code" name="office_code" class="gi-input" data-focus-span-text-align="default" autocomplete="off" data-gi-tag-disabled/>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -160,7 +154,7 @@
 </article>
 <script type="text/javascript">
     var PRGMID = "inspectionEquipmentModelTypeModify";	//page id
-    var newSession = new session();
+    // var newSession = new session();
     var data_binding = new dataBinding();
     init();
 
@@ -193,13 +187,16 @@
         function bindUserGroup(userGroups) {
             let userGroupHtml = '';
             userGroups.forEach((group) => {
-                userGroupHtml += "<span class='gi-tag-gray gi-col-24px'>" + group.group_name + "</span>";
+                if(formUtil.checkEmptyValue(group.group_name)){
+                    userGroupHtml += "<span class='gi-tag-gray'>" + group.group_name + "</span>";
+                }
             });
 
             $("#user-group-div").html(userGroupHtml);
         }
     }
 
+    //NOTE: 유저 정보 조회
     async function findUserData() {
         try {
             const email = JwtUtils.getUserEmailFromJWT();
@@ -221,18 +218,17 @@
 
     function resetEvent() {
         //데이터 호출 후 이벤트 재설정
-        new afterLoadDataEvent();
     }
 
     //클릭 이벤트
     function clickEvent() {
         //수정 버튼 클릭 이벤트
         $("#modify-btn").click(function () {
-            modify();
+            formUtil.popup("modify_user_info-btn",Message.Label.Array["CONFIRM.SAVE"], modify);
         });
 
         $("#change-password-btn").click(function () {
-            changePassword();
+            changePasswordValidation();
         });
     }
 
@@ -240,35 +236,52 @@
         // formUtil.createImgFileUpload("imgFileUpload", "/common/file/commonFileDetail", {FOLDER_NAME: "userImgFolder"}, modifyUserImage);
     }
 
-    // async function modify() {
-    //     if (!checkValidation()) return false;
-    //     if (!await formUtil.confirm(Message.Label.Array["CONFIRM.UPDATE"])) return false;
-    //
-    //     let data = new dataBinding().getData(PRGMID);
-    //     let url = "/cms/common/commonUser/update";
-    //     let param = {
-    //         id: data.id,
-    //         user_name: data.user_name,
-    //         tel: data.tel,
-    //         address: data.address,
-    //         address_detail: data.address_detail,
-    //         postal_code: data.postal_code,
-    //     };
-    //     axios.post(url, param).then(response => {
-    //         let status = response.status;
-    //         if (status === 200) {
-    //             (new GiFormatCheck).resetToggleIcon();
-    //             formUtil.showMessage(Message.Label.Array["COMPLETE.UPDATE"]);
-    //         } else {
-    //             formUtil.alertPopup("response status is :" + status);
-    //         }
-    //     }).catch(error => {
-    //         formUtil.alertPopup(error);
-    //     })
-    // }
+    function modify() {
+        if(checkValidation()){
+            let data = new dataBinding().getData(PRGMID);
+            let url = "/cms/common/commonUser/update";
+            let param = {
+                id: data.id,
+                user_name: data.user_name,
+                tel: data.tel,
+                address: data.address,
+                address_detail: data.address_detail,
+                postal_code: data.postal_code,
+            };
+            axios.post(url, param).then(response => {
+                let status = response.status;
+                if (status === 200) {
+                    (new GiFormatCheck).resetToggleIcon();
+                    formUtil.showMessage(Message.Label.Array["COMPLETE.UPDATE"]);
+                } else {
+                    formUtil.alertPopup("response status is :" + status);
+                }
+            }).catch(error => {
+                formUtil.alertPopup(error);
+            })
+        }
+    }
+    // NOTE: 유효성 검사
+    function checkValidation() {
+        let flag = false;
 
-    //NOTE : 비밀번호 변경 로직
-    async function changePassword() {
+        let validation = [];
+        validation.formId = PRGMID;
+        $(".gi-input[data-required='true'],.gi-select[data-required='true']").map((i, item) => {
+            if ($(item).data("field")) {
+                let messageId = $(item).data("field").toUpperCase();
+                let message = Message.Label.Array["COMMON_USER.CHECK." + messageId];
+                validation.push({id: item.id, message: message});
+            }
+        });
+        if (formUtil.validationCheck(validation)) {
+            flag = true;
+        }
+        return flag;
+    }
+
+    //NOTE : 비밀번호 변경 검사 로직
+    async function changePasswordValidation() {
         $("#change-password-popup").attr("data-popup-open","true");
         $(".popup_success_btn")
             .off("click.changePopupUpdateClickEventHandler")
@@ -295,22 +308,30 @@
                 formUtil.alertPopup(message);
                 return false;
             }
-
-            const url = "/cms/common/commonUser/changePassword";
-            const param = {
-                before_password: beforePassword,
-                password: newPassword,
-                email: JwtUtils.getUserEmailFromJWT()
-            };
-            axios.post(url, param).then(response =>{
-                if(response.status === 200){
-                    formUtil.showMessage(Message.Label.Array["COMPLETE.UPDATE"]);
-                    common_popup.close("change-password-popup");
-                }
-            }).catch(error =>{
-                formUtil.alertPopup(error.response.data);
-            })
+            let cont ={
+                beforePassword : beforePassword,
+                newPassword : newPassword,
+                newPasswordConfirm : newPasswordConfirm
+            }
+            changePassword(cont);
         }
+    }
+    //NOTE: 비밀번호 변경 API
+    function changePassword(cont){
+        const url = "/cms/common/commonUser/changePassword";
+        const param = {
+            before_password: cont.beforePassword,
+            password: cont.newPassword,
+            email: JwtUtils.getUserEmailFromJWT()
+        };
+        axios.post(url, param).then(response =>{
+            if(response.status === 200){
+                formUtil.showMessage(Message.Label.Array["COMPLETE.UPDATE"]);
+                common_popup.close("change-password-popup");
+            }
+        }).catch(error =>{
+            formUtil.alertPopup(error.response.data);
+        })
     }
 
     // function modifyUserImage() {
@@ -337,23 +358,6 @@
     //     }
     // }
 
-    function checkValidation() {
-        let flag = false;
-
-        let validation = [];
-        validation.formId = PRGMID;
-        $(".gi-input[data-required='true'],.gi-select[data-required='true']").map((i, item) => {
-            if ($(item).data("field")) {
-                let messageId = $(item).data("field").toUpperCase();
-                let message = Message.Label.Array["COMMON_USER.CHECK." + messageId];
-                validation.push({id: item.id, message: message});
-            }
-        });
-        if (formUtil.validationCheck(validation)) {
-            flag = true;
-        }
-        return flag;
-    }
 
     // function findImgFile() {
     //     let url = "/common/file/commonFileDetail/find";
