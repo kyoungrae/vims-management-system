@@ -63,7 +63,7 @@ public class CommonUserController extends AbstractCommonController<CommonUser> {
 //    }
 
     @PostMapping("/changePassword")
-    public int changePassword(@RequestBody CommonUser request) {
+    public int changePassword(@RequestBody CommonUser request) throws Exception{
         return commonUserService.changePassword(request);
     }
 

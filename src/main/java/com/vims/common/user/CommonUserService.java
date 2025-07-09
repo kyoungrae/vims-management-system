@@ -6,19 +6,20 @@ package com.vims.common.user;
 import com.system.auth.authuser.AuthUser;
 import com.system.common.base.AbstractCommonService;
 import com.system.common.exception.CustomException;
-import com.system.common.util.passwordvalidation.PasswordPolicy;
-import com.system.common.util.passwordvalidation.PasswordValidationUtil;
 import com.system.common.util.validation.ValidationService;
+import com.vims.common.siteconfig.CommonSiteConfig;
 import com.vims.common.siteconfig.CommonSiteConfigService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.MessageSource;
 import org.springframework.context.i18n.LocaleContextHolder;
+import org.springframework.security.core.userdetails.User;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.regex.Pattern;
 
 @Service
 @RequiredArgsConstructor
@@ -114,14 +115,86 @@ public class CommonUserService extends AbstractCommonService<CommonUser> {
         return commonUserMapper.INSERT(request);
     }
 
-//    public boolean matchToPassword(CommonUser request){
-//        var commonUser = CommonUser.builder()
-//                .id(request.getId())
-//                .build();
-//        List<CommonUser> userList = commonUserMapper.SELECT(commonUser);
-//        String before_password_encoded = userList.get(0).getPassword();
-//        return passwordEncoder.matches(request.getBefore_password(),before_password_encoded);
-//    }
+    public int changePassword(CommonUser request) throws Exception {
+        var commonUser = CommonUser.builder().email(request.getEmail()).build();
+        List<CommonUser> users = commonUserMapper.SELECT(commonUser);
+        if (users == null || users.isEmpty() || users.size() != 1) {
+            throw new CustomException(getMessage("EXCEPTION.NOT.FOUND.USER"));
+        }
+
+        if(!matchToPassword(request)){
+            throw new CustomException(getMessage("EXCEPTION.PASSWORD.NOT_MATCH"));
+        }
+        validationPasswordPolicy(request.getPassword());
+
+        var user = CommonUser.builder()
+                .id(users.get(0).getId())
+                .password(passwordEncoder.encode(request.getPassword()))
+                .build();
+        return commonUserMapper.UPDATE(user);
+    }
+
+    public void validationPasswordPolicy(String newPassword) throws Exception {
+        List<CommonSiteConfig> list = new ArrayList<>();
+        var commonSiteConfig = CommonSiteConfig.builder()
+                .config_group_id("PASSWORD_POLICY")
+                .use_yn("1")
+                .build();
+        list = commonSiteConfigService.findImpl(commonSiteConfig);
+        for (CommonSiteConfig csc : list) {
+            String key = csc.getConfig_key();
+            String value = csc.getConfig_value();
+            //NOTE: 비밀번호 최대길이 설정
+            if (key.equals("MAX_LENGTH")) {
+                if (newPassword.length() > Integer.parseInt(value)) {
+                    throw new CustomException(getMessage("EXCEPTION.PASSWORD.POLICY.MAX_LENGTH"));
+                }
+            //NOTE: 비밀번호 최소 길이 설정
+            }else if(key.equals("MIN_LENGTH")){
+                if(newPassword.length() < Integer.parseInt(value)){
+                    throw new CustomException(getMessage("EXCEPTION.PASSWORD.POLICY.MIN_LENGTH"));
+                }
+            //NOTE: 비밀번호 대문자 설정
+            }else if(key.equals("REQUIRE_UPPERCASE")){
+                Pattern UPPERCASE_PATTERN  = Pattern.compile(".*[A-Z].*");
+                if(!UPPERCASE_PATTERN.matcher(newPassword).matches()){
+                    throw new CustomException(getMessage("EXCEPTION.PASSWORD.POLICY.REQUIRE_UPPERCASE"));
+                }
+            //NOTE: 비밀번호 소문자 설정
+            }else if(key.equals("REQUIRE_LOWERCASE")){
+                Pattern LOWRERCASE_PATTERN  = Pattern.compile(".*[a-z].*");
+                if(!LOWRERCASE_PATTERN.matcher(newPassword).matches()){
+                    throw new CustomException(getMessage("EXCEPTION.PASSWORD.POLICY.REQUIRE_LOWERCASE"));
+                }
+            //NOTE: 비밀번호 숫자 포함 설정
+            }else if(key.equals("REQUIRE_NUMBER")){
+                Pattern NUMBER_PATTERN = Pattern.compile(".*\\d.*");
+                if(!NUMBER_PATTERN.matcher(newPassword).matches()){
+                    throw new CustomException(getMessage("EXCEPTION.PASSWORD.POLICY.REQUIRE_NUMBER"));
+                }
+            //NOTE: 비빌번호 특수 문자 포함 설정
+            }else if(key.equals("REQUIRE_SPECIAL_CHARACTER")) {
+                Pattern SPECIAL_CHARACTER_PATTERN = Pattern.compile(".*[!@#$%^&*(),.?\":{}|<>].*");
+                if (!SPECIAL_CHARACTER_PATTERN.matcher(newPassword).matches()) {
+                    throw new CustomException(getMessage("EXCEPTION.PASSWORD.POLICY.REQUIRE_SPECIAL_CHARACTER"));
+                }
+            }else{
+                throw new CustomException(getMessage("EXCEPTION.PASSWORD.POLICY.NOT_EXISTS") + key);
+            }
+        }
+    }
+    public List<String> validatePasswordPolicy(String newPassword) {
+        return null;
+    }
+
+    public boolean matchToPassword(CommonUser request){
+        var commonUser = CommonUser.builder()
+                .email(request.getEmail())
+                .build();
+        List<CommonUser> userList = commonUserMapper.SELECT(commonUser);
+        String before_password_encoded = userList.get(0).getPassword();
+        return passwordEncoder.matches(request.getBefore_password(),before_password_encoded);
+    }
 //
 //    public String getUserImageUrlByUserEmail(String email) {
 //        // TODO 이미지 호출 방식이 변경되면 여기도 바껴야 함
@@ -133,38 +206,6 @@ public class CommonUserService extends AbstractCommonService<CommonUser> {
 //        String filePath = ApplicationResource.get("application.properties").get("filePath").toString();
 //        return imagePath + "?fileId=" + fileName + "&basePath=" + filePath + "/userImgFolder";
 //    }
-
-    public int changePassword(CommonUser request) {
-        var commonUser = CommonUser.builder().email(request.getEmail()).build();
-        List<CommonUser> users = commonUserMapper.SELECT(commonUser);
-
-        if (users == null || users.isEmpty() || users.size() != 1) {
-            throw new UsernameNotFoundException("NO_USER");
-        }
-
-        List<String> failReasons = validatePasswordPolicy(request.getPassword());
-        if (failReasons.size() > 0) {
-            throw new CustomException(failReasons.get(0));
-        }
-
-        if (!passwordEncoder.matches(request.getBefore_password(), users.get(0).getPassword())) {
-            throw new CustomException(getMessage("EXCEPTION.PASSWORD.NOT.MATCH"));
-        }
-
-        var commonUserBean = CommonUser.builder()
-                .id(users.get(0).getId())
-                .password(passwordEncoder.encode(request.getPassword()))
-                .build();
-
-        return commonUserMapper.UPDATE(commonUserBean);
-    }
-
-    public List<String> validatePasswordPolicy(String newPassword) {
-        PasswordPolicy policy = commonSiteConfigService.getPasswordPolicy();
-        PasswordValidationUtil passwordValidationUtil = new PasswordValidationUtil();
-        return passwordValidationUtil.validatePassword(newPassword, policy);
-    }
-
 //    public int initializePassword(CommonUser request) {
 //        var commonUser = CommonUser.builder().email(request.getEmail()).build();
 //        List<CommonUser> users = commonUserMapper.SELECT(commonUser);

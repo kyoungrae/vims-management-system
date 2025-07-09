@@ -61,7 +61,9 @@ Message.Label.Array["COMMON_USER.MYINFO.MY_PASSWORD_CHANGE"] = "비밀번호 변
 Message.Label.Array["COMMON_USER.MYINFO.MY_BEFORE_PASSWORD"] = "기존 비밀번호";
 Message.Label.Array["COMMON_USER.MYINFO.MY_AFTER_PASSWORD"] = "새 비밀번호";
 Message.Label.Array["COMMON_USER.MYINFO.MY_AFTER_PASSWORD_CONFIRM"] = "새 비밀번호 확인";
+Message.Label.Array["COMMON_USER.MYINFO.CHECK_PASSWORD_DOUBLE_CHECK"] = "새 비밀번호 확인이 일치 하지 않습니다";
 Message.Label.Array["SAVE"] = "저장";
 Message.Label.Array["CONFIRM"] = "확인";
 Message.Label.Array["CANCEL"] = "취소";
+
 

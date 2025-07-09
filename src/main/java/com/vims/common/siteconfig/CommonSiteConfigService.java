@@ -37,7 +37,7 @@ public class CommonSiteConfigService extends AbstractCommonService<CommonSiteCon
     }
 
     @Override
-    protected List<CommonSiteConfig> findImpl(CommonSiteConfig request) throws Exception {
+    public List<CommonSiteConfig> findImpl(CommonSiteConfig request) throws Exception {
         return commonSiteConfigMapper.SELECT(request);
     }
 
@@ -57,9 +57,5 @@ public class CommonSiteConfigService extends AbstractCommonService<CommonSiteCon
         }catch (DuplicateKeyException dke){
             throw new CustomException(getMessage("EXCEPTION.PK.EXIST"));
         }
-    }
-
-    public PasswordPolicy getPasswordPolicy() {
-        return commonSiteConfigMapper.SELECT_PASSWORD_POLICY();
     }
 }
