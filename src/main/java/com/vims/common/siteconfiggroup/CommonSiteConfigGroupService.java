@@ -1,7 +1,7 @@
 /**
  *  ++ giens Product ++
  */
-package com.vims.common.siteConfigGroup;
+package com.vims.common.siteconfiggroup;
 
 import com.system.common.base.AbstractCommonService;
 import com.system.common.exception.CustomException;

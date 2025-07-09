@@ -1,4 +1,4 @@
-package com.vims.common.siteConfigGroup;
+package com.vims.common.siteconfiggroup;
 
 import com.system.common.base.AbstractCommonController;
 import lombok.RequiredArgsConstructor;

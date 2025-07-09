@@ -1,3 +1,8 @@
+<style>
+    .test{
+        font-weight: bold;
+    }
+</style>
 <article class="gi-article-content gi-col-95 gi-row-90">
     <section class="gi-col-100 gi-row-100">
         <header class="gi-flex gi-flex-center gi-col-10">
@@ -72,8 +77,8 @@
                             <span>[Page.Message].Message.Label.Array["COMMON_USER.MYINFO.MY_ROLE"]</span>
                         </div>
                         <div class="gi-row-100 gi-col-100 gi-grid gi-grid-template-rows-repeat-2-1fr">
-                            <div class="gi-row-100 gi-col-100 ">
-                                <div id="user-group-div" class="gi-row-100 gi-input-container gi-input-container-box-border gi-flex gi-col-100 gi-flex-wrap"></div>
+                            <div class="gi-row-100 gi-col-100" style="max-height:50px;">
+                                <div id="user-group-div" class="gi-overflow gi-row-100 gi-input-container gi-input-container-box-border gi-flex gi-col-100 gi-flex-wrap"></div>
                             </div>
                             <div class="gi-row-100 gi-col-100 gi-grid gi-grid-template-columns-2fr-2fr">
                                 <div class="gi-row-100 gi-input-container gi-input-container-box-border gi-flex gi-flex-center">
@@ -117,11 +122,13 @@
         </article>
     </section>
 </article>
+<!--NOTE: 비밀번호 변경 팝업-->
 <article id="change-password-popup" class="gi-popup" data-popup-open="false">
-    <div class="gi-popup-body" style="width: 300px !important; height: 300px !important;">
+    <div class="gi-popup-body" style="width: 350px !important; height: auto !important; min-height: 300px; padding:10px;">
         <div class="gi-popup-header">
             <span>[Page.Message].Message.Label.Array["COMMON_USER.MYINFO.MY_PASSWORD_CHANGE"]</span>
         </div>
+        <div class="password-policy-section gi-row-90 gi-flex gi-flex-wrap" style="color:red; font-size:12px;"></div>
         <div class="gi-popup-contents">
             <!--      팝업내용 삽입 영역      -->
             <form id="commonUserPasswordChange" class="gi-row-100 gi-col-90">
@@ -227,8 +234,10 @@
             formUtil.popup("modify_user_info-btn",Message.Label.Array["CONFIRM.SAVE"], modify);
         });
 
-        $("#change-password-btn").click(function () {
-            changePasswordValidation();
+        $("#change-password-btn").click(async function () {
+            let data = await findSiteConfigInPasswordPolicy();
+            setPasswordPolicyInPopupSection(data);
+            await changePasswordValidation();
         });
     }
 
@@ -332,6 +341,38 @@
         }).catch(error =>{
             formUtil.alertPopup(error.response.data);
         })
+    }
+    //NOTE: 비밀번호변경 정책 조회
+    function findSiteConfigInPasswordPolicy(){
+        return new Promise(resolve =>{
+            let url = "/cms/common/commonSiteConfig/find";
+            let param ={
+                config_group_id : "PASSWORD_POLICY",
+                use_yn : "1"
+            }
+            axios.post(url, param).then(response =>{
+                let status = response.status;
+                if(status === 200){
+                    if(response.data.length > 0){
+                        let data = response.data;
+                        resolve(data);
+                    }
+                }
+            }).catch(error =>{
+                formUtil.alertPopup(error.response.data);
+            })
+        })
+    }
+    //NOTE: 팝업안에 비밀번호 정책 공시
+    function setPasswordPolicyInPopupSection(cont){
+        let contents = '';
+        cont.map((item,i)=>{
+            console.log(item)
+            contents += '<div class="gi-row-50"><span class="test">['+(i+1)+']'+item.description+" : "+item.config_value+'</span></div>'
+
+        })
+        $(".password-policy-section").html(contents);
+        // <div class="gi-row-50"><span class="test">[1]숫자 필수</span></div>
     }
 
     // function modifyUserImage() {

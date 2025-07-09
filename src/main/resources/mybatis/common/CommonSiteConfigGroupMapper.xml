@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.vims.common.siteConfigGroup.CommonSiteConfigGroupMapper">
+<mapper namespace="com.vims.common.siteconfiggroup.CommonSiteConfigGroupMapper">
     <sql id="sortFilter">
         ORDER BY
         <choose>
@@ -14,7 +14,7 @@
         </choose>
     </sql>
 
-    <select id="SELECT_PAGE" resultType="com.vims.common.siteConfigGroup.CommonSiteConfigGroup">
+    <select id="SELECT_PAGE" resultType="com.vims.common.siteconfiggroup.CommonSiteConfigGroup">
         SELECT * FROM (
             SELECT
                 row_number() over (ORDER BY system_create_date DESC )AS no,
@@ -72,7 +72,7 @@
         </where>
     </select>
 
-    <select id="SELECT" resultType="com.vims.common.siteConfigGroup.CommonSiteConfigGroup">
+    <select id="SELECT" resultType="com.vims.common.siteconfiggroup.CommonSiteConfigGroup">
         SELECT
             
             config_group_id,

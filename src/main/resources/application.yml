@@ -33,6 +33,11 @@ spring:
         password: 1234   # 비밀번호가 그대로라면 유지, 아니면 MariaDB용으로 변경
         driver-class-name: org.mariadb.jdbc.Driver
 
+        hikari:
+            max-lifetime: 1800000      # 30분
+            idle-timeout: 600000       # 10분
+            validation-timeout: 5000
+
     jpa:
         show-sql: false
         properties:

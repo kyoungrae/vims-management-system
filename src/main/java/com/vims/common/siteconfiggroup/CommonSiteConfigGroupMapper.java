@@ -1,4 +1,4 @@
-package com.vims.common.siteConfigGroup;
+package com.vims.common.siteconfiggroup;
 
 import com.system.common.base.CommonMapper;
 import org.apache.ibatis.annotations.Mapper;
