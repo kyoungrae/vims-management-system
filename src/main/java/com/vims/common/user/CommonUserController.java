@@ -36,19 +36,19 @@ public class CommonUserController extends AbstractCommonController<CommonUser> {
 
     @PostMapping("/remove")
     @Override
-    protected int removeImpl(@RequestBody CommonUser request) {
+    public int removeImpl(@RequestBody CommonUser request) {
         return commonUserService.removeImpl(request);
     }
 
     @PostMapping("/update")
     @Override
-    protected int updateImpl(@RequestBody CommonUser request) {
+    public int updateImpl(@RequestBody CommonUser request) {
         return commonUserService.updateImpl(request);
     }
 
     @PostMapping("/register")
     @Override
-    protected int registerImpl(@RequestBody CommonUser request) {
+    public int registerImpl(@RequestBody CommonUser request) {
         return commonUserService.registerImpl(request);
     }
 
