@@ -62,6 +62,7 @@
         </article>
     </section>
 </article>
+<!--NOTE: 설정그룹 등록 팝업-->
 <article id="siteConfigGroupRegister_gi-popup" class="gi-popup" data-popup-open="false">
     <div class="gi-popup-body" style="width:350px !important; height: 300px !important;">
         <div class="gi-popup-header">
@@ -105,6 +106,7 @@
         </div>
     </div>
 </article>
+<!--NOTE: 설정키 등록 팝업-->
 <article id="siteConfigRegister_gi-popup" class="gi-popup" data-popup-open="false">
     <div class="gi-popup-body" style="width:350px !important; height: 400px !important;">
         <div class="gi-popup-header">
@@ -155,7 +157,63 @@
         <div class="gi-popup-footer">
             <div class="gi-btn-section gi-row-30 gi-col-30px gi-padding-left-right-20px gi-flex gi-flex-justify-content-center gi-flex-align-items-center">
                 <button id="siteConfigCodeRegister-btn" class="gi-popup-register-btn" type="button">[Page.Message].Message.Label.Array["REGISTER_BTN"]</button>
-                <button class="gi-popup-close-btn" type="button">[Page.Message].Message.Label.Array["CLOSE"]</button>
+                <button class="gi-popup-close-btn" type="button">[Page.Message].Message.Label.Array["CLOSE_BTN"]</button>
+            </div>
+        </div>
+    </div>
+</article>
+<!--NOTE: 설정키 등록 팝업-->
+<article id="siteConfigUpdate_gi-popup" class="gi-popup" data-popup-open="false">
+    <div class="gi-popup-body" style="width:350px !important; height: 400px !important;">
+        <div class="gi-popup-header">
+            <span>[Page.Message].Message.Label.Array["COMMON_SITE_CONFIG.TITLE_MODIFY_CONFIG_KEY"]</span>
+        </div>
+        <div class="gi-popup-contents">
+            <!--      팝업내용 삽입 영역      -->
+            <div class="gi-row-100 gi-col-100 gi-flex gi-flex-center">
+                <form id="siteConfigCodeUpdate" class="gi-row-100">
+                    <div class="gi-row-100 gi-padding-5px gi-grid-container gi-grid gi-grid-justify-items-center gi-grid-gap-10px gi-margin-bottom-15px">
+                        <div class="gi-row-90 gi-col-100 gi-grid gi-grid-template-columns-repeat-1-1fr gi-grid-rows-container">
+                            <div class="gi-row-100 gi-col-100 gi-flex">
+                                <div class="gi-row-100 gi-input-container gi-input-container-box-border-shadow gi-flex gi-flex-center">
+                                    <label for="update_config_group_id" class="gi-input-label" data-focus-label="true" data-focus-label-text-align="default" data-required="true">[Page.Message].Message.Label.Array["COMMON_SITE_CONFIG_GROUP.CONFIG_GROUP_ID"]</label>
+                                    <input data-gi-tag-disabled data-field="config_group_id" id="update_config_group_id" name="config_group_id" class="gi-input" data-focus-span-text-align="default" data-required="true" autocomplete="off"/>
+                                </div>
+                            </div>
+                            <div class="gi-row-100 gi-col-100 gi-flex">
+                                <div class="gi-row-100 gi-input-container gi-input-container-box-border-shadow gi-flex gi-flex-center">
+                                    <label for="update_config_key" class="gi-input-label" data-focus-label="true" data-focus-label-text-align="default" data-required="true">[Page.Message].Message.Label.Array["COMMON_SITE_CONFIG.CONFIG_KEY"]</label>
+                                    <input data-field="config_key" id="update_config_key" name="config_key" class="gi-input" data-focus-span-text-align="default" data-required="true" autocomplete="off"/>
+                                </div>
+                            </div>
+                            <div class="gi-row-100 gi-col-100 gi-flex">
+                                <div class="gi-row-100 gi-input-container gi-input-container-box-border-shadow gi-flex gi-flex-center">
+                                    <label for="update_config_value" class="gi-input-label" data-focus-label="true" data-focus-label-text-align="default" data-required="true">[Page.Message].Message.Label.Array["COMMON_SITE_CONFIG.CONFIG_VALUE"]</label>
+                                    <input data-field="config_value" id="update_config_value" name="config_value" class="gi-input" data-focus-span-text-align="default" data-required="true" autocomplete="off"/>
+                                </div>
+                            </div>
+                            <div class="gi-row-100 gi-col-100 gi-flex">
+                                <div class="gi-row-100 gi-input-container gi-input-container-box-border-shadow gi-flex gi-flex-center">
+                                    <label for="update_description" class="gi-input-label" data-focus-label="true" data-focus-label-text-align="default" data-required="true">[Page.Message].Message.Label.Array["COMMON_SITE_CONFIG.DESCRIPTION"]</label>
+                                    <input data-field="description" id="update_description" name="description" class="gi-input" data-focus-span-text-align="default" data-required="true" autocomplete="off"/>
+                                </div>
+                            </div>
+                            <div class="gi-row-100 gi-col-100">
+                                <div class="gi-row-100 gi-input-container gi-input-container-box-border-shadow gi-flex gi-flex-center ">
+                                    <label for="update_use_yn" class="gi-input-label" data-focus-label="true" data-focus-label-text-align="default" data-required="true">[Page.Message].Message.Label.Array["COMMON_SITE_CONFIG.USE_YN"]</label>
+                                    <input gi-selectbox data-selectbox-field="use_yn" data-field="use_yn" id="update_use_yn" name="use_yn" class="gi-input" data-focus-span-text-align="default" data-required="true" autocomplete="off"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <!--/      팝업내용 삽입 영역      -->
+        </div>
+        <div class="gi-popup-footer">
+            <div class="gi-btn-section gi-row-30 gi-col-30px gi-padding-left-right-20px gi-flex gi-flex-justify-content-center gi-flex-align-items-center">
+                <button id="siteConfigCodeUpdate-btn" class="gi-popup-register-btn" type="button">[Page.Message].Message.Label.Array["MODIFY_BTN"]</button>
+                <button class="gi-popup-close-btn" type="button">[Page.Message].Message.Label.Array["CLOSE_BTN"]</button>
             </div>
         </div>
     </div>
@@ -387,7 +445,7 @@
                         {HEADER: '[Page.Message].Message.Label.Array["COMMON_SITE_CONFIG.SYSTEM_UPDATE_DATE"]', ID: "system_update_date", WIDTH: "40", TYPE: "text", FONT_SIZE: "12px", TEXT_ALIGN: "center", HIDDEN: true},
                         {HEADER: '[Page.Message].Message.Label.Array["COMMON_SITE_CONFIG.SYSTEM_UPDATE_USERID"]', ID: "system_update_userid", WIDTH: "40", TYPE: "text", FONT_SIZE: "12px", TEXT_ALIGN: "center", HIDDEN: true},
                         {HEADER: '[Page.Message].Message.Label.Array["MODIFY_BTN"]', ID: "modify_btn", WIDTH: "15", TYPE: "button", FONT_SIZE: "12px", TEXT_ALIGN: "center", HIDDEN: false},
-                        {HEADER: '[Page.Message].Message.Label.Array["DETAIL_BTN"]', ID: "delete_btn", WIDTH: "15", TYPE: "button", FONT_SIZE: "12px", TEXT_ALIGN: "center", HIDDEN: false},
+                        {HEADER: '[Page.Message].Message.Label.Array["DELETE_BTN"]', ID: "delete_btn", WIDTH: "15", TYPE: "button", FONT_SIZE: "12px", TEXT_ALIGN: "center", HIDDEN: false},
                         <!--{HEADER:"사이드 그리드",  ID:"sideGridOpen_btn",  WIDTH:"15",TYPE:"button",FONT_SIZE:"12px",TEXT_ALIGN:"center",HIDDEN:false}-->
                     ]
                 }
@@ -421,10 +479,10 @@
                 }
 
                 //그리드 내부의 수정 버튼 클릭 이벤트 설정
-                siteConfig_list_grid.updateBtnClick("", "modify_btn");
+                siteConfig_list_grid.updateBtnClick(updatePopupSettings, "modify_btn");
 
                 //그리드 내부의 삭제 버튼 클릭 이벤트 설정
-                siteConfig_list_grid.deleteBtnClick("", "delete_btn");
+                siteConfig_list_grid.deleteBtnClick(removeCommonSiteConfigKey, "delete_btn");
             } else {
                 formUtil.alertPopup("response status is :" + status);
             }
@@ -432,7 +490,7 @@
             formUtil.alertPopup(error);
         })
     }
-
+    //NOTE: 설정 그룹 등록
     function siteConfigGroupIdRegister(){
         let flag = checkValidation(CONFIG_GROUP_FORMID);
         if(flag){
@@ -449,12 +507,13 @@
                     common_popup.close(CONFIG_GROUP_POPUPID);
                     findBySiteConfigGroupList();
                 }
-                s            }).catch(error =>{
+            }).catch(error =>{
                 formUtil.alertPopup(error.response.data);
             })
 
         }
     }
+    //NOTE : 설정키 등록
     function siteConfigKeyRegister(p_config_group_id){
         let flag = checkValidation(CONFIG_KEY_FORMID);
         if(flag){
@@ -495,5 +554,61 @@
             flag = true;
         }
         return flag;
+    }
+    //NOTE: 설정키 삭제 API
+    function removeCommonSiteConfigKey(cont){
+        let url = "/cms/common/commonSiteConfig/remove";
+        let param ={
+            config_group_id : cont.config_group_id,
+            config_key : cont.config_key
+        }
+        axios.post(url, param).then(response =>{
+            let status = response.status;
+            if(status === 200){
+                formUtil.showMessage(Message.Label.Array["COMPLETE.REMOVE"]);
+                findBySiteConfigList(null, null, null, null, cont.config_group_id);
+            }
+        }).catch(error =>{
+            formUtil.alertPopup(error.response.data);
+        })
+    }
+    //NOTE : 설정키 수정 팝업 셋팅
+    function updatePopupSettings(cont){
+        $("#siteConfigUpdate_gi-popup").attr("data-popup-open","true");
+        data_binding.setDataForm("siteConfigUpdate_gi-popup",cont);
+        data_binding.setDataSelectBox("update_use_yn",cont.use_yn);
+
+        $("#siteConfigCodeUpdate-btn").off("click.siteConfigCodeUpdateBtnClickEventHandler")
+            .on("click.siteConfigCodeUpdateBtnClickEventHandler",siteConfigCodeUpdateBtnClickEventHandler);
+        function siteConfigCodeUpdateBtnClickEventHandler(){
+            updateCommonSiteConfigKey("siteConfigUpdate_gi-popup");
+        }
+
+    }
+    //NOTE: 설정키 수정 API
+    function updateCommonSiteConfigKey(prgmId){
+        let flag = checkValidation(prgmId);
+        let cont = data_binding.getData(prgmId);
+        if(flag){
+            let url = "/cms/common/commonSiteConfig/update";
+            let param = {
+                config_group_id : cont.config_group_id,
+                config_key: cont.config_key,
+                config_value : cont.config_value,
+                description : cont.description,
+                use_yn : cont.use_yn
+            }
+            axios.post(url, param).then(response =>{
+                let status = response.status;
+                if(status === 200){
+                    formUtil.showMessage(Message.Label.Array["COMPLETE.UPDATE"]);
+                    findBySiteConfigList(null, null, null, null, cont.config_group_id);
+                    common_popup.close(prgmId);
+                }
+
+            }).catch(error =>{
+                formUtil.alertPopup(error.response.data);
+            })
+        }
     }
 </script>

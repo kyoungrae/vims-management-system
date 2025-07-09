@@ -6,6 +6,7 @@ Message.Label.Array["COMMON_SITE_CONFIG.TITLE_LIST"] = "시스템 설정";
 Message.Label.Array["COMMON_SITE_CONFIG.TITLE_MODIFY"] = "시스템 설정 수정";
 Message.Label.Array["COMMON_SITE_CONFIG.TITLE_REGISTER"] = "시스템 설정 등록";
 Message.Label.Array["COMMON_SITE_CONFIG.TITLE_REGISTER_CONFIG_KEY"] = "시스템 설정키 등록";
+Message.Label.Array["COMMON_SITE_CONFIG.TITLE_MODIFY_CONFIG_KEY"] = "시스템 설정키 수정";
 
 
 Message.Label.Array["COMMON_SITE_CONFIG.CHECK.CONFIG_GROUP_ID"] = "설정그룹아이디(을)를 입력해 주세요";
