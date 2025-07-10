@@ -182,6 +182,7 @@
         menu_level,
         top_menu_code,
         prgm_url,
+        menu_icon,
         url,
         use_yn,
         fn_get_common_code_name('use_yn', use_yn) as use_yn_name,

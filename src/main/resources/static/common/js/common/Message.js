@@ -102,6 +102,7 @@ Message.Label.Array["CONFIRM.CLOSE_UNSAVED_CHANGES"] = "저장되지 않은 변�
 Message.Label.Array["SAVE"] = "저장";
 Message.Label.Array["CLOSE_BTN"] = "닫기";
 Message.Label.Array["REGISTER_BTN"] = "등록";
+Message.Label.Array["SELECT_BTN"] = "선택";
 Message.Label.Array["MODIFY_BTN"] = "수정";
 Message.Label.Array["DELETE_BTN"] = "삭제";
 Message.Label.Array["DETAIL_BTN"] = "상세";

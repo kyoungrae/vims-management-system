@@ -7,7 +7,8 @@ class loadToScript{
             "CommonUserGroupMessage",
             "CommonUserMessage",
             "CommonSiteConfigMessage",
-            "CommonSiteConfigGroupMessage"
+            "CommonSiteConfigGroupMessage",
+            "CommonIconMessage"
 
         ];
         this.loadScripts(scriptsToLoad)
