@@ -5,6 +5,7 @@ package com.vims.common.menu;
 
 import com.system.common.base.AbstractCommonService;
 import com.system.common.exception.CustomException;
+import com.system.common.util.userinfo.UserInfo;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.MessageSource;
 import org.springframework.context.i18n.LocaleContextHolder;
@@ -24,7 +25,11 @@ public class CommonMenuService extends AbstractCommonService<CommonMenu> {
     }
     public List<CommonMenu> findHierarchy(CommonMenu request) throws Exception {
         return commonMenuMapper.SELECT_HIERARCHY(request);
-//        return commonMenuMapper.SELECT_HIERARCHY_WITH_ACCESS_RIGHT_GROUP(request);
+    }
+    public List<CommonMenu> findAccessRightGroupForMenu(CommonMenu request) throws Exception {
+        String userEmail = UserInfo.getUserEmail();
+        var commonMenu = CommonMenu.builder().user_email(userEmail).build();
+        return commonMenuMapper.SELECT_ACCESS_RIGHTS_GROUP_FOR_MENU(commonMenu);
     }
     @Override
     protected List<CommonMenu> selectPage(CommonMenu request) throws Exception {

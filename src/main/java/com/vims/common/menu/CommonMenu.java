@@ -73,7 +73,9 @@ public class CommonMenu extends Common {
 	private String prgm_url;
 
 
-
+    /***<pre> user_email : 사용자 이메일 </pre> */
+    @Transient
+    private String user_email;
     /***<pre> menu_code : 메뉴코드 </pre> */
     @Transient
 	private String _menu_code;

@@ -27,6 +27,11 @@ public class CommonMenuController extends AbstractCommonController<CommonMenu> {
         return commonMenuService.findHierarchy(request);
     }
 
+    @PostMapping("/findAccessRightGroupForMenu")
+    public List<CommonMenu> findAccessRightGroupForMenu(@RequestBody CommonMenu request) throws Exception{
+        return commonMenuService.findAccessRightGroupForMenu(request);
+    }
+
     @PostMapping("/findAll")
     protected List<CommonMenu> findAll(@RequestBody CommonMenu request) throws Exception{
         return commonMenuRepository.findAll();
