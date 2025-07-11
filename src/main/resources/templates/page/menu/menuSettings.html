@@ -109,9 +109,9 @@
 <article id="gi-menuDepth_register-popup" class="gi-popup" data-popup-open="false">
     <div class="gi-popup-body gi-row-40-important">
         <div class="gi-popup-header">
-            <span>[Page.Message].Message.Label.Array["COMMON_MENU.REGISTER_SUB_MENU_CODE"]s</span>
+            <span>[Page.Message].Message.Label.Array["COMMON_MENU.REGISTER_SUB_MENU_CODE"]</span>
         </div>
-        <div class="gi-popup-contents gi-overflow-scroll">
+        <div class="gi-popup-contents">
             <!--      팝업내용 삽입 영역      -->
             <div class="gi-row-100 gi-col-auto gi-flex gi-flex-center">
                 <form id="commonMenuDepthRegister" class="gi-row-100 gi-grid gi-grid-justify-items-center">
@@ -141,8 +141,8 @@
                         <div class="gi-row-100 gi-col-100 gi-grid gi-grid-template-columns-repeat-2-1fr gi-grid-rows-container">
                             <div class="gi-row-100 gi-col-100">
                                 <div class="gi-row-100 gi-input-container gi-input-container-box-border-shadow gi-flex gi-flex-center ">
-                                    <label for="register_depth_prgm_url" class="gi-input-label" data-focus-label="true" data-focus-label-text-align="default" data-required="true">[Page.Message].Message.Label.Array["COMMON_MENU.PRGM_URL"]</label>
-                                    <input data-field="prgm_url" id="register_depth_prgm_url" name="prgm_url" class="gi-input" data-focus-span-text-align="default" data-required="true" autocomplete="off"/>
+                                    <label for="register_depth_prgm_url" class="gi-input-label" data-focus-label="true" data-focus-label-text-align="default" data-required="false">[Page.Message].Message.Label.Array["COMMON_MENU.PRGM_URL"]</label>
+                                    <input data-field="prgm_url" id="register_depth_prgm_url" name="prgm_url" class="gi-input" data-focus-span-text-align="default" data-required="false" autocomplete="off"/>
                                 </div>
                             </div>
                             <div class="gi-row-100 gi-col-100">
@@ -191,7 +191,7 @@
         <div class="gi-popup-header">
             <span>메뉴수정</span>
         </div>
-        <div class="gi-popup-contents gi-overflow-scroll">
+        <div class="gi-popup-contents" style="height: auto !important;">
             <!--      팝업내용 삽입 영역      -->
             <div class="gi-row-100 gi-col-auto gi-flex gi-flex-center">
                 <form id="commonMenuUpdate" class="gi-row-100 gi-grid gi-grid-justify-items-center">
@@ -204,14 +204,15 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="gi-row-100 gi-col-100 gi-grid gi-grid-template-columns-repeat-1-3fr-1fr gi-grid-rows-container">
+                        <div id="menu_icon_layout" class="gi-row-100 gi-col-100 gi-grid gi-grid-template-columns-repeat-1-1fr-1fr gi-grid-rows-container">
                             <div class="gi-row-100 gi-col-100">
                                 <div class="gi-row-100 gi-input-container gi-input-container-box-border-shadow gi-flex gi-flex-center ">
-                                    <label for="update_menu_icon" class="gi-input-label" data-focus-label="true" data-focus-label-text-align="default" data-required="true">메뉴아이콘</label>
-                                    <input data-gi-tag-disabled data-field="menu_icon" id="update_menu_icon" name="top_menu_code" class="gi-input" data-focus-span-text-align="default" data-required="true" autocomplete="off"/>
+                                    <label for="update_menu_icon" class="gi-input-label" data-focus-label="true" data-focus-label-text-align="default" data-required="false">메뉴아이콘</label>
+                                    <input data-gi-tag-disabled data-field="menu_icon" id="update_menu_icon" name="top_menu_code" class="gi-input" data-focus-span-text-align="default" data-required="false" autocomplete="off"/>
                                 </div>
                             </div>
                             <div class="gi-btn-section gi-row-100 gi-col-100 gi-flex gi-flex-justify-content-center gi-flex-align-items-center">
+                                <button id="update_popup_delete_icon-btn" class="gi-btn gi-row-100" type="button">아이콘 삭제</button>
                                 <button id="update_popup_icon-btn" class="gi-btn gi-row-100" type="button" gi-popup-open-id="update_popup_icon_pack">아이콘 설정</button>
                             </div>
                         </div>
@@ -232,8 +233,8 @@
                         <div class="gi-row-100 gi-col-100 gi-grid gi-grid-template-columns-repeat-2-1fr gi-grid-rows-container">
                             <div class="gi-row-100 gi-col-100">
                                 <div class="gi-row-100 gi-input-container gi-input-container-box-border-shadow gi-flex gi-flex-center ">
-                                    <label for="update_prgm_url" class="gi-input-label" data-focus-label="true" data-focus-label-text-align="default" data-required="true">API 경로</label>
-                                    <input data-field="prgm_url" id="update_prgm_url" name="prgm_url" class="gi-input" data-focus-span-text-align="default" data-required="true" autocomplete="off"/>
+                                    <label for="update_prgm_url" class="gi-input-label" data-focus-label="true" data-focus-label-text-align="default" data-required="false">API 경로</label>
+                                    <input data-field="prgm_url" id="update_prgm_url" name="prgm_url" class="gi-input" data-focus-span-text-align="default" data-required="false" autocomplete="off"/>
                                 </div>
                             </div>
                             <div class="gi-row-100 gi-col-100">
@@ -284,18 +285,27 @@
 </article>
 <!--NOTE: 메뉴아이콘 설정 팝업-->
 <article id="update_popup_icon_pack" class="gi-popup" data-popup-open="false">
-    <div class="gi-popup-body gi-row-40-important">
-        <div class="gi-popup-header">
-            <span>메뉴 아이콘 설정</span>
+    <div class="gi-popup-body gi-row-40-important" style="height: 90% !important;">
+        <div class="gi-popup-header" style="height: 10% !important;">
+            <span>[Page.Message].Message.Label.Array["COMMON_ICON.TITLE_LIST"]</span>
+        </div>
+        <div id="search-area" class="gi-row-100 gi-col-35px gi-flex gi-grid-gap-10px" style="padding: 0 20px;">
+            <!--      검색설정 영역      -->
+            <div class="gi-row-35 gi-col-100 gi-input-container gi-input-container-box-shadow gi-flex gi-flex-center" data-focus-line="false">
+                <label for="search_icon_class" class="gi-input-label" data-focus-label="false" data-focus-label-text-align="center" data-required="false">[Page.Message].Message.Label.Array["COMMON_ICON.ICON_CLASS"]</label>
+                <input class="gi-input gi-margin-1px" data-required="false" type="text" id="search_icon_class" name="icon_class" data-focus-input-text-align="center" autocomplete="off"/>
+            </div>
+            <button id="reset-btn" class="gi-btn-reset gi-input-container-box-shadow" type="button"><i class="fa-solid fa-rotate-right gi-row-30px"></i>[Page.Message].Message.Label.Array["BUTTON.RESET"]</button>
+            <button id="search_icon_class-btn" class="gi-btn-search gi-row-40px gi-input-container-box-shadow" type="button" style="margin-left: auto; margin-right: 0;">[Page.Message].Message.Label.Array["BUTTON.SEARCH"]</button>
         </div>
         <div class="gi-popup-contents gi-overflow-scroll">
             <!--      팝업내용 삽입 영역      -->
-            <div class="gi-row-100 gi-col-auto gi-flex gi-flex-center">
+            <div class="gi-row-100 gi-col-auto gi-flex gi-flex-center gi-flex-direction-column">
                 <div class="gi-Grid" id="gi-icon-grid"></div>
             </div>
             <!--/      팝업내용 삽입 영역      -->
         </div>
-        <div class="gi-popup-footer">
+        <div class="gi-popup-footer" style="height: 10% !important;">
             <div class="gi-btn-section gi-row-30 gi-col-30px gi-padding-left-right-20px gi-flex gi-flex-justify-content-center gi-flex-align-items-center">
                 <button id="btn" class="gi-popup-update-btn" type="button">수정</button>
                 <button class="gi-popup-close-btn" type="button">닫기</button>
@@ -352,9 +362,6 @@
             // findByCommonCodeMenuList();
         });
 
-        $("#menuUpdate-btn").click(function(){
-            commonMenuUpdate();
-        })
         $("#menu_depth0_register_btn").click(function(){
             menuRegisterSetting();
         })
@@ -364,10 +371,10 @@
         $("#menu_depth_register_btn").click(function(){
             menuDepthRegisterSetting();
         })
-        $("#menuDepthRegister-btn").click(function(){
-            commonMenuDepthRegister();
-        })
         $("#update_popup_icon-btn").click(function(){
+            findByCommonIconList();
+        })
+        $("#search_icon_class-btn").click(function(){
             findByCommonIconList();
         })
     }
@@ -391,14 +398,15 @@
                 let menuGrid = {
                     title : '[Page.Message].Message.Label.Array["COMMON_MENU.TITLE"]',
                     list:[
-                        {HEADER:'[Page.Message].Message.Label.Array["COMMON_MENU.MENU_NAME_KR"]',      ID:"menu_name_kr",     WIDTH:"15",TYPE:"text",FONT_SIZE:"12px",TEXT_ALIGN:"left",HIDDEN:false},
+                        {HEADER:'[Page.Message].Message.Label.Array["COMMON_MENU.MENU_NAME"]',      ID:"menu_name_kr",     WIDTH:"15",TYPE:"text",FONT_SIZE:"12px",TEXT_ALIGN:"left",HIDDEN:false},
                         {HEADER:'[Page.Message].Message.Label.Array["COMMON_MENU.MENU_CODE"]',     ID:"menu_code",    WIDTH:"15",TYPE:"text",FONT_SIZE:"12px",TEXT_ALIGN:"left",HIDDEN:false},
-                        {HEADER:'[Page.Message].Message.Label.Array["COMMON_MENU.MENU_LEVEL"]',     ID:"menu_level",   WIDTH:"5",TYPE:"text",FONT_SIZE:"12px",TEXT_ALIGN:"center",HIDDEN:false},
+                        {HEADER:'[Page.Message].Message.Label.Array["COMMON_MENU.MENU_LEVEL"]',     ID:"menu_level",   WIDTH:"5",TYPE:"text",FONT_SIZE:"12px",TEXT_ALIGN:"center",HIDDEN:true},
                         {HEADER:'[Page.Message].Message.Label.Array["COMMON_MENU.MENU_NUMBER"]',     ID:"menu_number",  WIDTH:"5",TYPE:"text",FONT_SIZE:"12px",TEXT_ALIGN:"center",HIDDEN:false},
                         {HEADER:'[Page.Message].Message.Label.Array["COMMON_MENU.TOP_MENU_CODE"]', ID:"top_menu_code",WIDTH:"15",TYPE:"text",FONT_SIZE:"12px",TEXT_ALIGN:"left",HIDDEN:false},
                         {HEADER:'[Page.Message].Message.Label.Array["COMMON_MENU.PRGM_URL"]',     ID:"prgm_url",      WIDTH:"5",TYPE:"text",FONT_SIZE:"12px",TEXT_ALIGN:"left",HIDDEN:false},
-                        {HEADER:'[Page.Message].Message.Label.Array["COMMON_MENU.URL"]',         ID:"url",          WIDTH:"20",TYPE:"text",FONT_SIZE:"12px",TEXT_ALIGN:"left",HIDDEN:false},
-                        {HEADER:'[Page.Message].Message.Label.Array["COMMON_MENU.MENU_ICON"]',     ID:"menu_icon",        WIDTH:"10",TYPE:"text",FONT_SIZE:"12px",TEXT_ALIGN:"center",HIDDEN:false},
+                        {HEADER:'[Page.Message].Message.Label.Array["COMMON_MENU.URL"]',         ID:"url",          WIDTH:"15",TYPE:"text",FONT_SIZE:"12px",TEXT_ALIGN:"left",HIDDEN:false},
+                        {HEADER:'[Page.Message].Message.Label.Array["COMMON_ICON.ICON_VIEW"]',  ID:'icon_view',  WIDTH:'10',TYPE:'text',FONT_SIZE:'12px',TEXT_ALIGN:'center',HIDDEN:false},
+                        {HEADER:'[Page.Message].Message.Label.Array["COMMON_ICON.ICON_CLASS"]',     ID:"menu_icon",        WIDTH:"7",TYPE:"text",FONT_SIZE:"12px",TEXT_ALIGN:"center",HIDDEN:false},
                         {HEADER:'[Page.Message].Message.Label.Array["COMMON_MENU.USE_YN"]',     ID:"use_yn",        WIDTH:"7",TYPE:"text",FONT_SIZE:"12px",TEXT_ALIGN:"center",COMMON_CODE_GROUP_ID:"USE_YN",HIDDEN:false},
                         {HEADER:'[Page.Message].Message.Label.Array["MODIFY_BTN"]',        ID:"update_menu_btn",     WIDTH:"5",TYPE:"button",FONT_SIZE:"12px",TEXT_ALIGN:"center",HIDDEN:false},
                         {HEADER:'[Page.Message].Message.Label.Array["DELETE_BTN"]',        ID:"delete_menu_btn",     WIDTH:"5",TYPE:"button",FONT_SIZE:"12px",TEXT_ALIGN:"center",HIDDEN:false},
@@ -421,6 +429,9 @@
                 //계층 구조 기준컬럼명 설정
                 menu_grid.HierarchyOption({level_column:"menu_level",parent_depth_column:"menu_code",child_depth_column:"top_menu_code"});
                 //그리드 데이터 설정
+                data.map((item,i) =>{
+                    data[i]["icon_view"] = "<i class='fa-solid "+item.menu_icon+"'></i>";
+                })
                 menu_grid.DataSet(data);
                 //그리드 내부의 상세 버튼 클릭 이벤트 설정(버튼클릭시 호출될 함수, 그리드 헤더 부분에 설정한 버튼 ID)
                 menu_grid.updateBtnClick(menuUpdateSetting,"update_menu_btn");
@@ -451,6 +462,13 @@
                         if(rows.menu_level !== "2"){
                             $("#menu_depth_register_btn").removeClass("gi-hidden");
                             rowClickData = rows;
+                            if(rows.menu_level === "1"){
+                                $("#register_depth_prgm_url").attr("data-required","true");
+                                $("label[for='register_depth_prgm_url']").attr("data-required","true");
+                            }
+                            $("#menuDepthRegister-btn").off("click").on("click",function(){
+                                commonMenuDepthRegister();
+                            })
                         }else{
                             $("#menu_depth_register_btn").addClass("gi-hidden");
                             rowClickData = rows;
@@ -551,6 +569,7 @@
                     formUtil.showMessage(Message.Label.Array["COMPLETE.INSERT"]);
                     findByCommonGroupList(null,null,null,null,row);
                     findByCommonAccessGroupMenuList(null,null,null,null,row);
+                    findByMenuList();
                 } else {
                     formUtil.alertPopup("response status is :" + status);
                 }
@@ -644,6 +663,7 @@
             formUtil.alertPopup(error.response.data);
         })
     }
+    //NOTE: 메뉴 등록 팝업 데이터 설정
     function menuRegisterSetting(){
         $("#gi-menu_register-popup").attr("data-popup-open","true");
         $("#register_top_menu_code").val("-");
@@ -657,10 +677,34 @@
 
         inputTageReset.commonTagSettings();
     }
+
+    //NOTE: 메뉴 수정 팝업 데이터 설정
     function menuUpdateSetting(cont){
         $("#gi-menu_update-popup").attr("data-popup-open","true");
         data_binding.setDataSelectBox("update_use_yn",cont.use_yn);
         data_binding.setDataForm("gi-menu_update-popup",cont);
+        $("#update_popup_delete_icon-btn").off("click").on("click",function(){
+            $("#update_menu_icon").val("");
+        })
+        if(cont.menu_level !== "0"){
+            $("#menu_icon_layout").addClass("gi-hidden");
+            $("#update_menu_icon").val("");
+            if(cont.menu_level !== "1"){
+                $("#update_prgm_url").attr("data-required","true");
+                $("label[for='update_prgm_url']").attr("data-required","true");
+            }else{
+                $("#update_prgm_url").attr("data-required","false");
+                $("label[for='update_prgm_url']").attr("data-required","false");
+            }
+        }else{
+            $("#menu_icon_layout").removeClass("gi-hidden");
+            $("#update_prgm_url").attr("data-required","false");
+            $("label[for='update_prgm_url']").attr("data-required","false");
+        }
+        $("#menuUpdate-btn").off("click.menuUpdateBtnClickEventHandler").on("click.menuUpdateBtnClickEventHandler",menuUpdateBtnClickEventHandler);
+        function menuUpdateBtnClickEventHandler(){
+            commonMenuUpdate();
+        }
     }
     /**
      * NOTE: 상위메뉴등록
@@ -733,32 +777,34 @@
      * NOTE: 메뉴 업데이트 API
      */
     function commonMenuUpdate(){
-        let data = new dataBinding().getData(COMMON_MENU_UPDATE_PRGMID);
-        let url = "/cms/common/commonMenu/update";
-        let param = {
-            menu_code :data.menu_code ,
-            menu_name_kr :data.menu_name_kr ,
-            menu_number :data.menu_number ,
-            menu_level :data.menu_level ,
-            top_menu_code :data.top_menu_code ,
-            url :data.url ,
-            prgm_url : data.prgm_url,
-            use_yn :data.use_yn,
-            menu_sequence : data.menu_sequence
-            //,access_right_group : data.access_right_group
-        };
-         axios.post(url, param).then(response =>{
-             if(response.status === 200){
-                 formUtil.showMessage(Message.Label.Array["COMPLETE.UPDATE"]);
-                 common_popup.close("gi-menu_update-popup");
-                 findByCommonCodeMenuList();
-                 findByMenuList();
-             }else{
-                 formUtil.showMessage(Message.Label.Array["FAIL.UPDATE"]);
-             }
-         }).catch(error =>{
-             formUtil.alertPopup(error + "");
-         })
+        if(menuModifyCheckValidation(COMMON_MENU_UPDATE_PRGMID)){
+            let data = new dataBinding().getData(COMMON_MENU_UPDATE_PRGMID);
+            let url = "/cms/common/commonMenu/update";
+            let param = {
+                menu_code :data.menu_code ,
+                menu_name_kr :data.menu_name_kr ,
+                menu_number :data.menu_number ,
+                menu_level :data.menu_level ,
+                top_menu_code :data.top_menu_code ,
+                url :data.url ,
+                prgm_url : data.prgm_url,
+                use_yn :data.use_yn,
+                menu_sequence : data.menu_sequence,
+                menu_icon : data.menu_icon
+            };
+            axios.post(url, param).then(response =>{
+                if(response.status === 200){
+                    formUtil.showMessage(Message.Label.Array["COMPLETE.UPDATE"]);
+                    common_popup.close("gi-menu_update-popup");
+                    findByCommonCodeMenuList();
+                    findByMenuList();
+                }else{
+                    formUtil.showMessage(Message.Label.Array["FAIL.UPDATE"]);
+                }
+            }).catch(error =>{
+                formUtil.alertPopup(error + "");
+            })
+        }
     }
     /**
      * NOTE: 메뉴 ROW DATA 삭제
@@ -810,6 +856,25 @@
         }
         return flag;
     }
+    //NOTE: 메뉴 수정 유효성 검사
+    function menuModifyCheckValidation(ID){
+        let flag = false;
+
+        let validation = [];
+        validation.formId = ID;
+        $(".gi-input[data-required='true'],.gi-select[data-required='true']").map((i,item)=>{
+            if($(item).data("field")){
+                let messageId = $(item).data("field").toUpperCase();
+                let message = Message.Label.Array["COMMON_MENU.CHECK."+messageId];
+                validation.push({id:item.id,message:message});
+            }
+        });
+        if(formUtil.validationCheck(validation)){
+            flag = true;
+        }
+        return flag;
+    }
+    //NOTE: 권한 적용 그룹 목록 Group_id 삭제
     function commonAccessGroupIdRemove(cont){
         let url = "/cms/common/commonAccessGroupMenu/remove";
         let param = {
@@ -821,6 +886,7 @@
                 formUtil.showMessage(Message.Label.Array["COMPLETE.DELETE"]);
                 findByCommonGroupList(null,null,null,null,cont);
                 findByCommonAccessGroupMenuList(null,null,null,null,cont);
+                findByMenuList();
             }
         }).catch(error =>{
             formUtil.alertPopup(error.response.data);
@@ -838,6 +904,8 @@
             row_range : range,
             offset: (page-1) * range
         };
+
+        if(formUtil.checkEmptyValue($("#search_icon_class").val())) param._icon_class =  $("#search_icon_class").val();
 
         axios.post(url, param).then(response => {
             let status = response.status;
@@ -877,6 +945,7 @@
                 function selectMenuIconPopup(rows){
                     $("#update_menu_icon").val(rows.icon_class);
                     common_popup.close("update_popup_icon_pack");
+                    inputTageReset.commonTagSettings();
                 }
             } else {
                 formUtil.alertPopup("response status is :" + status);

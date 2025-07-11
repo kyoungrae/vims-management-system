@@ -12,6 +12,7 @@ import lombok.NoArgsConstructor;
 import lombok.experimental.SuperBuilder;
 
 import java.util.Arrays;
+import java.util.Date;
 
 @EqualsAndHashCode(callSuper = true)
 @Entity
@@ -52,13 +53,13 @@ public class CommonMenu extends Common {
 	private String use_yn;
 
     /***<pre> system_create_date : 작성일자 </pre> */
-	private String system_create_date;
+	private Date system_create_date;
 
     /***<pre> system_create_userid : 작성자ID </pre> */
 	private String system_create_userid;
 
     /***<pre> system_update_date : 수정일자 </pre> */
-	private String system_update_date;
+	private Date system_update_date;
 
     /***<pre> system_update_userid : 수정자ID </pre> */
 	private String system_update_userid;

@@ -20,8 +20,8 @@ Message.Label.Array["COMMON_MENU.CHECK.SYSTEM_CREATE_USERID"] = "작성자ID(을
 Message.Label.Array["COMMON_MENU.CHECK.SYSTEM_UPDATE_DATE"] = "수정일자(을)를 입력해 주세요";
 Message.Label.Array["COMMON_MENU.CHECK.SYSTEM_UPDATE_USERID"] = "수정자ID(을)를 입력해 주세요";
 Message.Label.Array["COMMON_MENU.CHECK.MENU_SEQUENCE"] = "메뉴 고유번호를 입력해 주세요";
-Message.Label.Array["COMMON_MENU.CHECK.MENU_ICON"] = "(을)를 입력해 주세요";
-Message.Label.Array["COMMON_MENU.CHECK.PRGM_URL"] = "(을)를 입력해 주세요";
+Message.Label.Array["COMMON_MENU.CHECK.MENU_ICON"] = "메뉴 아이콘(을)를 입력해 주세요";
+Message.Label.Array["COMMON_MENU.CHECK.PRGM_URL"] = "API 경로(을)를 입력해 주세요";
 
 
 Message.Label.Array["COMMON_MENU.MENU_CODE"] = "메뉴코드";

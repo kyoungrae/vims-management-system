@@ -60,7 +60,7 @@ public class CommonMenuController extends AbstractCommonController<CommonMenu> {
 
     @PostMapping("/register")
     @Override
-    protected int registerImpl(@RequestBody CommonMenu request) {
+    protected int registerImpl(@RequestBody CommonMenu request) throws Exception {
         return commonMenuService.registerImpl(request);
     }
 }

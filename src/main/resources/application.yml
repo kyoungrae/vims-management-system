@@ -34,9 +34,10 @@ spring:
         driver-class-name: org.mariadb.jdbc.Driver
 
         hikari:
-            max-lifetime: 1800000      # 30분
-            idle-timeout: 600000       # 10분
-            validation-timeout: 5000
+                maximum-pool-size: 10
+                idle-timeout: 300000         # 5분
+                max-lifetime: 1800000        # 30분 (DB 커넥션 타임아웃보다 짧게)
+                connection-timeout: 30000
 
     jpa:
         show-sql: false
